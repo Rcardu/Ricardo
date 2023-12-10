@@ -1,0 +1,8 @@
+{
+    "clangd.fallbackFlags": [
+        "-l/usr/include/c++/11",
+        // "-std=c++17",
+        // "-std=c17", 
+        "-I${workspaceFolder}\\include", // 项目根目录    
+    ],
+}

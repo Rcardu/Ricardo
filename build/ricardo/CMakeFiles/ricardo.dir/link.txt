@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libricardo.so -o ../../lib/libricardo.so CMakeFiles/ricardo.dir/config.cc.o CMakeFiles/ricardo.dir/log.cpp.o CMakeFiles/ricardo.dir/util.cpp.o 

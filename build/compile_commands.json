@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -g -fPIC -o CMakeFiles/ricardo.dir/config.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -g -fPIC -o CMakeFiles/ricardo.dir/log.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -g -fPIC -o CMakeFiles/ricardo.dir/util.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -g -o CMakeFiles/app_log.dir/main.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config",
+  "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -g -o CMakeFiles/app_config.dir/main.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc"
+}
+]
