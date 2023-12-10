@@ -29,6 +29,9 @@ tests -- 测试代码
 
 Config --> Yaml
 
+yamp-cpp: github
+mkdir build && cd build && cmake .. && make install
+
 ## 协程库封装
 
 ## socket系列函数库
