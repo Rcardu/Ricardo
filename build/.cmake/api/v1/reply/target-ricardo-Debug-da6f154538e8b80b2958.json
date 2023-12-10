@@ -56,6 +56,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp"
 				}
 			],
 			"language" : "CXX",

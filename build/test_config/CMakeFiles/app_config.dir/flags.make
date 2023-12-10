@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include
+CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
 CXX_FLAGS = -g
 

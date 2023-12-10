@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_config"
+			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"test_config/CMakeLists.txt"
+			"tests/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -64,6 +64,10 @@
 				{
 					"backtrace" : 4,
 					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp"
 				}
 			],
 			"language" : "CXX",
@@ -80,7 +84,7 @@
 			"id" : "ricardo::@e4f8d5b6a61329f35d66"
 		}
 	],
-	"id" : "app_config::@c4cc8f415547f9a757be",
+	"id" : "app_log::@a44f0ac069e85531cdee",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -110,12 +114,12 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "app_config",
-	"nameOnDisk" : "app_config",
+	"name" : "app_log",
+	"nameOnDisk" : "app_log",
 	"paths" : 
 	{
-		"build" : "test_config",
-		"source" : "test_config"
+		"build" : "tests",
+		"source" : "tests"
 	},
 	"sourceGroups" : 
 	[
@@ -132,7 +136,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test_config/main.cc",
+			"path" : "tests/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
