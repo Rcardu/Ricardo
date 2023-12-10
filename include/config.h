@@ -41,7 +41,7 @@ public:
     std::string toString() override{
         
         try {
-            boost::lexical_cast<std::string>(m_val);
+            return boost::lexical_cast<std::string>(m_val);
         }catch (std::exception& e){
             SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << "ConfigVar::toString exception"
                 <<e.what()<<"convert: "<<typeid(m_val).name()<<"to string";
