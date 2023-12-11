@@ -32,6 +32,37 @@ Config --> Yaml
 yamp-cpp: github
 mkdir build && cd build && cmake .. && make install
 
+```cpp
+YAML::Node::node = YAML::LoadFile(fillename);
+
+node.IsMap()
+for(auto it = node.begin();it!=node.end();it++){
+     
+    it->first,it->second
+}
+
+node.IsSequence()
+for(size_t i = 0;i < node.size();i++){
+
+}
+
+node.IsScalar();
+```
+
+配置系统的原则：约定优于配置
+
+```cpp
+template<T, ForStr, ToStr>
+class ConfigVar;
+LexicalCast;
+
+//容器片特化，目前支持vector
+// list、set、map、unordered_map、unordered_set
+// map/unordered_map 支持key=std::string 
+// Config::Lookup(key),key相同，类型不同，不会报错
+```
+
+
 ## 协程库封装
 
 ## socket系列函数库
