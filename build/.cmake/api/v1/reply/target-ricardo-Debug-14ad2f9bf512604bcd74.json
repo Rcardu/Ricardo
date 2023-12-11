@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
+			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so"
 		}
 	],
 	"backtrace" : 1,
@@ -10,14 +10,14 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
+			"add_library",
 			"link_directories",
 			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"tests/CMakeLists.txt"
+			"ricardo/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 4,
+				"line" : 3,
 				"parent" : 0
 			}
 		]
@@ -56,7 +56,13 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "ricardo_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -73,26 +79,17 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 3,
-			"id" : "ricardo::@e4f8d5b6a61329f35d66"
-		}
-	],
-	"id" : "app_log::@a44f0ac069e85531cdee",
+	"id" : "ricardo::@e4f8d5b6a61329f35d66",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -108,18 +105,18 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "../../lib/libricardo.so",
+				"fragment" : "-lyaml-cpp",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "app_log",
-	"nameOnDisk" : "app_log",
+	"name" : "ricardo",
+	"nameOnDisk" : "libricardo.so",
 	"paths" : 
 	{
-		"build" : "tests",
-		"source" : "tests"
+		"build" : "ricardo",
+		"source" : "ricardo"
 	},
 	"sourceGroups" : 
 	[
@@ -127,7 +124,9 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2
 			]
 		}
 	],
@@ -136,9 +135,21 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/main.cpp",
+			"path" : "ricardo/config.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ricardo/log.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ricardo/util.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }
