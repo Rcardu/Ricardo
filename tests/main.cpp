@@ -1,16 +1,14 @@
-#include <iostream>
+#include<iostream>
 #include "log.h"
-#include "util.h"
-#include "singleton.h"
+#include "util.h" 
+#include "singleton.h" //测试 
 
-int main(int argc,char* argv[]){
-
-    Ricardo::Logger::ptr logger(new Ricardo::Logger);
-    logger->addAppender(Ricardo::LogAppender::ptr(new Ricardo::StdoutLogAppender));
-
-    Ricardo::FileLogAppender::ptr file_appender(new Ricardo::FileLogAppender("./log.txt"));
-    Ricardo::LogFormatter::ptr fmt(new Ricardo::LogFormatter("%d%T%p%T%m%n"));
-    file_appender->setFormatter(fmt);
+int main(){ 
+    Ricardo::Logger::ptr logger(new Ricardo::Logger); 
+    logger->addAppender(Ricardo::LogAppender::ptr(new Ricardo::StdoutLogAppender)); 
+    Ricardo::FileLogAppender::ptr file_appender(new Ricardo::FileLogAppender("./log.txt")); 
+    Ricardo::LogFormatter::ptr fmt(new Ricardo::LogFormatter("%d%T%p%T%m%n")); 
+    file_appender->setFormatter(fmt); 
     file_appender->setLevel(Ricardo::LogLevel::ERROR);
 
     logger->addAppender(file_appender);

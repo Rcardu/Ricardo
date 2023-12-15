@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../bin/app_log"
-  "../../bin/app_log.pdb"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log.pdb"
   "CMakeFiles/app_log.dir/main.cpp.o"
   "CMakeFiles/app_log.dir/main.cpp.o.d"
 )

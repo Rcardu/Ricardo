@@ -91,14 +91,14 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "app_config::@c4cc8f415547f9a757be",
-					"jsonFile" : "target-app_config-Debug-fe24635877d584269641.json",
+					"jsonFile" : "target-app_config-Debug-8fb14a49b9f2a8c0c2ed.json",
 					"name" : "app_config",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "app_log::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-app_log-Debug-f06721826f7ab02e5a97.json",
+					"jsonFile" : "target-app_log-Debug-a5126f57e454e0a01ab5.json",
 					"name" : "app_log",
 					"projectIndex" : 0
 				},
@@ -121,6 +121,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 6
 	}
 }

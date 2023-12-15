@@ -31,3 +31,32 @@ system:
       ka: 11
       kb: 23
       kc: 17
+class: 
+    person: 
+        name: ricardo
+        age:  22
+        sex: true
+    map: 
+        Ricardo01: 
+            name: Ricardo01
+            age:  18
+            sex: false
+        ricardo2: 
+            name: Ricardo02
+            age:  40
+            sex: true
+    vec_map: 
+        k1:
+            - name: m1
+              age: 33
+              sex: true
+            - name: m2
+              age: 44
+              sex: false
+        k2:
+            - name: m3
+              age: 33
+              sex: true
+            - name: m4
+              age: 44
+              sex: false

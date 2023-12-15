@@ -13,8 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp" "ricardo/CMakeFiles/ricardo.dir/util.cpp.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/util.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -2,26 +2,31 @@
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
   "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/config.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc"
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/config.cc.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
   "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/log.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp"
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
+  "output": "ricardo/CMakeFiles/ricardo.dir/log.cpp.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
   "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/util.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp"
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
+  "output": "ricardo/CMakeFiles/ricardo.dir/util.cpp.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
   "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -o CMakeFiles/app_log.dir/main.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp"
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp",
+  "output": "tests/CMakeFiles/app_log.dir/main.cpp.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config",
   "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -o CMakeFiles/app_config.dir/main.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc"
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc",
+  "output": "test_config/CMakeFiles/app_config.dir/main.cc.o"
 }
 ]

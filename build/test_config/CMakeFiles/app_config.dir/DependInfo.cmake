@@ -11,9 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc" "test_config/CMakeFiles/app_config.dir/main.cc.o" "gcc" "test_config/CMakeFiles/app_config.dir/main.cc.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo/CMakeFiles/ricardo.dir/DependInfo.cmake"
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
+			"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_config"
 		}
 	],
 	"backtrace" : 1,
@@ -17,7 +17,7 @@
 		],
 		"files" : 
 		[
-			"tests/CMakeLists.txt"
+			"test_config/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -43,6 +43,12 @@
 				"parent" : 0
 			},
 			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
 				"command" : 3,
 				"file" : 0,
 				"line" : 4,
@@ -62,11 +68,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp"
 				}
 			],
@@ -84,7 +90,7 @@
 			"id" : "ricardo::@e4f8d5b6a61329f35d66"
 		}
 	],
-	"id" : "app_log::@a44f0ac069e85531cdee",
+	"id" : "app_config::@c4cc8f415547f9a757be",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -108,22 +114,23 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "../../lib/libricardo.so",
+				"fragment" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 4,
 				"fragment" : "-lyaml-cpp",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "app_log",
-	"nameOnDisk" : "app_log",
+	"name" : "app_config",
+	"nameOnDisk" : "app_config",
 	"paths" : 
 	{
-		"build" : "tests",
-		"source" : "tests"
+		"build" : "test_config",
+		"source" : "test_config"
 	},
 	"sourceGroups" : 
 	[
@@ -140,7 +147,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/main.cpp",
+			"path" : "test_config/main.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

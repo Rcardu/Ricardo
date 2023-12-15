@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../lib/libricardo.pdb"
-  "../../lib/libricardo.so"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.pdb"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so"
   "CMakeFiles/ricardo.dir/config.cc.o"
   "CMakeFiles/ricardo.dir/config.cc.o.d"
   "CMakeFiles/ricardo.dir/log.cpp.o"

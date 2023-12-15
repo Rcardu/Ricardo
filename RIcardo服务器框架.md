@@ -62,6 +62,10 @@ LexicalCast;
 // Config::Lookup(key),key相同，类型不同，不会报错
 ```
 
+自定义类型，需要实现Ricard::LexicalCast，片特化
+实现后，就可以支持Config解析自定义，自定义类型可以和常规
+stl容器一起使用。
+
 
 ## 协程库封装
 

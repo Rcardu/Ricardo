@@ -14,7 +14,7 @@ ConfigVarBase::ptr Config::LookupBase(const std::string& name){
 static void ListAllMember(const std::string& prefix, const YAML::Node& node, 
                         std::list<std::pair<std::string, const YAML::Node>>& output){
 
-    if(prefix.find_first_not_of("abcdefghijklmnopqrstuvwxyz._012345678") != std::string::npos){
+    if(prefix.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._012345678") != std::string::npos){
 
         SYLAR_LOG_ERROR(SYLAR_LOG_ROOT())<<"config invalid name: "<<prefix<<" : "<<node;
         return ;

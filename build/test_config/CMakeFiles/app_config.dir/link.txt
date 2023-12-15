@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/app_config.dir/main.cc.o -o ../../bin/app_config   -L/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib ../../lib/libricardo.so -lyaml-cpp 
+/usr/bin/c++ -g CMakeFiles/app_config.dir/main.cc.o -o /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_config   -L/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib /home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so -lyaml-cpp 
