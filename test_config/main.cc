@@ -1,7 +1,7 @@
 #include "config.h"
 #include "log.h"
 
-#if 0
+#if 1
 Ricardo::ConfigVar<int>::ptr g_int_value_config = 
     Ricardo::Config::Lookup("system.port",(int)8080,"system port");
 Ricardo::ConfigVar<float>::ptr g_int_valuex_config = 
@@ -54,7 +54,7 @@ void print_yaml(const YAML::Node& node,int level){
 
 void test_yaml(){
     
-    YAML::Node node = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/log.yml");
+    YAML::Node node = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/test.yml");
     print_yaml(node,0);
 
     // SYLAR_LOG_ERROR(SYLAR_LOG_ROOT())<<root;
@@ -64,23 +64,26 @@ void test_config(){
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"brfore: "<<g_int_value_config->getValue();
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"brfore: "<<g_float_value_config->toString();
 
-#define XX(g_var,name,prefix)   \
-    {   \
-        auto& v = g_var->getValue();    \
-        for(auto& i : v){   \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name ": " <<i;  \
-        }   \
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name " yaml: " <<g_var->toString();  \
-    }    
+#define XX(g_var, name, prefix)                                        \
+  {                                                                    \
+    auto& v = g_var->getValue();                                       \
+    for (auto& i : v) {                                                \
+      SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name ": " << i; \
+    }                                                                  \
+    SYLAR_LOG_INFO(SYLAR_LOG_ROOT())                                   \
+        << #prefix " " #name " yaml: " << g_var->toString();           \
+  }
 
-#define XX_M(g_var,name,prefix)   \
-    {   \
-        auto& v = g_var->getValue();    \
-        for(auto& i : v){   \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name ": {" <<i.first<<" - "<<i.second<<"}";    \
-        }   \
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name " yaml: " <<g_var->toString();  \
-    }    
+#define XX_M(g_var, name, prefix)                                            \
+  {                                                                          \
+    auto& v = g_var->getValue();                                             \
+    for (auto& i : v) {                                                      \
+      SYLAR_LOG_INFO(SYLAR_LOG_ROOT())                                       \
+          << #prefix " " #name ": {" << i.first << " - " << i.second << "}"; \
+    }                                                                        \
+    SYLAR_LOG_INFO(SYLAR_LOG_ROOT())                                         \
+        << #prefix " " #name " yaml: " << g_var->toString();                 \
+  }    
 
     XX(g_int_vec_value_config,int_vec,before);
     XX(g_int_list_value_config,int_list,before);
@@ -90,7 +93,7 @@ void test_config(){
     XX_M(g_str_int_umap_value_config,str_int_umap,before);
     
 
-    YAML::Node root = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/test.yml");
     Ricardo::Config::LoadFormYaml(root);
 
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"after: "<<g_int_value_config->getValue();
@@ -103,7 +106,7 @@ void test_config(){
     XX_M(g_str_int_map_value_config,str_int_map,after);
     XX_M(g_str_int_umap_value_config,str_int_umap,after);
 }
-#endif
+// #endif
 class Person{
 public:
     std::string m_name;
@@ -117,6 +120,12 @@ public:
             <<" sex = " <<m_sex
             <<"]";
         return ss.str();
+    }
+
+    bool operator==(const Person& oth)const{
+        return m_name == oth.m_name
+            && m_age == oth.m_age
+            && m_sex == oth.m_sex; 
     }
 private:
 
@@ -165,32 +174,48 @@ Ricardo::ConfigVar<std::map<std::string,std::vector<Person>>>::ptr g_person_vec_
 void test_class(){
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) <<"before: "<< g_person->getValue().toString() << " - "<< g_person->toString();
 
-#define XX_PM(g_var, prefix)    \
-    {\
-        auto m = g_person_map->getValue();  \
-        for(auto& i: m){    \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) <<prefix<< ": "<<i.first <<" - "<<i.second.toString();   \
-        }   \
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) <<prefix<< ": size = "<<m.size();   \
-    }
+#define XX_PM(g_var, prefix)                                               \
+  {                                                                        \
+    auto m = g_person_map->getValue();                                     \
+    for (auto& i : m) {                                                    \
+      SYLAR_LOG_INFO(SYLAR_LOG_ROOT())                                     \
+          << prefix << ": " << i.first << " - " << i.second.toString();    \
+    }                                                                      \
+    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << prefix << ": size = " << m.size(); \
+  }
+
+    g_person->addListener(10,[](const Person& old_value,const Person& new_value){
+        SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"old_value="<< old_value.toString()
+                <<" new_value="<<new_value.toString();
+    });
 
     XX_PM(g_person_map,"class.map before");
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"before: "<<g_person_vec_map->toString();
 
 
-    YAML::Node root = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/test.yml");
     Ricardo::Config::LoadFormYaml(root);
 
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) <<"after: "<< g_person->getValue().toString() << " - "<< g_person->toString();
     XX_PM(g_person_map,"class.map after");
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT())<<"after: "<<g_person_vec_map->toString();
 }
+#endif
+void test_log() {
 
-int main (int argc, char* argv[]){
+  std::cout << Ricardo::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+  YAML::Node root = YAML::LoadFile(
+      "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/log.yml");
+  Ricardo::Config::LoadFormYaml(root);
+  std::cout << "======================" << std::endl;
+  std::cout << Ricardo::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+}
 
-    //test_yaml();
-    // test_config();
-    test_class();
+int main(int argc, char* argv[]) {
 
-    return 0;
+  //test_yaml();
+  // test_config();
+  //test_class();
+  test_log();
+  return 0;
 }
