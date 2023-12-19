@@ -69,32 +69,48 @@ include tests/CMakeFiles/app_log.dir/progress.make
 # Include the compile flags for this target's objects.
 include tests/CMakeFiles/app_log.dir/flags.make
 
-tests/CMakeFiles/app_log.dir/main.cpp.o: tests/CMakeFiles/app_log.dir/flags.make
-tests/CMakeFiles/app_log.dir/main.cpp.o: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp
-tests/CMakeFiles/app_log.dir/main.cpp.o: tests/CMakeFiles/app_log.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/app_log.dir/main.cpp.o"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/app_log.dir/main.cpp.o -MF CMakeFiles/app_log.dir/main.cpp.o.d -o CMakeFiles/app_log.dir/main.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp
+tests/CMakeFiles/app_log.dir/config_t.cc.o: tests/CMakeFiles/app_log.dir/flags.make
+tests/CMakeFiles/app_log.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc
+tests/CMakeFiles/app_log.dir/config_t.cc.o: tests/CMakeFiles/app_log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/app_log.dir/config_t.cc.o"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/config_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/app_log.dir/config_t.cc.o -MF CMakeFiles/app_log.dir/config_t.cc.o.d -o CMakeFiles/app_log.dir/config_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc
 
-tests/CMakeFiles/app_log.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_log.dir/main.cpp.i"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp > CMakeFiles/app_log.dir/main.cpp.i
+tests/CMakeFiles/app_log.dir/config_t.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_log.dir/config_t.cc.i"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/config_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc > CMakeFiles/app_log.dir/config_t.cc.i
 
-tests/CMakeFiles/app_log.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_log.dir/main.cpp.s"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp -o CMakeFiles/app_log.dir/main.cpp.s
+tests/CMakeFiles/app_log.dir/config_t.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_log.dir/config_t.cc.s"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/config_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc -o CMakeFiles/app_log.dir/config_t.cc.s
+
+tests/CMakeFiles/app_log.dir/log_t.cc.o: tests/CMakeFiles/app_log.dir/flags.make
+tests/CMakeFiles/app_log.dir/log_t.cc.o: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc
+tests/CMakeFiles/app_log.dir/log_t.cc.o: tests/CMakeFiles/app_log.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/CMakeFiles/app_log.dir/log_t.cc.o"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/log_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/app_log.dir/log_t.cc.o -MF CMakeFiles/app_log.dir/log_t.cc.o.d -o CMakeFiles/app_log.dir/log_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc
+
+tests/CMakeFiles/app_log.dir/log_t.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_log.dir/log_t.cc.i"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/log_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc > CMakeFiles/app_log.dir/log_t.cc.i
+
+tests/CMakeFiles/app_log.dir/log_t.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_log.dir/log_t.cc.s"
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"tests/log_t.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc -o CMakeFiles/app_log.dir/log_t.cc.s
 
 # Object files for target app_log
 app_log_OBJECTS = \
-"CMakeFiles/app_log.dir/main.cpp.o"
+"CMakeFiles/app_log.dir/config_t.cc.o" \
+"CMakeFiles/app_log.dir/log_t.cc.o"
 
 # External object files for target app_log
 app_log_EXTERNAL_OBJECTS =
 
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: tests/CMakeFiles/app_log.dir/main.cpp.o
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: tests/CMakeFiles/app_log.dir/config_t.cc.o
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: tests/CMakeFiles/app_log.dir/log_t.cc.o
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: tests/CMakeFiles/app_log.dir/build.make
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log: tests/CMakeFiles/app_log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/app_log"
 	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app_log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

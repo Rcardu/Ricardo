@@ -178,6 +178,30 @@ log.cpp.s:
 	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cpp.s
 .PHONY : log.cpp.s
 
+thread.o: thread.cc.o
+.PHONY : thread.o
+
+# target to build an object file
+thread.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.o
+.PHONY : thread.cc.o
+
+thread.i: thread.cc.i
+.PHONY : thread.i
+
+# target to preprocess a source file
+thread.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.i
+.PHONY : thread.cc.i
+
+thread.s: thread.cc.s
+.PHONY : thread.s
+
+# target to generate assembly for a file
+thread.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.s
+.PHONY : thread.cc.s
+
 util.o: util.cpp.o
 .PHONY : util.o
 
@@ -217,6 +241,9 @@ help:
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"

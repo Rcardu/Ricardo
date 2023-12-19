@@ -117,42 +117,118 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/app_log.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/app_log.dir/rule
-.PHONY : tests/CMakeFiles/app_log.dir/rule
+tests/CMakeFiles/applog.dir/rule:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/applog.dir/rule
+.PHONY : tests/CMakeFiles/applog.dir/rule
 
 # Convenience name for target.
-app_log: tests/CMakeFiles/app_log.dir/rule
-.PHONY : app_log
+applog: tests/CMakeFiles/applog.dir/rule
+.PHONY : applog
 
 # fast build rule for target.
-app_log/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/build
-.PHONY : app_log/fast
+applog/fast:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/build
+.PHONY : applog/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+# Convenience name for target.
+tests/CMakeFiles/appconfig.dir/rule:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appconfig.dir/rule
+.PHONY : tests/CMakeFiles/appconfig.dir/rule
+
+# Convenience name for target.
+appconfig: tests/CMakeFiles/appconfig.dir/rule
+.PHONY : appconfig
+
+# fast build rule for target.
+appconfig/fast:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/build
+.PHONY : appconfig/fast
+
+# Convenience name for target.
+tests/CMakeFiles/appthread.dir/rule:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appthread.dir/rule
+.PHONY : tests/CMakeFiles/appthread.dir/rule
+
+# Convenience name for target.
+appthread: tests/CMakeFiles/appthread.dir/rule
+.PHONY : appthread
+
+# fast build rule for target.
+appthread/fast:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
+.PHONY : appthread/fast
+
+config_t.o: config_t.cc.o
+.PHONY : config_t.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/main.cpp.o
-.PHONY : main.cpp.o
+config_t.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.o
+.PHONY : config_t.cc.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+config_t.i: config_t.cc.i
+.PHONY : config_t.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/main.cpp.i
-.PHONY : main.cpp.i
+config_t.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.i
+.PHONY : config_t.cc.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+config_t.s: config_t.cc.s
+.PHONY : config_t.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/main.cpp.s
-.PHONY : main.cpp.s
+config_t.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.s
+.PHONY : config_t.cc.s
+
+log_t.o: log_t.cc.o
+.PHONY : log_t.o
+
+# target to build an object file
+log_t.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.o
+.PHONY : log_t.cc.o
+
+log_t.i: log_t.cc.i
+.PHONY : log_t.i
+
+# target to preprocess a source file
+log_t.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.i
+.PHONY : log_t.cc.i
+
+log_t.s: log_t.cc.s
+.PHONY : log_t.s
+
+# target to generate assembly for a file
+log_t.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.s
+.PHONY : log_t.cc.s
+
+thread_t.o: thread_t.cc.o
+.PHONY : thread_t.o
+
+# target to build an object file
+thread_t.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.o
+.PHONY : thread_t.cc.o
+
+thread_t.i: thread_t.cc.i
+.PHONY : thread_t.i
+
+# target to preprocess a source file
+thread_t.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.i
+.PHONY : thread_t.cc.i
+
+thread_t.s: thread_t.cc.s
+.PHONY : thread_t.s
+
+# target to generate assembly for a file
+thread_t.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.s
+.PHONY : thread_t.cc.s
 
 # Help Target
 help:
@@ -162,10 +238,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... app_log"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... appconfig"
+	@echo "... applog"
+	@echo "... appthread"
+	@echo "... config_t.o"
+	@echo "... config_t.i"
+	@echo "... config_t.s"
+	@echo "... log_t.o"
+	@echo "... log_t.i"
+	@echo "... log_t.s"
+	@echo "... thread_t.o"
+	@echo "... thread_t.i"
+	@echo "... thread_t.s"
 .PHONY : help
 
 

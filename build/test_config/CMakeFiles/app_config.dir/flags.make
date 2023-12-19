@@ -6,5 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
-CXX_FLAGS = -g
+CXX_FLAGS = -Wno-builtin-macro-redefined -g
+
+# Custom defines: test_config/CMakeFiles/app_config.dir/main.cc.o_DEFINES = __FILE__="test_config/main.cc"
 

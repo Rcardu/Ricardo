@@ -135,17 +135,7 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/log.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/singleton.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/stdhead.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/fstream \
- /usr/include/c++/11/istream /usr/include/c++/11/ios \
+ /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
  /usr/include/c++/11/bits/locale_classes.tcc \
@@ -159,8 +149,20 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/include/c++/11/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
  /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/singleton.h \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/stdhead.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h /usr/include/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/c++/11/fstream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
@@ -225,9 +227,14 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/include/c++/11/bits/regex_compiler.tcc \
  /usr/include/c++/11/bits/regex.h /usr/include/c++/11/bits/regex.tcc \
  /usr/include/c++/11/bits/regex_executor.h \
- /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/list \
- /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
- /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/limits \
+ /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/atomic \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/set \
+ /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
@@ -247,8 +254,7 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
- /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
  /usr/include/c++/11/tr1/bessel_function.tcc \
  /usr/include/c++/11/tr1/beta_function.tcc \
@@ -283,8 +289,8 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
  /usr/local/include/yaml-cpp/node/iterator.h \
  /usr/local/include/yaml-cpp/node/detail/iterator.h \
- /usr/include/c++/11/atomic /usr/local/include/yaml-cpp/node/convert.h \
- /usr/include/c++/11/valarray /usr/include/c++/11/bits/valarray_array.h \
+ /usr/local/include/yaml-cpp/node/convert.h /usr/include/c++/11/valarray \
+ /usr/include/c++/11/bits/valarray_array.h \
  /usr/include/c++/11/bits/valarray_array.tcc \
  /usr/include/c++/11/bits/valarray_before.h \
  /usr/include/c++/11/bits/slice_array.h \
@@ -812,4 +818,5 @@ ricardo/CMakeFiles/ricardo.dir/config.cc.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
  /usr/include/boost/detail/basic_pointerbuf.hpp \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/thread.h \
  /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h

@@ -1,32 +1,44 @@
 [
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
-  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/config.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/config.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/config.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
   "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/config.cc",
   "output": "ricardo/CMakeFiles/ricardo.dir/config.cc.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
-  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/log.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/log.cpp\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/log.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
   "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
   "output": "ricardo/CMakeFiles/ricardo.dir/log.cpp.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
-  "command": "/usr/bin/c++ -Dricardo_EXPORTS -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -fPIC -o CMakeFiles/ricardo.dir/util.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/thread.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/thread.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/thread.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/thread.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/thread.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/util.cpp\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/util.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
   "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
   "output": "ricardo/CMakeFiles/ricardo.dir/util.cpp.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
-  "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -o CMakeFiles/app_log.dir/main.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp",
-  "output": "tests/CMakeFiles/app_log.dir/main.cpp.o"
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/log_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/applog.dir/log_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc",
+  "output": "tests/CMakeFiles/applog.dir/log_t.cc.o"
 },
 {
-  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config",
-  "command": "/usr/bin/c++  -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -g -o CMakeFiles/app_config.dir/main.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc",
-  "output": "test_config/CMakeFiles/app_config.dir/main.cc.o"
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/config_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/appconfig.dir/config_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc",
+  "output": "tests/CMakeFiles/appconfig.dir/config_t.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/thread_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/appthread.dir/thread_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/thread_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/thread_t.cc",
+  "output": "tests/CMakeFiles/appthread.dir/thread_t.cc.o"
 }
 ]

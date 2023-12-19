@@ -73,15 +73,15 @@ test_config/CMakeFiles/app_config.dir/main.cc.o: test_config/CMakeFiles/app_conf
 test_config/CMakeFiles/app_config.dir/main.cc.o: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc
 test_config/CMakeFiles/app_config.dir/main.cc.o: test_config/CMakeFiles/app_config.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test_config/CMakeFiles/app_config.dir/main.cc.o"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test_config/CMakeFiles/app_config.dir/main.cc.o -MF CMakeFiles/app_config.dir/main.cc.o.d -o CMakeFiles/app_config.dir/main.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"test_config/main.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test_config/CMakeFiles/app_config.dir/main.cc.o -MF CMakeFiles/app_config.dir/main.cc.o.d -o CMakeFiles/app_config.dir/main.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc
 
 test_config/CMakeFiles/app_config.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_config.dir/main.cc.i"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc > CMakeFiles/app_config.dir/main.cc.i
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"test_config/main.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc > CMakeFiles/app_config.dir/main.cc.i
 
 test_config/CMakeFiles/app_config.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_config.dir/main.cc.s"
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc -o CMakeFiles/app_config.dir/main.cc.s
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"test_config/main.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/main.cc -o CMakeFiles/app_config.dir/main.cc.s
 
 # Object files for target app_config
 app_config_OBJECTS = \

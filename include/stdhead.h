@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <cstdint>
 #include <cstring>
+#include <pthread.h>
+#include <unistd.h>
+#include <semaphore.h>
 
 //c++库
 #include <cctype>
@@ -18,6 +21,8 @@
 #include <regex>
 #include <sstream>
 #include <string>
+#include <thread>
+#include <atomic>
 
 //stl容器
 #include <list>

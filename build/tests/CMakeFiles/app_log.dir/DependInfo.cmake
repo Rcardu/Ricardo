@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/main.cpp" "tests/CMakeFiles/app_log.dir/main.cpp.o" "gcc" "tests/CMakeFiles/app_log.dir/main.cpp.o.d"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/config_t.cc" "tests/CMakeFiles/app_log.dir/config_t.cc.o" "gcc" "tests/CMakeFiles/app_log.dir/config_t.cc.o.d"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/log_t.cc" "tests/CMakeFiles/app_log.dir/log_t.cc.o" "gcc" "tests/CMakeFiles/app_log.dir/log_t.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

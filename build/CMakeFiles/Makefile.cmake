@@ -11,8 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.9/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.9/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.9/CMakeSystem.cmake"
+  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/cmake/utils.cmake"
   "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/CMakeLists.txt"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/test_config/CMakeLists.txt"
   "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/CMakeLists.txt"
   "/usr/local/lib/python3.10/dist-packages/cmake/data/share/cmake-3.27/Modules/CMakeCInformation.cmake"
   "/usr/local/lib/python3.10/dist-packages/cmake/data/share/cmake-3.27/Modules/CMakeCXXInformation.cmake"
@@ -45,12 +45,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "ricardo/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "test_config/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "ricardo/CMakeFiles/ricardo.dir/DependInfo.cmake"
-  "tests/CMakeFiles/app_log.dir/DependInfo.cmake"
-  "test_config/CMakeFiles/app_config.dir/DependInfo.cmake"
+  "tests/CMakeFiles/applog.dir/DependInfo.cmake"
+  "tests/CMakeFiles/appconfig.dir/DependInfo.cmake"
+  "tests/CMakeFiles/appthread.dir/DependInfo.cmake"
   )

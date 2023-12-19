@@ -130,30 +130,43 @@ ricardo/fast:
 .PHONY : ricardo/fast
 
 #=============================================================================
-# Target rules for targets named app_log
+# Target rules for targets named applog
 
 # Build rule for target.
-app_log: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_log
-.PHONY : app_log
+applog: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 applog
+.PHONY : applog
 
 # fast build rule for target.
-app_log/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/build
-.PHONY : app_log/fast
+applog/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/build
+.PHONY : applog/fast
 
 #=============================================================================
-# Target rules for targets named app_config
+# Target rules for targets named appconfig
 
 # Build rule for target.
-app_config: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_config
-.PHONY : app_config
+appconfig: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appconfig
+.PHONY : appconfig
 
 # fast build rule for target.
-app_config/fast:
-	$(MAKE) $(MAKESILENT) -f test_config/CMakeFiles/app_config.dir/build.make test_config/CMakeFiles/app_config.dir/build
-.PHONY : app_config/fast
+appconfig/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/build
+.PHONY : appconfig/fast
+
+#=============================================================================
+# Target rules for targets named appthread
+
+# Build rule for target.
+appthread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appthread
+.PHONY : appthread
+
+# fast build rule for target.
+appthread/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
+.PHONY : appthread/fast
 
 # Help Target
 help:
@@ -163,8 +176,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... app_config"
-	@echo "... app_log"
+	@echo "... appconfig"
+	@echo "... applog"
+	@echo "... appthread"
 	@echo "... ricardo"
 .PHONY : help
 

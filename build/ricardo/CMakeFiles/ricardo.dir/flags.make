@@ -6,5 +6,13 @@ CXX_DEFINES = -Dricardo_EXPORTS
 
 CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
-CXX_FLAGS = -g -fPIC
+CXX_FLAGS = -Wno-builtin-macro-redefined -g -fPIC
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/config.cc.o_DEFINES = __FILE__="ricardo/config.cc"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/log.cpp.o_DEFINES = __FILE__="ricardo/log.cpp"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/thread.cc.o_DEFINES = __FILE__="ricardo/thread.cc"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/util.cpp.o_DEFINES = __FILE__="ricardo/util.cpp"
 

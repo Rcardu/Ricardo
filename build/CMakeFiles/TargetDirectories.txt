@@ -3,9 +3,8 @@
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo/CMakeFiles/ricardo.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo/CMakeFiles/edit_cache.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo/CMakeFiles/rebuild_cache.dir
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/app_log.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/applog.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appconfig.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appthread.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/edit_cache.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/rebuild_cache.dir
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config/CMakeFiles/app_config.dir
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config/CMakeFiles/edit_cache.dir
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/test_config/CMakeFiles/rebuild_cache.dir

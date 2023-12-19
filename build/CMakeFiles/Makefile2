@@ -65,19 +65,16 @@ CMAKE_BINARY_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build
 # The main recursive "all" target.
 all: ricardo/all
 all: tests/all
-all: test_config/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: ricardo/preinstall
 preinstall: tests/preinstall
-preinstall: test_config/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: ricardo/clean
 clean: tests/clean
-clean: test_config/clean
 .PHONY : clean
 
 #=============================================================================
@@ -96,25 +93,12 @@ ricardo/clean: ricardo/CMakeFiles/ricardo.dir/clean
 .PHONY : ricardo/clean
 
 #=============================================================================
-# Directory level rules for directory test_config
-
-# Recursive "all" directory target.
-test_config/all: test_config/CMakeFiles/app_config.dir/all
-.PHONY : test_config/all
-
-# Recursive "preinstall" directory target.
-test_config/preinstall:
-.PHONY : test_config/preinstall
-
-# Recursive "clean" directory target.
-test_config/clean: test_config/CMakeFiles/app_config.dir/clean
-.PHONY : test_config/clean
-
-#=============================================================================
 # Directory level rules for directory tests
 
 # Recursive "all" directory target.
-tests/all: tests/CMakeFiles/app_log.dir/all
+tests/all: tests/CMakeFiles/applog.dir/all
+tests/all: tests/CMakeFiles/appconfig.dir/all
+tests/all: tests/CMakeFiles/appthread.dir/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
@@ -122,7 +106,9 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/app_log.dir/clean
+tests/clean: tests/CMakeFiles/applog.dir/clean
+tests/clean: tests/CMakeFiles/appconfig.dir/clean
+tests/clean: tests/CMakeFiles/appthread.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -132,12 +118,12 @@ tests/clean: tests/CMakeFiles/app_log.dir/clean
 ricardo/CMakeFiles/ricardo.dir/all:
 	$(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/depend
 	$(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=5,6,7,8 "Built target ricardo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=7,8,9,10,11 "Built target ricardo"
 .PHONY : ricardo/CMakeFiles/ricardo.dir/all
 
 # Build rule for subdir invocation for target.
 ricardo/CMakeFiles/ricardo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/CMakeFiles/ricardo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
 .PHONY : ricardo/CMakeFiles/ricardo.dir/rule
@@ -152,56 +138,82 @@ ricardo/CMakeFiles/ricardo.dir/clean:
 .PHONY : ricardo/CMakeFiles/ricardo.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/app_log.dir
+# Target rules for target tests/CMakeFiles/applog.dir
 
 # All Build rule for target.
-tests/CMakeFiles/app_log.dir/all: ricardo/CMakeFiles/ricardo.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=3,4 "Built target app_log"
-.PHONY : tests/CMakeFiles/app_log.dir/all
+tests/CMakeFiles/applog.dir/all: ricardo/CMakeFiles/ricardo.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=3,4 "Built target applog"
+.PHONY : tests/CMakeFiles/applog.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/app_log.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/app_log.dir/all
+tests/CMakeFiles/applog.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/applog.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/app_log.dir/rule
+.PHONY : tests/CMakeFiles/applog.dir/rule
 
 # Convenience name for target.
-app_log: tests/CMakeFiles/app_log.dir/rule
-.PHONY : app_log
+applog: tests/CMakeFiles/applog.dir/rule
+.PHONY : applog
 
 # clean rule for target.
-tests/CMakeFiles/app_log.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/app_log.dir/build.make tests/CMakeFiles/app_log.dir/clean
-.PHONY : tests/CMakeFiles/app_log.dir/clean
+tests/CMakeFiles/applog.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/clean
+.PHONY : tests/CMakeFiles/applog.dir/clean
 
 #=============================================================================
-# Target rules for target test_config/CMakeFiles/app_config.dir
+# Target rules for target tests/CMakeFiles/appconfig.dir
 
 # All Build rule for target.
-test_config/CMakeFiles/app_config.dir/all: ricardo/CMakeFiles/ricardo.dir/all
-	$(MAKE) $(MAKESILENT) -f test_config/CMakeFiles/app_config.dir/build.make test_config/CMakeFiles/app_config.dir/depend
-	$(MAKE) $(MAKESILENT) -f test_config/CMakeFiles/app_config.dir/build.make test_config/CMakeFiles/app_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=1,2 "Built target app_config"
-.PHONY : test_config/CMakeFiles/app_config.dir/all
+tests/CMakeFiles/appconfig.dir/all: ricardo/CMakeFiles/ricardo.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=1,2 "Built target appconfig"
+.PHONY : tests/CMakeFiles/appconfig.dir/all
 
 # Build rule for subdir invocation for target.
-test_config/CMakeFiles/app_config.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config/CMakeFiles/app_config.dir/all
+tests/CMakeFiles/appconfig.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appconfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
-.PHONY : test_config/CMakeFiles/app_config.dir/rule
+.PHONY : tests/CMakeFiles/appconfig.dir/rule
 
 # Convenience name for target.
-app_config: test_config/CMakeFiles/app_config.dir/rule
-.PHONY : app_config
+appconfig: tests/CMakeFiles/appconfig.dir/rule
+.PHONY : appconfig
 
 # clean rule for target.
-test_config/CMakeFiles/app_config.dir/clean:
-	$(MAKE) $(MAKESILENT) -f test_config/CMakeFiles/app_config.dir/build.make test_config/CMakeFiles/app_config.dir/clean
-.PHONY : test_config/CMakeFiles/app_config.dir/clean
+tests/CMakeFiles/appconfig.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/clean
+.PHONY : tests/CMakeFiles/appconfig.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/appthread.dir
+
+# All Build rule for target.
+tests/CMakeFiles/appthread.dir/all: ricardo/CMakeFiles/ricardo.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles --progress-num=5,6 "Built target appthread"
+.PHONY : tests/CMakeFiles/appthread.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/appthread.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appthread.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/appthread.dir/rule
+
+# Convenience name for target.
+appthread: tests/CMakeFiles/appthread.dir/rule
+.PHONY : appthread
+
+# clean rule for target.
+tests/CMakeFiles/appthread.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/clean
+.PHONY : tests/CMakeFiles/appthread.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

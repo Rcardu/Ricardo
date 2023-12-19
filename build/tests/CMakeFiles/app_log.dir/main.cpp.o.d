@@ -220,7 +220,11 @@ tests/CMakeFiles/app_log.dir/main.cpp.o: \
  /usr/include/c++/11/bits/regex_compiler.tcc \
  /usr/include/c++/11/bits/regex.h /usr/include/c++/11/bits/regex.tcc \
  /usr/include/c++/11/bits/regex_executor.h \
- /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/list \
+ /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/limits \
+ /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/list \
  /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
@@ -242,8 +246,7 @@ tests/CMakeFiles/app_log.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
- /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
  /usr/include/c++/11/tr1/bessel_function.tcc \
  /usr/include/c++/11/tr1/beta_function.tcc \
