@@ -5,53 +5,53 @@
 #include "thread.h"
 
 //使用logger写入日志级别为level的日志（流式日志）
-#define SYLAR_LOG_LEVEL(logger, level)                                  \
+#define ICEY_LOG_LEVEL(logger, level)                                  \
   if (logger->getLevel() <= level)                                      \
   Ricardo::LogEventWrap(                                                \
       Ricardo::LogEvent::ptr(new Ricardo::LogEvent(                     \
           logger, level, __FILE__, __LINE__, 0, Ricardo::GetThreadId(), \
-          Ricardo::GetFiberId(), time(0))))                             \
+          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName())))                             \
       .getSS()
 
 //使用logger写入日志界别为debug的日志（流式日志）
-#define SYLAR_LOG_DEBUG(logger) \
-  SYLAR_LOG_LEVEL(logger, Ricardo::LogLevel::DEBUG)
+#define ICEY_LOG_DEBUG(logger) \
+  ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::DEBUG)
 //使用logger写入日志界别为info的日志（流式日志）
-#define SYLAR_LOG_INFO(logger) SYLAR_LOG_LEVEL(logger, Ricardo::LogLevel::INFO)
+#define ICEY_LOG_INFO(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::INFO)
 //使用logger写入日志界别为warn的日志（流式日志）
-#define SYLAR_LOG_WARN(logger) SYLAR_LOG_LEVEL(logger, Ricardo::LogLevel::WARN)
+#define ICEY_LOG_WARN(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::WARN)
 //使用logger写入日志界别为error的日志（流式日志）
-#define SYLAR_LOG_ERROR(logger) \
-  SYLAR_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
+#define ICEY_LOG_ERROR(logger) \
+  ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
 //使用logger写入日志界别为fatal的日志（流式日志）
-#define SYLAR_LOG_FATAL(logger) YLAR_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
+#define ICEY_LOG_FATAL(logger) YLAR_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
 
-#define SYLAR_LOG_FMT_LEVEL(logger, level, fmt, ...)                    \
+#define ICEY_LOG_FMT_LEVEL(logger, level, fmt, ...)                    \
   if (logger->getLevel() <= level)                                      \
   Ricardo::LogEventWrap(                                                \
       Ricardo::LogEvent::ptr(new Ricardo::LogEvent(                     \
           logger, level, __FILE__, __LINE__, 0, Ricardo::GetThreadId(), \
-          Ricardo::GetFiberId(), time(0))))                             \
+          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName())))                             \
       .getEvent()                                                       \
       ->format(fmt, __VA_ARGS__)
 //使用logger写入日志界别为debug的日志（格式化,printf）
-#define SYLAR_LOG_FMT_DEBUG(logger, fmt, ...) \
-  SYLAR_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::DEBUG, fmt, __VA_ARGS__)
+#define ICEY_LOG_FMT_DEBUG(logger, fmt, ...) \
+  ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::DEBUG, fmt, __VA_ARGS__)
 //使用logger写入日志界别为info的日志（格式化,printf）
-#define SYLAR_LOG_FMT_INFO(logger, fmt, ...) \
-  SYLAR_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::INFO, fmt, __VA_ARGS__)
+#define ICEY_LOG_FMT_INFO(logger, fmt, ...) \
+  ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::INFO, fmt, __VA_ARGS__)
 //使用logger写入日志界别为warn的日志（格式化,printf）
-#define SYLAR_LOG_FMT_WARN(logger, fmt, ...) \
-  SYLAR_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::WARN, fmt, __VA_ARGS__)
+#define ICEY_LOG_FMT_WARN(logger, fmt, ...) \
+  ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::WARN, fmt, __VA_ARGS__)
 //使用logger写入日志界别为error的日志（格式化,printf）
-#define SYLAR_LOG_FMT_ERROR(logger, fmt, ...) \
-  SYLAR_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::ERROR, fmt, __VA_ARGS__)
+#define ICEY_LOG_FMT_ERROR(logger, fmt, ...) \
+  ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::ERROR, fmt, __VA_ARGS__)
 //使用logger写入日志界别为fatal的日志（格式化,printf）
-#define SYLAR_LOG_FMT_FATAL(logger, fmt, ...) \
-  SYLAR_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::FATAL, fmt, __VA_ARGS__)
+#define ICEY_LOG_FMT_FATAL(logger, fmt, ...) \
+  ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::FATAL, fmt, __VA_ARGS__)
 
-#define SYLAR_LOG_ROOT() Ricardo::LoggerMgr::GetInstance()->getRoot()
-#define SYLAR_LOG_NAME(name) Ricardo::LoggerMgr::GetInstance()->getLogger(name)
+#define ICEY_LOG_ROOT() Ricardo::LoggerMgr::GetInstance()->getRoot()
+#define ICEY_LOG_NAME(name) Ricardo::LoggerMgr::GetInstance()->getLogger(name)
 
 namespace Ricardo {
 
@@ -81,7 +81,7 @@ class LogEvent {
   typedef std::shared_ptr<LogEvent> ptr;
   LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level,
            const char* file, int32_t line, uint32_t elapse, uint32_t thread_id,
-           uint32_t fiber_id, uint32_t time);
+           uint32_t fiber_id, uint32_t time, const std::string& thread_name);
 
   const char* getFile() const { return m_file; }
 
@@ -95,14 +95,15 @@ class LogEvent {
 
   uint32_t getTime() const { return m_time; }
 
-  const std::string getContent() const { return m_ss.str(); }
+  const std::string getThredName() const {return m_threadName;}
+
+  std::string getContent() const { return m_ss.str(); }
 
   std::shared_ptr<Logger> getLogger() const { return m_logger; }
 
   LogLevel::Level getLevel() const { return m_level; }
 
   std::stringstream& getSS() { return m_ss; }
-
   void format(const char* fmt, ...);
   void format(const char* fmt, va_list al);
 
@@ -113,6 +114,7 @@ class LogEvent {
   int32_t m_threadId = 0;        //线程id
   uint32_t m_fiberId = 0;        //协程id
   uint64_t m_time = 0;           //时间戳
+  std::string m_threadName;
   std::stringstream m_ss;
 
   std::shared_ptr<Logger> m_logger;

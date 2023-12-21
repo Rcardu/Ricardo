@@ -10,6 +10,9 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <semaphore.h>
+#include <assert.h>
+#include <execinfo.h>
+#include <ucontext.h>
 
 //c++库
 #include <cctype>
@@ -23,6 +26,7 @@
 #include <string>
 #include <thread>
 #include <atomic>
+#include <stdexcept>
 
 //stl容器
 #include <list>
