@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wno-builtin-macro-redefined -g CMakeFiles/appschedler.dir/scheduler_t.cc.o -o /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appschedler   -L/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib /home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so -lyaml-cpp 

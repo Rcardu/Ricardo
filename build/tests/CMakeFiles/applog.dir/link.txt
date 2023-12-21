@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wno-builtin-macro-redefined -g CMakeFiles/applog.dir/log_t.cc.o -o /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/applog   -L/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib /home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so -lyaml-cpp 

@@ -76,7 +76,11 @@ ricardo/CMakeFiles/ricardo.dir/util.cpp.o: \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/assert.h \
+ /usr/include/execinfo.h /usr/include/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/indirect-return.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
  /usr/include/c++/11/cctype /usr/include/ctype.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/exception_ptr.h \
@@ -311,7 +315,7 @@ ricardo/CMakeFiles/ricardo.dir/util.cpp.o: \
  /usr/include/boost/range/iterator_range_core.hpp \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp /usr/include/boost/assert.hpp \
- /usr/include/assert.h /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/boost/iterator/iterator_traits.hpp \
  /usr/include/boost/iterator/iterator_facade.hpp \
  /usr/include/boost/iterator/interoperable.hpp \
  /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
@@ -811,4 +815,7 @@ ricardo/CMakeFiles/ricardo.dir/util.cpp.o: \
  /usr/include/boost/math/tools/real_cast.hpp \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
- /usr/include/boost/detail/basic_pointerbuf.hpp
+ /usr/include/boost/detail/basic_pointerbuf.hpp \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/log.h \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/singleton.h \
+ /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/thread.h

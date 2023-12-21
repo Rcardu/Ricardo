@@ -6,5 +6,8 @@
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/applog.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appconfig.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appthread.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/apputil.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appfiber.dir
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/appschedler.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/edit_cache.dir
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests/CMakeFiles/rebuild_cache.dir

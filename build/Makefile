@@ -168,6 +168,45 @@ appthread/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
 .PHONY : appthread/fast
 
+#=============================================================================
+# Target rules for targets named apputil
+
+# Build rule for target.
+apputil: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apputil
+.PHONY : apputil
+
+# fast build rule for target.
+apputil/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/build
+.PHONY : apputil/fast
+
+#=============================================================================
+# Target rules for targets named appfiber
+
+# Build rule for target.
+appfiber: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appfiber
+.PHONY : appfiber
+
+# fast build rule for target.
+appfiber/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/build
+.PHONY : appfiber/fast
+
+#=============================================================================
+# Target rules for targets named appschedler
+
+# Build rule for target.
+appschedler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appschedler
+.PHONY : appschedler
+
+# fast build rule for target.
+appschedler/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/build
+.PHONY : appschedler/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -177,8 +216,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... appconfig"
+	@echo "... appfiber"
 	@echo "... applog"
+	@echo "... appschedler"
 	@echo "... appthread"
+	@echo "... apputil"
 	@echo "... ricardo"
 .PHONY : help
 

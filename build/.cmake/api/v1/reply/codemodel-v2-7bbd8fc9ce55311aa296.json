@@ -1,0 +1,146 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "ricardo",
+					"jsonFile" : "directory-ricardo-Debug-829cfc4395204069429f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ricardo",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "SOcketServer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "appconfig::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-appconfig-Debug-722f83be38010633568c.json",
+					"name" : "appconfig",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "appfiber::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-appfiber-Debug-11f585a9eb1272ba8684.json",
+					"name" : "appfiber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "applog::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-applog-Debug-a4c482dbf60d1b959f32.json",
+					"name" : "applog",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "appschedler::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-appschedler-Debug-c2a1fdc978e942ab7440.json",
+					"name" : "appschedler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "appthread::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-appthread-Debug-d55709b1c5f2cbeee5f0.json",
+					"name" : "appthread",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "apputil::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-apputil-Debug-d182ab668afa3d493ccb.json",
+					"name" : "apputil",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ricardo::@e4f8d5b6a61329f35d66",
+					"jsonFile" : "target-ricardo-Debug-137b0406744d8df2be8a.json",
+					"name" : "ricardo",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build",
+		"source" : "/home/Ricardo/Object/NetWork/Socket/SocketForCpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

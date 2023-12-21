@@ -7,9 +7,21 @@
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
-  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/log.cpp\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/log.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cpp",
-  "output": "ricardo/CMakeFiles/ricardo.dir/log.cpp.o"
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/fiber.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/fiber.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/fiber.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/fiber.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/fiber.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/log.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/log.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/log.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/log.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/scheduler.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/scheduler.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/scheduler.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/scheduler.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
@@ -19,9 +31,9 @@
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo",
-  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/util.cpp\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/util.cpp.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
-  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cpp",
-  "output": "ricardo/CMakeFiles/ricardo.dir/util.cpp.o"
+  "command": "/usr/bin/c++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/util.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -fPIC -o CMakeFiles/ricardo.dir/util.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/util.cc",
+  "output": "ricardo/CMakeFiles/ricardo.dir/util.cc.o"
 },
 {
   "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
@@ -40,5 +52,23 @@
   "command": "/usr/bin/c++  -D__FILE__=\\\"tests/thread_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/appthread.dir/thread_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/thread_t.cc",
   "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/thread_t.cc",
   "output": "tests/CMakeFiles/appthread.dir/thread_t.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/util_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/apputil.dir/util_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/util_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/util_t.cc",
+  "output": "tests/CMakeFiles/apputil.dir/util_t.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/fiber_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/appfiber.dir/fiber_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/fiber_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/fiber_t.cc",
+  "output": "tests/CMakeFiles/appfiber.dir/fiber_t.cc.o"
+},
+{
+  "directory": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests",
+  "command": "/usr/bin/c++  -D__FILE__=\\\"tests/scheduler_t.cc\\\" -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp -Wno-builtin-macro-redefined -g -o CMakeFiles/appschedler.dir/scheduler_t.cc.o -c /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/scheduler_t.cc",
+  "file": "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/scheduler_t.cc",
+  "output": "tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o"
 }
 ]

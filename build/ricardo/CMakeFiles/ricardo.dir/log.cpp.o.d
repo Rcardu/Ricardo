@@ -157,7 +157,11 @@ ricardo/CMakeFiles/ricardo.dir/log.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h /usr/include/c++/11/cstring \
  /usr/include/string.h /usr/include/strings.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/assert.h \
+ /usr/include/execinfo.h /usr/include/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/indirect-return.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
  /usr/include/c++/11/fstream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
@@ -313,7 +317,7 @@ ricardo/CMakeFiles/ricardo.dir/log.cpp.o: \
  /usr/include/boost/range/iterator_range_core.hpp \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp /usr/include/boost/assert.hpp \
- /usr/include/assert.h /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/boost/iterator/iterator_traits.hpp \
  /usr/include/boost/iterator/iterator_facade.hpp \
  /usr/include/boost/iterator/interoperable.hpp \
  /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \

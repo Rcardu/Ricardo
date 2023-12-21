@@ -10,9 +10,13 @@ CXX_FLAGS = -Wno-builtin-macro-redefined -g -fPIC
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/config.cc.o_DEFINES = __FILE__="ricardo/config.cc"
 
-# Custom defines: ricardo/CMakeFiles/ricardo.dir/log.cpp.o_DEFINES = __FILE__="ricardo/log.cpp"
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/fiber.cc.o_DEFINES = __FILE__="ricardo/fiber.cc"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/log.cc.o_DEFINES = __FILE__="ricardo/log.cc"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o_DEFINES = __FILE__="ricardo/scheduler.cc"
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/thread.cc.o_DEFINES = __FILE__="ricardo/thread.cc"
 
-# Custom defines: ricardo/CMakeFiles/ricardo.dir/util.cpp.o_DEFINES = __FILE__="ricardo/util.cpp"
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/util.cc.o_DEFINES = __FILE__="ricardo/util.cc"
 

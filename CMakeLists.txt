@@ -18,6 +18,10 @@ set(YAML_CPP yaml-cpp)
 set(NAME_C appconfig)
 set(NAME_L applog)
 set(NAME_T appthread)
+set(NAME_U apputil)
+set(NAME_F appfiber)
+set(NAME_S appschedler)
+
 
 #递归子目录
 add_subdirectory(ricardo)
