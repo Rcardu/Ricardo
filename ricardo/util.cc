@@ -1,0 +1,45 @@
+#include "util.h"
+#include "log.h"
+#include "fiber.h"
+
+namespace Ricardo {
+
+Logger::ptr g_logger = ICEY_LOG_NAME("system");
+
+pid_t GetThreadId() {
+
+  return syscall(SYS_gettid);
+}
+
+uint64_t GetFiberId() { 
+    return Ricardo::Fiber::GetFiberId();
+}
+
+void Backtrace(std::vector<std::string>& bt, int size, int skip) {
+  void** array = (void**)malloc((sizeof(void*) * size));
+  size_t s = ::backtrace(array, size);
+
+  char** strings = backtrace_symbols(array, s);
+  if (strings == NULL) {
+    ICEY_LOG_ERROR(g_logger) << "Backtrace_synblos error";
+    return;
+  }
+  for (size_t i = skip; i < s; ++i) {
+    bt.push_back(strings[i]);
+  }
+  free(strings);
+  free(array);
+}
+
+std::string BacktraceToString(int size, int skip, const std::string& prefix) {
+  std::vector<std::string> bt;
+  Backtrace(bt, size, skip);
+  std::stringstream ss;
+  for (size_t i = 0; i < bt.size(); ++i) {
+    ss << prefix << bt[i] << std::endl;
+  }
+  return ss.str();
+}
+
+
+}  // namespace Ricardo

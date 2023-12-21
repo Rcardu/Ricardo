@@ -3,7 +3,7 @@
 namespace Ricardo {
 
 ConfigVarBase::ptr Config::LookupBase(const std::string& name) {
-
+  RWMutexType::ReadLock rdlock(GetMutex());
   auto it = GetDatas().find(name);
   //如果在Map中有记录就返回此指针
   return it == GetDatas().end() ? nullptr : it->second;
@@ -17,7 +17,7 @@ static void ListAllMember(
           "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._012345678") !=
       std::string::npos) {
 
-    SYLAR_LOG_ERROR(SYLAR_LOG_ROOT())
+    ICEY_LOG_ERROR(ICEY_LOG_ROOT())
         << "config invalid name: " << prefix << " : " << node;
     return;
   }
@@ -60,4 +60,17 @@ void Config::LoadFormYaml(const YAML::Node& root) {
     }
   }
 }
+
+  void Config::Visit(std::function<void(ConfigVarBase::ptr)>cb){
+    RWMutexType::ReadLock rdlock(GetMutex());
+    ConfigVarMap& m = GetDatas(); 
+    for(auto it = m.begin(); it != m.end(); ++it){
+        cb(it->second);
+    }
+
+  }
+
+
+
+
 }  // namespace Ricardo

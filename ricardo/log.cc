@@ -149,15 +149,16 @@ class FiberIdFormatItem : public LogFormatter::FormatItem {
   }
 };
 
-//class ThreadNameFormatItem : public LogFormatter::FormatItem {
-// public:
-//  ThreadNameFormatItem(const std::string& str = "") {}
-//
-//  void format(std::ostream& os, std::shared_ptr<Logger> logger,
-//              LogLevel::Level level, LogEvent::ptr event) override {
-//    os << event->getThredName();
-//  }
-//};
+class ThreadNameFormatItem : public LogFormatter::FormatItem {
+ public:
+  ThreadNameFormatItem(const std::string& str = "") {}
+
+  void format(std::ostream& os, std::shared_ptr<Logger> logger,
+              LogLevel::Level level, LogEvent::ptr event) override {
+    os << event->getThredName();
+  }
+};
+
 class DateTimeFormatItem : public LogFormatter::FormatItem {
  public:
   DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%S")
@@ -240,13 +241,14 @@ class TabFormatItem : public LogFormatter::FormatItem {
 
 LogEvent::LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level,
                    const char* file, int32_t line, uint32_t elapse,
-                   uint32_t thread_id, uint32_t fiber_id, uint32_t time)
+                   uint32_t thread_id, uint32_t fiber_id, uint32_t time, const std::string& thread_name)
     : m_file(file),
       m_line(line),
       m_elapse(elapse),
       m_threadId(thread_id),
       m_fiberId(fiber_id),
       m_time(time),
+      m_threadName(thread_name),
       m_logger(logger),
       m_level(level) {}
 
@@ -255,7 +257,7 @@ Logger::Logger(const std::string& name)
   //输出格式
   //年-月-日 时:分:秒   线程号  [日志等级]  [日志名称]    文件:行号   消息体换行
   m_formatter.reset(new LogFormatter(
-      "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T[%c]%T%f:%l%T%m%n"));
+      "%d{%Y-%m-%d %H:%M:%S}%T%t%T%N%T%F%T[%p]%T[%c]%T%f:%l%T%m%n"));
 }
 
 std::string Logger::toYamlString() {
@@ -556,14 +558,12 @@ void LogFormatter::init() {
       return FormatItem::ptr(new C(fmt)); \
     }                                     \
   }
-
-          XX(m, MessageFormatItem),  XX(p, LevelFormatItem),
-          XX(r, ElapseFormatItem),   XX(c, NameFormatItem),
-          XX(t, ThreadIdFormatItem), XX(n, NewLineFormatItem),
-          XX(d, DateTimeFormatItem), XX(f, FilenameFormatItem),
-          XX(l, LineFormatItem),     XX(T, TabFormatItem),
-          XX(F, FiberIdFormatItem),
-  // XX(N,NameFormatItem),
+          XX(m, MessageFormatItem),  XX(p, LevelFormatItem),        //m:消息、          p:日志级别
+          XX(r, ElapseFormatItem),   XX(c, NameFormatItem),         //r:累积毫秒数、    c:日志名称
+          XX(t, ThreadIdFormatItem), XX(n, NewLineFormatItem),      //t:线程Id、        n:换行
+          XX(d, DateTimeFormatItem), XX(f, FilenameFormatItem),     //d:时间、          f:文件名
+          XX(l, LineFormatItem),     XX(T, TabFormatItem),          //l:行号、          T:制表符(Tab)
+          XX(F, FiberIdFormatItem),  XX(N, ThreadNameFormatItem),   //F:协程Id、        N:线程名称
 #undef XX
       };
   for (auto& i : vec) {
@@ -748,20 +748,20 @@ Ricardo::ConfigVar<std::set<LogDefine>>::ptr g_log_defines =
 struct LogIniter {
   LogIniter() {
     g_log_defines->addListener(
-        0xF1E231, [](const std::set<LogDefine>& old_value,
+        [](const std::set<LogDefine>& old_value,
                      const std::set<LogDefine>& new_value) {
-          SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "on_logger_conf_changed";
+          ICEY_LOG_INFO(ICEY_LOG_ROOT()) << "on_logger_conf_changed";
           for (auto& i : new_value) {
             auto it = old_value.find(i);
             Ricardo::Logger::ptr logger;
             //更新日志
             if (it == old_value.end()) {
               //新增logger
-              logger = SYLAR_LOG_NAME(i.name);
+              logger = ICEY_LOG_NAME(i.name);
             } else {
               if (!(i == *it)) {
                 //修改的logger
-                logger = SYLAR_LOG_NAME(i.name);
+                logger = ICEY_LOG_NAME(i.name);
               } else
                 continue;
             }
@@ -794,7 +794,7 @@ struct LogIniter {
             auto it = new_value.find(i);
             if (it == new_value.end()) {
               //删除logger
-              auto logger = SYLAR_LOG_NAME(i.name);
+              auto logger = ICEY_LOG_NAME(i.name);
               logger->setLevel((LogLevel::Level)100);
               logger->clearAppenders();
             }
