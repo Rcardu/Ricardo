@@ -2,10 +2,9 @@
 #include "log.h"
 #include "fiber.h"
 
+Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
+
 namespace Ricardo {
-
-Logger::ptr g_logger = ICEY_LOG_NAME("system");
-
 pid_t GetThreadId() {
 
   return syscall(SYS_gettid);
@@ -21,7 +20,7 @@ void Backtrace(std::vector<std::string>& bt, int size, int skip) {
 
   char** strings = backtrace_symbols(array, s);
   if (strings == NULL) {
-    ICEY_LOG_ERROR(g_logger) << "Backtrace_synblos error";
+    ICEY_LOG_ERROR(g_logger)<<" error backtrace";
     return;
   }
   for (size_t i = skip; i < s; ++i) {

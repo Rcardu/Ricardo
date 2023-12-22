@@ -207,6 +207,19 @@ appschedler/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/build
 .PHONY : appschedler/fast
 
+#=============================================================================
+# Target rules for targets named appiomanager
+
+# Build rule for target.
+appiomanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appiomanager
+.PHONY : appiomanager
+
+# fast build rule for target.
+appiomanager/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/build
+.PHONY : appiomanager/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -217,6 +230,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... appconfig"
 	@echo "... appfiber"
+	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"
 	@echo "... appthread"

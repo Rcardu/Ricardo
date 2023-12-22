@@ -208,9 +208,8 @@ void Scheduler::run() {
         continue;
       }
       if(idle_fiber->getState() == Fiber::TERM){
-        //ICEY_LOG_INFO(g_logger)<<"idel fiber term";
+        ICEY_LOG_INFO(g_logger)<<"idel fiber term";
         break;
-        //continue;
       }
 
       ++m_idleThreadCount;

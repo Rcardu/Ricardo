@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
-CXX_FLAGS = -Wno-builtin-macro-redefined -g
+CXX_FLAGS = -Wno-builtin-macro-redefined
 
 # Custom defines: tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o_DEFINES = __FILE__="tests/scheduler_t.cc"
 

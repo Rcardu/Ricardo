@@ -200,6 +200,20 @@ appschedler/fast:
 	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/build
 .PHONY : appschedler/fast
 
+# Convenience name for target.
+tests/CMakeFiles/appiomanager.dir/rule:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appiomanager.dir/rule
+.PHONY : tests/CMakeFiles/appiomanager.dir/rule
+
+# Convenience name for target.
+appiomanager: tests/CMakeFiles/appiomanager.dir/rule
+.PHONY : appiomanager
+
+# fast build rule for target.
+appiomanager/fast:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/build
+.PHONY : appiomanager/fast
+
 config_t.o: config_t.cc.o
 .PHONY : config_t.o
 
@@ -247,6 +261,30 @@ fiber_t.s: fiber_t.cc.s
 fiber_t.cc.s:
 	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.s
 .PHONY : fiber_t.cc.s
+
+iomanager_t.o: iomanager_t.cc.o
+.PHONY : iomanager_t.o
+
+# target to build an object file
+iomanager_t.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.o
+.PHONY : iomanager_t.cc.o
+
+iomanager_t.i: iomanager_t.cc.i
+.PHONY : iomanager_t.i
+
+# target to preprocess a source file
+iomanager_t.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.i
+.PHONY : iomanager_t.cc.i
+
+iomanager_t.s: iomanager_t.cc.s
+.PHONY : iomanager_t.s
+
+# target to generate assembly for a file
+iomanager_t.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.s
+.PHONY : iomanager_t.cc.s
 
 log_t.o: log_t.cc.o
 .PHONY : log_t.o
@@ -354,6 +392,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... appconfig"
 	@echo "... appfiber"
+	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"
 	@echo "... appthread"
@@ -364,6 +403,9 @@ help:
 	@echo "... fiber_t.o"
 	@echo "... fiber_t.i"
 	@echo "... fiber_t.s"
+	@echo "... iomanager_t.o"
+	@echo "... iomanager_t.i"
+	@echo "... iomanager_t.s"
 	@echo "... log_t.o"
 	@echo "... log_t.i"
 	@echo "... log_t.s"

@@ -13,6 +13,8 @@
 #include <assert.h>
 #include <execinfo.h>
 #include <ucontext.h>
+#include <fcntl.h>
+#include <errno.h>
 
 //c++库
 #include <cctype>
@@ -39,6 +41,9 @@
 //linux系统库
 #include <sys/syscall.h>
 #include <sys/types.h>
+#include <sys/epoll.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 //第三方库
 #include <yaml-cpp/yaml.h>

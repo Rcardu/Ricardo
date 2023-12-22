@@ -178,6 +178,30 @@ fiber.cc.s:
 	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.s
 .PHONY : fiber.cc.s
 
+iomanager.o: iomanager.cc.o
+.PHONY : iomanager.o
+
+# target to build an object file
+iomanager.cc.o:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o
+.PHONY : iomanager.cc.o
+
+iomanager.i: iomanager.cc.i
+.PHONY : iomanager.i
+
+# target to preprocess a source file
+iomanager.cc.i:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.i
+.PHONY : iomanager.cc.i
+
+iomanager.s: iomanager.cc.s
+.PHONY : iomanager.s
+
+# target to generate assembly for a file
+iomanager.cc.s:
+	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.s
+.PHONY : iomanager.cc.s
+
 log.o: log.cc.o
 .PHONY : log.o
 
@@ -289,6 +313,9 @@ help:
 	@echo "... fiber.o"
 	@echo "... fiber.i"
 	@echo "... fiber.s"
+	@echo "... iomanager.o"
+	@echo "... iomanager.i"
+	@echo "... iomanager.s"
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ricardo.dir/config.cc.o.d"
   "CMakeFiles/ricardo.dir/fiber.cc.o"
   "CMakeFiles/ricardo.dir/fiber.cc.o.d"
+  "CMakeFiles/ricardo.dir/iomanager.cc.o"
+  "CMakeFiles/ricardo.dir/iomanager.cc.o.d"
   "CMakeFiles/ricardo.dir/log.cc.o"
   "CMakeFiles/ricardo.dir/log.cc.o.d"
   "CMakeFiles/ricardo.dir/scheduler.cc.o"

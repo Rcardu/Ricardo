@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
-CXX_FLAGS = -Wno-builtin-macro-redefined -g
+CXX_FLAGS = -Wno-builtin-macro-redefined
 
 # Custom defines: tests/CMakeFiles/appfiber.dir/fiber_t.cc.o_DEFINES = __FILE__="tests/fiber_t.cc"
 

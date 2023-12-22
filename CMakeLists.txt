@@ -21,6 +21,7 @@ set(NAME_T appthread)
 set(NAME_U apputil)
 set(NAME_F appfiber)
 set(NAME_S appschedler)
+set(NAME_IO appiomanager)
 
 
 #递归子目录

@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
 
-CXX_FLAGS = -Wno-builtin-macro-redefined -g
+CXX_FLAGS = -Wno-builtin-macro-redefined
 
 # Custom defines: tests/CMakeFiles/applog.dir/log_t.cc.o_DEFINES = __FILE__="tests/log_t.cc"
 

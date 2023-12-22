@@ -34,7 +34,7 @@ void fun3() {
 int main(int argc, char* argv[]) {
   ICEY_LOG_INFO(g_logger) << "thread test begin";
   YAML::Node root = YAML::LoadFile(
-      "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/conf/log2.yml");
+      "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/yaml/log2.yml");
   Ricardo::Config::LoadFormYaml(root);
 
   std::vector<Ricardo::Thread::ptr> thrs;

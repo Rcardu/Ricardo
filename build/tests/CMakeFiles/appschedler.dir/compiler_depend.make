@@ -13,8 +13,13 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/thread.h \
   /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h \
   /usr/include/alloca.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/asm-generic/sockios.h \
   /usr/include/assert.h \
   /usr/include/boost/array.hpp \
   /usr/include/boost/assert.hpp \
@@ -764,15 +769,20 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/execinfo.h \
+  /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/falloc.h \
   /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
   /usr/include/locale.h \
   /usr/include/math.h \
+  /usr/include/netinet/in.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/semaphore.h \
@@ -787,7 +797,12 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
@@ -797,7 +812,10 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -805,6 +823,7 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/x86_64-linux-gnu/bits/indirect-return.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -826,12 +845,17 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
@@ -856,7 +880,9 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
@@ -892,8 +918,10 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/sys/ucontext.h \
@@ -973,8 +1001,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
-/usr/include/x86_64-linux-gnu/sys/syscall.h:
-
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
@@ -1009,7 +1035,11 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
@@ -1047,9 +1077,13 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -1083,6 +1117,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -1094,6 +1130,14 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/x86_64-linux-gnu/sys/syscall.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/wctype.h:
 
@@ -1151,10 +1195,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/c++/11/tr1/exp_integral.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
-
-/usr/include/c++/11/tr1/ell_integral.tcc:
-
 /usr/include/c++/11/thread:
 
 /usr/include/c++/11/string_view:
@@ -1172,6 +1212,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/c++/11/pstl/execution_defs.h:
 
 /usr/include/c++/11/ostream:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/c++/11/new:
 
@@ -1202,6 +1244,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/c++/11/deque:
 
 /usr/include/c++/11/debug/assertions.h:
+
+/usr/include/linux/posix_types.h:
 
 /usr/include/c++/11/cwctype:
 
@@ -1254,6 +1298,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/c++/11/vector:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
+
+/usr/include/x86_64-linux-gnu/bits/epoll.h:
 
 /usr/include/c++/11/bits/stl_stack.h:
 
@@ -1373,6 +1419,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
+/usr/include/netinet/in.h:
+
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
@@ -1391,6 +1439,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/c++/11/backward/binders.h:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
 /usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/c++/11/tr1/special_function_util.h:
@@ -1400,6 +1450,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
 /usr/include/boost/version.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/boost/utility/identity_type.hpp:
 
@@ -1411,17 +1463,13 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/type_traits/remove_const.hpp:
 
-/usr/include/boost/mpl/inserter.hpp:
+/usr/include/boost/type_traits/make_void.hpp:
 
-/usr/include/boost/mpl/eval_if.hpp:
+/usr/include/wchar.h:
 
-/usr/include/boost/preprocessor/control/while.hpp:
+/usr/include/boost/type_traits/make_unsigned.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/c++/11/ctime:
-
-/usr/include/boost/mpl/identity.hpp:
+/usr/include/boost/type_traits/is_void.hpp:
 
 /usr/include/boost/mpl/front_inserter.hpp:
 
@@ -1527,12 +1575,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/preprocessor/repetition/repeat.hpp:
 
-/usr/include/boost/utility.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
-
-/usr/include/boost/type_traits/is_member_pointer.hpp:
-
 /usr/include/boost/numeric/conversion/bounds.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
@@ -1542,10 +1584,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
 
 /usr/include/boost/mpl/aux_/numeric_op.hpp:
-
-/usr/include/wchar.h:
-
-/usr/include/boost/type_traits/make_unsigned.hpp:
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
@@ -1571,9 +1609,9 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/aux_/iter_apply.hpp:
 
-/usr/include/boost/mpl/int_fwd.hpp:
-
 /usr/include/boost/iterator/iterator_facade.hpp:
+
+/usr/include/boost/mpl/int_fwd.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/indirect-return.h:
 
@@ -1625,6 +1663,10 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
 
+/usr/include/boost/type_traits/is_unsigned.hpp:
+
+/usr/include/boost/mpl/iter_fold_if.hpp:
+
 /usr/include/boost/mpl/contains_fwd.hpp:
 
 /usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp:
@@ -1653,11 +1695,11 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/aux_/config/integral.hpp:
 
+/usr/include/boost/mpl/at_fwd.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/boost/mpl/int.hpp:
-
-/usr/include/boost/mpl/at_fwd.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
@@ -1697,6 +1739,16 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/preprocessor/facilities/identity.hpp:
 
+/usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/usr/include/boost/mpl/aux_/config/adl.hpp:
+
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/boost/mpl/aux_/comparison_op.hpp:
+
+/usr/include/boost/preprocessor/list/fold_left.hpp:
+
 /usr/include/boost/mpl/aux_/config/ctps.hpp:
 
 /usr/include/boost/detail/lcast_precision.hpp:
@@ -1707,31 +1759,17 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/void.hpp:
 
-/usr/include/c++/11/bits/cxxabi_init_exception.h:
+/usr/include/boost/mpl/eval_if.hpp:
 
-/usr/include/boost/mpl/aux_/fold_impl.hpp:
+/usr/include/boost/mpl/inserter.hpp:
 
-/usr/include/c++/11/bits/unique_ptr.h:
-
-/usr/include/boost/config/helper_macros.hpp:
+/usr/include/boost/preprocessor/control/while.hpp:
 
 /usr/include/boost/mpl/aux_/iter_fold_impl.hpp:
 
 /usr/include/boost/lexical_cast/detail/inf_nan.hpp:
 
 /usr/include/boost/preprocessor/identity.hpp:
-
-/usr/include/boost/mpl/empty_fwd.hpp:
-
-/usr/include/boost/integer.hpp:
-
-/usr/include/boost/iterator/iterator_concepts.hpp:
-
-/usr/include/boost/mpl/arg_fwd.hpp:
-
-/usr/include/boost/preprocessor/tuple/eat.hpp:
-
-/usr/include/boost/mpl/apply_wrap.hpp:
 
 /usr/include/boost/container/container_fwd.hpp:
 
@@ -1761,21 +1799,15 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/list/list20.hpp:
 
-/usr/include/boost/mpl/aux_/config/arrays.hpp:
-
-/usr/local/include/yaml-cpp/node/convert.h:
-
-/usr/include/c++/11/ext/string_conversions.h:
-
-/usr/include/boost/mpl/aux_/advance_backward.hpp:
-
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/usr/include/c++/11/bits/regex.h:
-
-/usr/include/boost/config/no_tr1/complex.hpp:
-
 /usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/boost/config/helper_macros.hpp:
+
+/usr/include/c++/11/bits/cxxabi_init_exception.h:
+
+/usr/include/boost/mpl/aux_/fold_impl.hpp:
 
 /usr/include/boost/config/no_tr1/cmath.hpp:
 
@@ -1829,6 +1861,10 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/type_traits/is_scalar.hpp:
 
+/usr/include/boost/concept_check.hpp:
+
+/usr/include/boost/mpl/list/aux_/iterator.hpp:
+
 /usr/include/c++/11/bits/indirect_array.h:
 
 /usr/include/boost/mpl/aux_/config/bind.hpp:
@@ -1845,7 +1881,25 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/numeric/conversion/detail/meta.hpp:
 
+/usr/include/boost/detail/indirect_traits.hpp:
+
+/usr/include/boost/mpl/vector/vector0.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/boost/config/user.hpp:
+
+/usr/include/boost/mpl/list/aux_/clear.hpp:
+
 /usr/include/boost/mpl/aux_/msvc_type.hpp:
+
+/usr/include/boost/mpl/bind.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
+
+/usr/include/boost/config/detail/suffix.hpp:
 
 /usr/include/boost/mpl/aux_/has_size.hpp:
 
@@ -1857,19 +1911,25 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/iterator/distance.hpp:
 
-/usr/local/include/yaml-cpp/node/impl.h:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/include/boost/iterator/detail/enable_if.hpp:
+/usr/include/boost/mpl/aux_/na.hpp:
 
-/usr/include/c++/11/bits/align.h:
+/usr/include/boost/config.hpp:
 
-/usr/include/boost/mpl/and.hpp:
+/usr/include/boost/preprocessor/seq/cat.hpp:
 
-/usr/include/c++/11/bits/stl_iterator.h:
+/usr/include/boost/mpl/apply.hpp:
 
-/usr/include/boost/preprocessor/array/elem.hpp:
+/usr/include/boost/numeric/conversion/converter_policies.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
+
+/usr/include/boost/iterator/iterator_concepts.hpp:
+
+/usr/include/boost/mpl/empty_fwd.hpp:
+
+/usr/include/boost/integer.hpp:
 
 /usr/include/boost/math/tools/real_cast.hpp:
 
@@ -1881,21 +1941,89 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/detail/select_type.hpp:
 
-/usr/include/boost/mpl/iter_fold_if.hpp:
-
-/usr/include/boost/type_traits/is_unsigned.hpp:
-
 /usr/include/c++/11/typeinfo:
 
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/scheduler.h:
 
 /usr/include/boost/range/difference_type.hpp:
 
+/usr/include/boost/mpl/vector/vector20.hpp:
+
+/usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+
+/usr/include/boost/mpl/equal_to.hpp:
+
 /usr/include/c++/11/ratio:
 
 /usr/include/boost/math/tools/user.hpp:
 
 /usr/include/boost/range/empty.hpp:
+
+/usr/include/boost/mpl/begin_end_fwd.hpp:
+
+/usr/include/boost/iterator/iterator_traits.hpp:
+
+/usr/include/boost/mpl/aux_/config/arrays.hpp:
+
+/usr/local/include/yaml-cpp/node/convert.h:
+
+/usr/include/c++/11/ext/string_conversions.h:
+
+/usr/include/boost/mpl/aux_/advance_backward.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
+
+/usr/include/c++/11/tr1/ell_integral.tcc:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/boost/mpl/aux_/arg_typedef.hpp:
+
+/usr/include/c++/11/bits/shared_ptr.h:
+
+/usr/include/c++/11/bits/regex.h:
+
+/usr/include/boost/config/no_tr1/complex.hpp:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/11/bits/charconv.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
+
+/usr/include/boost/concept/detail/general.hpp:
+
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
+
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/scheduler_t.cc:
+
+/usr/include/boost/container/detail/std_fwd.hpp:
+
+/usr/include/boost/mpl/always.hpp:
+
+/usr/include/boost/assert/source_location.hpp:
+
+/usr/include/boost/mpl/aux_/full_lambda.hpp:
+
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
+
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/usr/include/boost/type_traits/has_plus.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/boost/concept/usage.hpp:
+
+/usr/include/boost/mpl/list/aux_/begin_end.hpp:
+
+/usr/include/boost/range/size.hpp:
+
+/usr/include/boost/type_traits/is_float.hpp:
+
+/usr/include/boost/math/special_functions/math_fwd.hpp:
+
+/usr/include/asm-generic/sockios.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -1927,33 +2055,21 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
-/usr/include/boost/mpl/begin_end_fwd.hpp:
+/usr/include/c++/11/bits/align.h:
 
-/usr/include/boost/iterator/iterator_traits.hpp:
+/usr/include/boost/mpl/and.hpp:
 
-/usr/include/boost/mpl/aux_/arg_typedef.hpp:
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/fiber.h:
 
-/usr/include/c++/11/bits/charconv.h:
+/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
+/usr/include/c++/11/bits/stl_iterator.h:
 
-/usr/include/boost/concept/detail/general.hpp:
+/usr/include/boost/preprocessor/array/elem.hpp:
 
-/usr/include/c++/11/tr1/riemann_zeta.tcc:
+/usr/local/include/yaml-cpp/node/impl.h:
 
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/scheduler_t.cc:
-
-/usr/include/boost/mpl/bind.hpp:
-
-/usr/include/boost/config/detail/suffix.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
-
-/usr/include/boost/container/detail/std_fwd.hpp:
-
-/usr/include/boost/assert.hpp:
-
-/usr/include/boost/mpl/long_fwd.hpp:
+/usr/include/boost/iterator/detail/enable_if.hpp:
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
@@ -1965,89 +2081,41 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/bool.hpp:
 
-/usr/include/boost/cstdint.hpp:
+/usr/include/boost/utility.hpp:
 
-/usr/include/boost/range/has_range_iterator.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
 
-/usr/include/boost/array.hpp:
+/usr/include/boost/type_traits/is_member_pointer.hpp:
 
-/usr/include/boost/move/detail/std_ns_begin.hpp:
+/usr/include/asm-generic/posix_types.h:
 
-/usr/include/boost/mpl/list/aux_/front.hpp:
-
-/usr/include/boost/mpl/always.hpp:
-
-/usr/include/boost/assert/source_location.hpp:
-
-/usr/include/boost/mpl/aux_/full_lambda.hpp:
-
-/usr/include/boost/config/stdlib/libstdcpp3.hpp:
-
-/usr/include/boost/mpl/aux_/config/dtp.hpp:
-
-/usr/include/boost/type_traits/has_plus.hpp:
-
-/usr/include/boost/mpl/aux_/config/bcc.hpp:
-
-/usr/include/boost/math/special_functions/math_fwd.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/boost/concept/usage.hpp:
-
-/usr/include/boost/mpl/list/aux_/begin_end.hpp:
-
-/usr/include/boost/range/size.hpp:
-
-/usr/include/boost/type_traits/is_float.hpp:
-
-/usr/include/boost/concept_check.hpp:
-
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h:
-
-/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/fiber.h:
-
-/usr/include/boost/mpl/apply.hpp:
-
-/usr/include/boost/numeric/conversion/converter_policies.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/boost/mpl/aux_/na.hpp:
-
-/usr/include/boost/config.hpp:
-
-/usr/include/boost/preprocessor/seq/cat.hpp:
-
-/usr/include/boost/mpl/if.hpp:
-
-/usr/include/boost/preprocessor/comma_if.hpp:
-
-/usr/include/boost/preprocessor/tuple/rem.hpp:
-
-/usr/include/boost/detail/indirect_traits.hpp:
-
-/usr/include/boost/mpl/vector/vector0.hpp:
-
-/usr/include/boost/concept/assert.hpp:
+/usr/include/linux/falloc.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
 
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/macro.h:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
+/usr/include/boost/concept/assert.hpp:
 
-/usr/include/boost/config/detail/posix_features.hpp:
+/usr/include/boost/move/detail/std_ns_begin.hpp:
 
-/usr/include/boost/config/user.hpp:
+/usr/include/boost/mpl/list/aux_/front.hpp:
 
-/usr/include/boost/mpl/list/aux_/clear.hpp:
+/usr/include/boost/assert.hpp:
 
-/usr/include/boost/mpl/vector/vector20.hpp:
+/usr/include/boost/mpl/long_fwd.hpp:
 
-/usr/include/boost/mpl/equal_to.hpp:
+/usr/include/boost/preprocessor/tuple/eat.hpp:
 
-/usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+/usr/include/boost/mpl/apply_wrap.hpp:
+
+/usr/include/boost/cstdint.hpp:
+
+/usr/include/boost/array.hpp:
+
+/usr/include/boost/range/has_range_iterator.hpp:
+
+/usr/include/boost/mpl/arg_fwd.hpp:
 
 /usr/include/boost/math/special_functions/detail/round_fwd.hpp:
 
@@ -2109,8 +2177,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/type_traits/is_floating_point.hpp:
 
-/usr/include/boost/mpl/list/aux_/iterator.hpp:
-
 /usr/include/boost/mpl/or.hpp:
 
 /usr/include/boost/lexical_cast.hpp:
@@ -2157,12 +2223,6 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/type_traits/is_pod.hpp:
 
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
-
-/usr/include/boost/mpl/aux_/comparison_op.hpp:
-
-/usr/include/boost/preprocessor/list/fold_left.hpp:
-
 /usr/include/c++/11/bits/valarray_before.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
@@ -2188,6 +2248,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/local/include/yaml-cpp/emitterdef.h:
 
 /usr/include/boost/mpl/aux_/arity.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
@@ -2219,7 +2281,19 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/aux_/clear_impl.hpp:
 
-/usr/include/boost/mpl/aux_/config/adl.hpp:
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/11/ctime:
+
+/usr/include/boost/mpl/identity.hpp:
+
+/usr/include/boost/mpl/if.hpp:
+
+/usr/include/boost/preprocessor/comma_if.hpp:
+
+/usr/include/boost/preprocessor/tuple/rem.hpp:
 
 /usr/include/boost/math/special_functions/sign.hpp:
 
@@ -2242,6 +2316,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/boost/mpl/iterator_range.hpp:
 
 /usr/include/boost/mpl/iterator_tags.hpp:
+
+/usr/include/fcntl.h:
 
 /usr/include/boost/mpl/push_back_fwd.hpp:
 
@@ -2279,6 +2355,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
 /usr/include/boost/type_traits/has_left_shift.hpp:
 
 /usr/include/boost/mpl/list/aux_/item.hpp:
@@ -2307,9 +2385,9 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
 
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
-
 /usr/include/boost/type_traits/is_volatile.hpp:
+
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
 /usr/include/boost/mpl/list/list10.hpp:
 
@@ -2361,6 +2439,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/tag.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
 /usr/include/boost/mpl/reverse_fold.hpp:
 
 /usr/include/boost/preprocessor/inc.hpp:
@@ -2388,6 +2468,8 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/boost/type_traits/intrinsics.hpp:
 
 /usr/include/boost/numeric/conversion/cast.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
 /usr/include/boost/type_traits/is_const.hpp:
 
@@ -2591,6 +2673,10 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/preprocessor/seq/detail/is_empty.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/arpa/inet.h:
+
 /usr/include/boost/preprocessor/control/deduce_d.hpp:
 
 /usr/include/boost/preprocessor/control/detail/while.hpp:
@@ -2619,15 +2705,17 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 
 /usr/include/boost/mpl/aux_/static_cast.hpp:
 
-/usr/include/boost/range/iterator_range_core.hpp:
-
 /usr/include/boost/mpl/next_prior.hpp:
+
+/usr/include/boost/range/iterator_range_core.hpp:
 
 /usr/include/boost/type_traits/is_arithmetic.hpp:
 
 /usr/include/boost/preprocessor/empty.hpp:
 
 /usr/include/boost/preprocessor/logical/bool.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
@@ -2800,7 +2888,3 @@ tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o: /home/Ricardo/Object/NetWork/
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
 /usr/include/boost/type_traits/is_same.hpp:
-
-/usr/include/boost/type_traits/is_void.hpp:
-
-/usr/include/boost/type_traits/make_void.hpp:

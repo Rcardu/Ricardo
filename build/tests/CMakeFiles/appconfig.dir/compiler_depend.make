@@ -9,8 +9,13 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/thread.h \
   /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h \
   /usr/include/alloca.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/asm-generic/sockios.h \
   /usr/include/assert.h \
   /usr/include/boost/array.hpp \
   /usr/include/boost/assert.hpp \
@@ -760,15 +765,20 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/execinfo.h \
+  /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/falloc.h \
   /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
   /usr/include/locale.h \
   /usr/include/math.h \
+  /usr/include/netinet/in.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/semaphore.h \
@@ -783,7 +793,12 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
@@ -793,7 +808,10 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -801,6 +819,7 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/x86_64-linux-gnu/bits/indirect-return.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -822,12 +841,17 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   /usr/include/x86_64-linux-gnu/bits/syscall.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
@@ -852,7 +876,9 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
@@ -888,8 +914,10 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/sys/ucontext.h \
@@ -969,8 +997,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
-/usr/include/x86_64-linux-gnu/sys/syscall.h:
-
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
@@ -1005,7 +1031,11 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
@@ -1043,9 +1073,13 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -1079,6 +1113,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -1090,6 +1126,14 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/x86_64-linux-gnu/sys/syscall.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/wctype.h:
 
@@ -1151,10 +1195,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/c++/11/tr1/exp_integral.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
-
-/usr/include/c++/11/tr1/ell_integral.tcc:
-
 /usr/include/c++/11/thread:
 
 /usr/include/c++/11/string_view:
@@ -1172,6 +1212,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/c++/11/pstl/execution_defs.h:
 
 /usr/include/c++/11/ostream:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/c++/11/new:
 
@@ -1202,6 +1244,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/c++/11/deque:
 
 /usr/include/c++/11/debug/assertions.h:
+
+/usr/include/linux/posix_types.h:
 
 /usr/include/c++/11/cwctype:
 
@@ -1254,6 +1298,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/c++/11/vector:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
+
+/usr/include/x86_64-linux-gnu/bits/epoll.h:
 
 /usr/include/c++/11/bits/stl_stack.h:
 
@@ -1373,6 +1419,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
+/usr/include/netinet/in.h:
+
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
@@ -1391,6 +1439,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/c++/11/backward/binders.h:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
 /usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/c++/11/tr1/special_function_util.h:
@@ -1401,17 +1451,27 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/version.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+
 /usr/include/boost/utility/identity_type.hpp:
 
 /usr/include/boost/type_traits/type_identity.hpp:
 
-/usr/include/boost/mpl/iter_fold.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/boost/type_traits/remove_reference.hpp:
+
+/usr/include/boost/type_traits/remove_const.hpp:
+
+/usr/include/boost/type_traits/make_void.hpp:
 
 /usr/include/boost/mpl/inserter.hpp:
 
 /usr/include/boost/mpl/eval_if.hpp:
 
 /usr/include/boost/preprocessor/control/while.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -1487,6 +1547,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
+/usr/include/linux/falloc.h:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
 
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/singleton.h:
@@ -1496,14 +1558,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp:
 
 /usr/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/include/boost/mpl/integral_c_tag.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/c++/11/bits/stl_set.h:
-
-/usr/include/boost/range/begin.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp:
 
@@ -1533,12 +1587,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/preprocessor/repetition/repeat.hpp:
 
-/usr/include/boost/utility.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
-
-/usr/include/boost/type_traits/is_member_pointer.hpp:
-
 /usr/include/boost/numeric/conversion/bounds.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
@@ -1566,10 +1614,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/mpl/aux_/msvc_never_true.hpp:
 
 /usr/include/boost/mpl/aux_/lambda_spec.hpp:
-
-/usr/include/boost/mpl/integral_c_fwd.hpp:
-
-/usr/include/boost/type_traits/is_function.hpp:
 
 /usr/include/boost/mpl/greater.hpp:
 
@@ -1681,21 +1725,39 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/stdhead.h:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
+/usr/include/boost/mpl/back_inserter.hpp:
 
-/usr/include/boost/iterator/detail/config_undef.hpp:
+/usr/include/boost/mpl/aux_/config/eti.hpp:
 
-/usr/include/boost/container/container_fwd.hpp:
+/usr/include/c++/11/bits/memoryfwd.h:
 
-/usr/include/boost/mpl/list/aux_/pop_front.hpp:
+/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
 
-/usr/include/boost/mpl/list/aux_/size.hpp:
+/usr/include/boost/range/detail/extract_optional_type.hpp:
 
-/usr/local/include/yaml-cpp/node/detail/node_ref.h:
+/usr/include/c++/11/unordered_set:
 
-/usr/include/boost/math/tools/promotion.hpp:
+/usr/include/boost/range/iterator.hpp:
+
+/usr/include/c++/11/math.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
+
+/usr/include/assert.h:
+
+/usr/include/boost/preprocessor/facilities/identity.hpp:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
+
+/usr/include/boost/detail/lcast_precision.hpp:
+
+/usr/include/boost/math/policies/policy.hpp:
+
+/usr/include/boost/config/detail/select_stdlib_config.hpp:
 
 /usr/include/boost/mpl/void.hpp:
 
@@ -1711,14 +1773,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/lexical_cast/detail/inf_nan.hpp:
 
-/usr/include/c++/11/math.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
-
-/usr/include/assert.h:
-
-/usr/include/boost/preprocessor/facilities/identity.hpp:
-
 /usr/include/boost/preprocessor/identity.hpp:
 
 /usr/include/boost/mpl/empty_fwd.hpp:
@@ -1733,15 +1787,17 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/apply_wrap.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+/usr/include/boost/container/container_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/config/gpu.hpp:
+/usr/include/boost/mpl/list/aux_/pop_front.hpp:
 
-/usr/include/boost/preprocessor/arithmetic/inc.hpp:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/boost/iterator/detail/config_def.hpp:
+/usr/include/boost/mpl/list/aux_/size.hpp:
 
-/usr/include/boost/core/enable_if.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
+
+/usr/include/boost/iterator/detail/config_undef.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/minus.hpp:
 
@@ -1759,29 +1815,27 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/list/list20.hpp:
 
-/usr/include/boost/math/policies/policy.hpp:
-
-/usr/include/boost/config/detail/select_stdlib_config.hpp:
-
-/usr/include/boost/detail/lcast_precision.hpp:
-
-/usr/include/boost/mpl/aux_/config/arrays.hpp:
-
-/usr/local/include/yaml-cpp/node/convert.h:
-
-/usr/include/c++/11/ext/string_conversions.h:
-
-/usr/include/boost/mpl/aux_/advance_backward.hpp:
-
 /usr/include/boost/config/no_tr1/cmath.hpp:
 
 /usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
-/usr/include/c++/11/bits/shared_ptr.h:
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
-/usr/include/c++/11/bits/regex.h:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp:
 
-/usr/include/boost/config/no_tr1/complex.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
+
+/usr/include/boost/math/tools/config.hpp:
+
+/usr/include/boost/core/enable_if.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+
+/usr/include/boost/mpl/aux_/config/gpu.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
+
+/usr/include/boost/iterator/detail/config_def.hpp:
 
 /usr/include/boost/mpl/aux_/value_wknd.hpp:
 
@@ -1805,26 +1859,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/predef/make.h:
 
-/usr/include/boost/exception/exception.hpp:
-
-/usr/include/boost/utility/base_from_member.hpp:
-
-/usr/include/boost/config/compiler/gcc.hpp:
-
-/usr/include/boost/numeric/conversion/detail/meta.hpp:
-
-/usr/include/boost/assert.hpp:
-
-/usr/include/boost/mpl/long_fwd.hpp:
-
-/usr/include/c++/11/bits/indirect_array.h:
-
-/usr/include/boost/mpl/aux_/config/bind.hpp:
-
-/usr/include/boost/mpl/aux_/has_tag.hpp:
-
-/usr/include/boost/mpl/less.hpp:
-
 /usr/include/boost/config/detail/select_compiler_config.hpp:
 
 /usr/include/boost/preprocessor/control/iif.hpp:
@@ -1835,13 +1869,19 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/type_traits/is_scalar.hpp:
 
+/usr/include/boost/detail/indirect_traits.hpp:
+
+/usr/include/boost/mpl/vector/vector0.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/boost/config/user.hpp:
+
+/usr/include/boost/mpl/list/aux_/clear.hpp:
+
 /usr/include/boost/container/detail/std_fwd.hpp:
-
-/usr/include/boost/concept/assert.hpp:
-
-/usr/include/boost/move/detail/std_ns_begin.hpp:
-
-/usr/include/boost/mpl/list/aux_/front.hpp:
 
 /usr/include/c++/11/bits/charconv.h:
 
@@ -1854,6 +1894,12 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
 
 /usr/include/boost/mpl/vector.hpp:
+
+/usr/include/boost/mpl/vector/vector20.hpp:
+
+/usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+
+/usr/include/boost/mpl/equal_to.hpp:
 
 /usr/include/boost/current_function.hpp:
 
@@ -1883,15 +1929,63 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/iterator/iterator_traits.hpp:
 
+/usr/include/boost/mpl/aux_/config/arrays.hpp:
+
+/usr/local/include/yaml-cpp/node/convert.h:
+
+/usr/include/c++/11/ext/string_conversions.h:
+
+/usr/include/boost/mpl/aux_/advance_backward.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
+
+/usr/include/c++/11/tr1/ell_integral.tcc:
+
+/usr/include/asm-generic/socket.h:
+
 /usr/include/boost/mpl/aux_/arg_typedef.hpp:
 
-/usr/include/boost/mpl/aux_/config/static_constant.hpp:
+/usr/include/c++/11/bits/shared_ptr.h:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp:
+/usr/include/c++/11/bits/regex.h:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
+/usr/include/boost/config/no_tr1/complex.hpp:
 
-/usr/include/boost/math/tools/config.hpp:
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/11/bits/indirect_array.h:
+
+/usr/include/boost/mpl/aux_/config/bind.hpp:
+
+/usr/include/boost/mpl/aux_/has_tag.hpp:
+
+/usr/include/boost/mpl/less.hpp:
+
+/usr/include/boost/utility/base_from_member.hpp:
+
+/usr/include/boost/config/compiler/gcc.hpp:
+
+/usr/include/boost/exception/exception.hpp:
+
+/usr/include/boost/numeric/conversion/detail/meta.hpp:
+
+/usr/include/boost/mpl/aux_/msvc_type.hpp:
+
+/usr/include/boost/mpl/bind.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
+
+/usr/include/boost/config/detail/suffix.hpp:
+
+/usr/include/boost/mpl/aux_/has_size.hpp:
+
+/usr/include/c++/11/bits/regex_executor.h:
+
+/usr/include/boost/type_traits/is_base_of.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h:
+
+/usr/include/boost/iterator/distance.hpp:
 
 /usr/local/include/yaml-cpp/node/impl.h:
 
@@ -1913,6 +2007,10 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/type_traits/function_traits.hpp:
 
+/usr/include/boost/concept_check.hpp:
+
+/usr/include/boost/mpl/list/aux_/iterator.hpp:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
 
 /usr/include/boost/mpl/not.hpp:
@@ -1931,33 +2029,37 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/lexical_cast/detail/converter_lexical.hpp:
 
-/usr/include/boost/mpl/aux_/full_lambda.hpp:
-
-/usr/include/boost/config/stdlib/libstdcpp3.hpp:
-
 /usr/include/boost/mpl/always.hpp:
 
 /usr/include/boost/assert/source_location.hpp:
 
-/usr/include/boost/mpl/aux_/has_size.hpp:
+/usr/include/boost/mpl/aux_/full_lambda.hpp:
 
-/usr/include/c++/11/bits/regex_executor.h:
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
-/usr/include/boost/type_traits/is_base_of.hpp:
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h:
-
-/usr/include/boost/iterator/distance.hpp:
-
-/usr/include/boost/mpl/aux_/msvc_type.hpp:
-
-/usr/include/boost/mpl/bind.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
-
-/usr/include/boost/config/detail/suffix.hpp:
+/usr/include/boost/type_traits/has_plus.hpp:
 
 /usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/usr/include/boost/assert.hpp:
+
+/usr/include/boost/mpl/long_fwd.hpp:
+
+/usr/include/boost/utility.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
+
+/usr/include/boost/type_traits/is_member_pointer.hpp:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/boost/concept/assert.hpp:
+
+/usr/include/boost/move/detail/std_ns_begin.hpp:
+
+/usr/include/boost/mpl/list/aux_/front.hpp:
 
 /usr/include/boost/cstdint.hpp:
 
@@ -1975,22 +2077,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/bool.hpp:
 
-/usr/include/boost/type_traits/has_plus.hpp:
-
-/usr/include/boost/mpl/aux_/config/dtp.hpp:
-
-/usr/include/c++/11/bits/memoryfwd.h:
-
-/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
-
-/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
-
-/usr/include/boost/range/detail/extract_optional_type.hpp:
-
-/usr/include/c++/11/unordered_set:
-
-/usr/include/boost/range/iterator.hpp:
-
 /usr/include/boost/math/special_functions/math_fwd.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
@@ -2002,8 +2088,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/range/size.hpp:
 
 /usr/include/boost/type_traits/is_float.hpp:
-
-/usr/include/boost/concept_check.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
@@ -2019,27 +2103,13 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/preprocessor/tuple/rem.hpp:
 
-/usr/include/boost/mpl/advance_fwd.hpp:
-
 /usr/include/boost/math/special_functions/detail/round_fwd.hpp:
 
-/usr/include/boost/detail/indirect_traits.hpp:
+/usr/include/boost/mpl/advance_fwd.hpp:
 
-/usr/include/boost/mpl/vector/vector0.hpp:
+/usr/local/include/yaml-cpp/node/detail/node_ref.h:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/boost/config/user.hpp:
-
-/usr/include/boost/mpl/list/aux_/clear.hpp:
-
-/usr/include/boost/mpl/vector/vector20.hpp:
-
-/usr/include/boost/mpl/equal_to.hpp:
-
-/usr/include/boost/mpl/vector/aux_/begin_end.hpp:
+/usr/include/boost/math/tools/promotion.hpp:
 
 /usr/include/c++/11/sstream:
 
@@ -2088,8 +2158,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/c++/11/bits/allocated_ptr.h:
 
 /usr/include/boost/type_traits/is_floating_point.hpp:
-
-/usr/include/boost/mpl/list/aux_/iterator.hpp:
 
 /usr/include/boost/mpl/or.hpp:
 
@@ -2175,6 +2243,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/aux_/arity.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/config.h:
@@ -2205,27 +2275,35 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/type_traits/has_minus.hpp:
 
-/usr/include/boost/type_traits/remove_const.hpp:
-
 /usr/include/boost/lexical_cast/detail/lcast_char_constants.hpp:
 
 /usr/include/boost/mpl/aux_/clear_impl.hpp:
+
+/usr/include/boost/mpl/aux_/config/adl.hpp:
 
 /usr/include/boost/math/special_functions/sign.hpp:
 
 /usr/include/boost/mpl/integral_c.hpp:
 
-/usr/include/boost/mpl/aux_/config/adl.hpp:
+/usr/include/boost/mpl/integral_c_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/config/ctps.hpp:
+/usr/include/boost/type_traits/is_function.hpp:
 
-/usr/include/boost/mpl/back_inserter.hpp:
+/usr/include/boost/mpl/integral_c_tag.hpp:
 
-/usr/include/boost/mpl/aux_/config/eti.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/c++/11/bits/stl_set.h:
+
+/usr/include/boost/range/begin.hpp:
+
+/usr/include/boost/mpl/iter_fold.hpp:
 
 /usr/include/boost/mpl/iterator_range.hpp:
 
 /usr/include/boost/mpl/iterator_tags.hpp:
+
+/usr/include/fcntl.h:
 
 /usr/include/boost/mpl/push_back_fwd.hpp:
 
@@ -2262,6 +2340,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/boost/type_traits/has_left_shift.hpp:
 
@@ -2345,6 +2425,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/tag.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
 /usr/include/boost/mpl/reverse_fold.hpp:
 
 /usr/include/boost/preprocessor/inc.hpp:
@@ -2355,6 +2437,10 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
+/usr/include/boost/type_traits/remove_pointer.hpp:
+
+/usr/include/boost/mpl/sequence_tag.hpp:
+
 /usr/include/c++/11/cfloat:
 
 /usr/include/c++/11/bits/unordered_map.h:
@@ -2363,15 +2449,13 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/mpl/sequence_tag_fwd.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/boost/type_traits/remove_reference.hpp:
-
 /usr/include/boost/mpl/size_fwd.hpp:
 
 /usr/include/boost/type_traits/intrinsics.hpp:
 
 /usr/include/boost/numeric/conversion/cast.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
 /usr/include/boost/type_traits/is_const.hpp:
 
@@ -2573,6 +2657,10 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/preprocessor/seq/detail/is_empty.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/arpa/inet.h:
+
 /usr/include/boost/preprocessor/control/deduce_d.hpp:
 
 /usr/include/boost/preprocessor/control/detail/while.hpp:
@@ -2610,6 +2698,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/preprocessor/empty.hpp:
 
 /usr/include/boost/preprocessor/logical/bool.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
@@ -2761,9 +2851,9 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 
 /usr/include/boost/type_traits/is_array.hpp:
 
-/usr/include/boost/concept/detail/backward_compatibility.hpp:
-
 /usr/include/boost/core/swap.hpp:
+
+/usr/include/boost/concept/detail/backward_compatibility.hpp:
 
 /usr/include/boost/type_traits/is_class.hpp:
 
@@ -2786,9 +2876,3 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/Object/NetWork/Socke
 /usr/include/boost/type_traits/is_same.hpp:
 
 /usr/include/boost/type_traits/is_void.hpp:
-
-/usr/include/boost/type_traits/make_void.hpp:
-
-/usr/include/boost/mpl/sequence_tag.hpp:
-
-/usr/include/boost/type_traits/remove_pointer.hpp:
