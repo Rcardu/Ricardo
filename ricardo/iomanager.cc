@@ -41,7 +41,7 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)
   ICEY_ASSERT(m_epfd > 0);
 
   int rt = pipe(m_tickleFds);
-  ICEY_LOG_INFO(g_logger)<<"return value = "<<rt;
+  ICEY_LOG_INFO(g_logger) << "return value = " << rt;
   ICEY_ASSERT(!rt);
 
   epoll_event event;
@@ -245,17 +245,22 @@ IOManager* IOManager::GetThis() {
 }
 
 void IOManager::tickle() {
-  if(hasIdleThreads()){
-    ICEY_LOG_INFO(g_logger)<<"no thread tickle";
+  if (hasIdleThreads()) {
+    //:ICEY_LOG_INFO(g_logger) << "no thread tickle";
     return;
   }
   int rt = write(m_tickleFds[1], "T", 1);
   ICEY_ASSERT(rt == 1);
 }
 
-bool IOManager::stopping(){
-  return Scheduler::stopping() &&
-    m_pendingEventCount == 0;
+bool IOManager::stopping() {
+  uint64_t timeout = 0;
+  return stopping(timeout);
+}
+
+bool IOManager::stopping(uint64_t& timeout) {
+  timeout = getNextTimer();
+  return timeout == ~0ull && m_pendingEventCount == 0 && Scheduler::stopping();
 }
 
 void IOManager::idel() {
@@ -264,21 +269,39 @@ void IOManager::idel() {
       events, [](epoll_event* ptr) { delete[] ptr; });
 
   while (true) {
-    if (stopping()) {
+    uint64_t next_timeout = 0;
+    if (stopping(next_timeout)) {
       ICEY_LOG_INFO(g_logger)
           << "name = " << getName() << " idle stopping exit";
       break;
     }
+
     int rt = 0;
     do {
-      static const int MAX_TIMEOUT = 5000;
-      rt = epoll_wait(m_epfd, events, 64, MAX_TIMEOUT);
+      static const int MAX_TIMEOUT = 3000;
+      if (next_timeout != ~0ull) {
+        next_timeout =
+            (int)next_timeout > MAX_TIMEOUT ? MAX_TIMEOUT : next_timeout;
+      } else {
+        next_timeout = MAX_TIMEOUT;
+      }
+      rt = epoll_wait(m_epfd, events, 64, (int)next_timeout);
 
       if (rt < 0 && errno == EINTR) {
       } else {
         break;
       }
     } while (true);
+
+    //获取当前时间点满足条件的回调函数
+    std::vector<std::function<void()>> cbs;
+    listExpiredCb(cbs);
+    if (!cbs.empty()) {
+      //ICEY_LOG_DEBUG(g_logger)<<"no timer cbs.size = "<<cbs.size();
+      schedule(cbs.begin(), cbs.end());
+      cbs.clear();
+    }
+
     for (int i = 0; i < rt; i++) {
       epoll_event& event = events[i];
       if (event.data.fd == m_tickleFds[0]) {
@@ -332,4 +355,7 @@ void IOManager::idel() {
   }
 }
 
+void IOManager::onTimerInsertedAtFront() {
+  tickle();
+}
 }  // namespace Ricardo

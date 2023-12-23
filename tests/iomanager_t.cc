@@ -41,7 +41,25 @@ void test1() {
   iom.schedule(&test_fiber);
 }
 
+Ricardo::Timer::ptr s_timer;
+
+void test_timer() {
+  Ricardo::IOManager iom(2);
+  s_timer = iom.addTimer(
+      1000,
+      []() {
+        static int i = 0;
+        ICEY_LOG_INFO(g_logger) << "hello timer i = " << i;
+        if (++i == 3) {
+          s_timer->reset(2000);
+          //s_timer->cancel();
+        }
+      },
+      true);
+}
+
 int main(int argc, char* argv[]) {
-  test1();
+  //test1();
+  test_timer();
   return 0;
 }

@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ricardo.dir/scheduler.cc.o.d"
   "CMakeFiles/ricardo.dir/thread.cc.o"
   "CMakeFiles/ricardo.dir/thread.cc.o.d"
+  "CMakeFiles/ricardo.dir/timer.cc.o"
+  "CMakeFiles/ricardo.dir/timer.cc.o.d"
   "CMakeFiles/ricardo.dir/util.cc.o"
   "CMakeFiles/ricardo.dir/util.cc.o.d"
 )
