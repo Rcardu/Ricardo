@@ -1,8 +1,8 @@
 #include "iomanager.h"
 
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 
 IOManager::FdContext::EventContext& IOManager::FdContext::getContext(
     IOManager::Event event) {

@@ -5,33 +5,31 @@
 #include "thread.h"
 
 //使用logger写入日志级别为level的日志（流式日志）
-#define ICEY_LOG_LEVEL(logger, level)                                  \
+#define ICEY_LOG_LEVEL(logger, level)                                   \
   if (logger->getLevel() <= level)                                      \
   Ricardo::LogEventWrap(                                                \
       Ricardo::LogEvent::ptr(new Ricardo::LogEvent(                     \
           logger, level, __FILE__, __LINE__, 0, Ricardo::GetThreadId(), \
-          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName())))                             \
+          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName()))) \
       .getSS()
 
 //使用logger写入日志界别为debug的日志（流式日志）
-#define ICEY_LOG_DEBUG(logger) \
-  ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::DEBUG)
+#define ICEY_LOG_DEBUG(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::DEBUG)
 //使用logger写入日志界别为info的日志（流式日志）
 #define ICEY_LOG_INFO(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::INFO)
 //使用logger写入日志界别为warn的日志（流式日志）
 #define ICEY_LOG_WARN(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::WARN)
 //使用logger写入日志界别为error的日志（流式日志）
-#define ICEY_LOG_ERROR(logger) \
-  ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
+#define ICEY_LOG_ERROR(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
 //使用logger写入日志界别为fatal的日志（流式日志）
 #define ICEY_LOG_FATAL(logger) YLAR_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
 
-#define ICEY_LOG_FMT_LEVEL(logger, level, fmt, ...)                    \
+#define ICEY_LOG_FMT_LEVEL(logger, level, fmt, ...)                     \
   if (logger->getLevel() <= level)                                      \
   Ricardo::LogEventWrap(                                                \
       Ricardo::LogEvent::ptr(new Ricardo::LogEvent(                     \
           logger, level, __FILE__, __LINE__, 0, Ricardo::GetThreadId(), \
-          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName())))                             \
+          Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName()))) \
       .getEvent()                                                       \
       ->format(fmt, __VA_ARGS__)
 //使用logger写入日志界别为debug的日志（格式化,printf）
@@ -95,7 +93,7 @@ class LogEvent {
 
   uint32_t getTime() const { return m_time; }
 
-  const std::string getThredName() const {return m_threadName;}
+  const std::string getThredName() const { return m_threadName; }
 
   std::string getContent() const { return m_ss.str(); }
 
@@ -104,6 +102,7 @@ class LogEvent {
   LogLevel::Level getLevel() const { return m_level; }
 
   std::stringstream& getSS() { return m_ss; }
+
   void format(const char* fmt, ...);
   void format(const char* fmt, va_list al);
 

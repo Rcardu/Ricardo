@@ -7,13 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/CMakeLists.txt"
+  "/home/Ricardo/RiSer/SocketForCpp/CMakeLists.txt"
   "CMakeFiles/3.27.9/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.9/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.9/CMakeSystem.cmake"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/cmake/utils.cmake"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/CMakeLists.txt"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/CMakeLists.txt"
+  "/home/Ricardo/RiSer/SocketForCpp/cmake/utils.cmake"
+  "/home/Ricardo/RiSer/SocketForCpp/ricardo/CMakeLists.txt"
+  "/home/Ricardo/RiSer/SocketForCpp/tests/CMakeLists.txt"
   "/usr/local/lib/python3.10/dist-packages/cmake/data/share/cmake-3.27/Modules/CMakeCInformation.cmake"
   "/usr/local/lib/python3.10/dist-packages/cmake/data/share/cmake-3.27/Modules/CMakeCXXInformation.cmake"
   "/usr/local/lib/python3.10/dist-packages/cmake/data/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake"
@@ -57,4 +57,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/CMakeFiles/appfiber.dir/DependInfo.cmake"
   "tests/CMakeFiles/appschedler.dir/DependInfo.cmake"
   "tests/CMakeFiles/appiomanager.dir/DependInfo.cmake"
+  "tests/CMakeFiles/apphook.dir/DependInfo.cmake"
   )

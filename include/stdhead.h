@@ -15,6 +15,8 @@
 #include <ucontext.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <dlfcn.h>
+#include <time.h>
 
 //c++库
 #include <cctype>
@@ -45,6 +47,8 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <sys/time.h>
+#include <sys/stat.h>
+#include <sys/un.h>
 
 //第三方库
 #include <yaml-cpp/yaml.h>

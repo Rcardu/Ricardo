@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appconfig"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appconfig.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appconfig"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appconfig.pdb"
   "CMakeFiles/appconfig.dir/config_t.cc.o"
   "CMakeFiles/appconfig.dir/config_t.cc.o.d"
 )

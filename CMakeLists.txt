@@ -22,6 +22,7 @@ set(NAME_U apputil)
 set(NAME_F appfiber)
 set(NAME_S appschedler)
 set(NAME_IO appiomanager)
+set(NAME_HK apphook)
 
 
 #递归子目录

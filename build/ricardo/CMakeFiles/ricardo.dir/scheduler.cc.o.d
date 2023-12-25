@@ -1,9 +1,9 @@
 ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o: \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/ricardo/scheduler.cc \
+ /home/Ricardo/RiSer/SocketForCpp/ricardo/scheduler.cc \
  /usr/include/stdc-predef.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/scheduler.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/fiber.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/stdhead.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/scheduler.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/fiber.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/stdhead.h \
  /usr/include/pthread.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -90,7 +90,9 @@ ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h /usr/include/dlfcn.h \
+ /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
+ /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
  /usr/include/c++/11/cctype /usr/include/ctype.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/exception_ptr.h \
@@ -265,6 +267,13 @@ ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o: \
  /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
  /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
  /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
@@ -841,8 +850,13 @@ ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
  /usr/include/boost/detail/basic_pointerbuf.hpp \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/thread.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/log.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/singleton.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/macro.h \
- /home/Ricardo/Object/NetWork/Socket/SocketForCpp/include/util.h
+ /home/Ricardo/RiSer/SocketForCpp/include/thread.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/noncopyable.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/log.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/singleton.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/macro.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/util.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/hook.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/iomanager.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/timer.h \
+ /home/Ricardo/RiSer/SocketForCpp/include/fd_manager.h

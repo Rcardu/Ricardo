@@ -1,7 +1,8 @@
 #include "scheduler.h"
+#include "hook.h"
 
-namespace Ricardo {
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
+namespace Ricardo {
 
 static thread_local Scheduler* t_scheduler = nullptr;
 static thread_local Fiber* t_fiber = nullptr;
@@ -131,6 +132,7 @@ void Scheduler::setThis() {
 
 void Scheduler::run() {
   ICEY_LOG_INFO(g_logger)<<"run";
+  set_hook_enable(true);
   setThis();
 
   if (Ricardo::GetThreadId() != m_rootThread) {

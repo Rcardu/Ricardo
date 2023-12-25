@@ -57,10 +57,10 @@ RM = /usr/local/lib/python3.10/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp
+CMAKE_SOURCE_DIR = /home/Ricardo/RiSer/SocketForCpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build
+CMAKE_BINARY_DIR = /home/Ricardo/RiSer/SocketForCpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles /home/Ricardo/RiSer/SocketForCpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -220,6 +220,19 @@ appiomanager/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/build
 .PHONY : appiomanager/fast
 
+#=============================================================================
+# Target rules for targets named apphook
+
+# Build rule for target.
+apphook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 apphook
+.PHONY : apphook
+
+# fast build rule for target.
+apphook/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/build
+.PHONY : apphook/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -230,6 +243,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... appconfig"
 	@echo "... appfiber"
+	@echo "... apphook"
 	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"

@@ -57,10 +57,10 @@ RM = /usr/local/lib/python3.10/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp
+CMAKE_SOURCE_DIR = /home/Ricardo/RiSer/SocketForCpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build
+CMAKE_BINARY_DIR = /home/Ricardo/RiSer/SocketForCpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/ricardo//CMakeFiles/progress.marks
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles /home/Ricardo/RiSer/SocketForCpp/build/ricardo//CMakeFiles/progress.marks
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/clean
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/preinstall
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/preinstall
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 ricardo/CMakeFiles/ricardo.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/CMakeFiles/ricardo.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ricardo/CMakeFiles/ricardo.dir/rule
 .PHONY : ricardo/CMakeFiles/ricardo.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ ricardo: ricardo/CMakeFiles/ricardo.dir/rule
 
 # fast build rule for target.
 ricardo/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/build
 .PHONY : ricardo/fast
 
 config.o: config.cc.o
@@ -135,7 +135,7 @@ config.o: config.cc.o
 
 # target to build an object file
 config.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.o
 .PHONY : config.cc.o
 
 config.i: config.cc.i
@@ -143,7 +143,7 @@ config.i: config.cc.i
 
 # target to preprocess a source file
 config.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.i
 .PHONY : config.cc.i
 
 config.s: config.cc.s
@@ -151,15 +151,39 @@ config.s: config.cc.s
 
 # target to generate assembly for a file
 config.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/config.cc.s
 .PHONY : config.cc.s
+
+fd_manager.o: fd_manager.cc.o
+.PHONY : fd_manager.o
+
+# target to build an object file
+fd_manager.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o
+.PHONY : fd_manager.cc.o
+
+fd_manager.i: fd_manager.cc.i
+.PHONY : fd_manager.i
+
+# target to preprocess a source file
+fd_manager.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.i
+.PHONY : fd_manager.cc.i
+
+fd_manager.s: fd_manager.cc.s
+.PHONY : fd_manager.s
+
+# target to generate assembly for a file
+fd_manager.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.s
+.PHONY : fd_manager.cc.s
 
 fiber.o: fiber.cc.o
 .PHONY : fiber.o
 
 # target to build an object file
 fiber.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.o
 .PHONY : fiber.cc.o
 
 fiber.i: fiber.cc.i
@@ -167,7 +191,7 @@ fiber.i: fiber.cc.i
 
 # target to preprocess a source file
 fiber.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.i
 .PHONY : fiber.cc.i
 
 fiber.s: fiber.cc.s
@@ -175,15 +199,39 @@ fiber.s: fiber.cc.s
 
 # target to generate assembly for a file
 fiber.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/fiber.cc.s
 .PHONY : fiber.cc.s
+
+hook.o: hook.cc.o
+.PHONY : hook.o
+
+# target to build an object file
+hook.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/hook.cc.o
+.PHONY : hook.cc.o
+
+hook.i: hook.cc.i
+.PHONY : hook.i
+
+# target to preprocess a source file
+hook.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/hook.cc.i
+.PHONY : hook.cc.i
+
+hook.s: hook.cc.s
+.PHONY : hook.s
+
+# target to generate assembly for a file
+hook.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/hook.cc.s
+.PHONY : hook.cc.s
 
 iomanager.o: iomanager.cc.o
 .PHONY : iomanager.o
 
 # target to build an object file
 iomanager.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o
 .PHONY : iomanager.cc.o
 
 iomanager.i: iomanager.cc.i
@@ -191,7 +239,7 @@ iomanager.i: iomanager.cc.i
 
 # target to preprocess a source file
 iomanager.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.i
 .PHONY : iomanager.cc.i
 
 iomanager.s: iomanager.cc.s
@@ -199,7 +247,7 @@ iomanager.s: iomanager.cc.s
 
 # target to generate assembly for a file
 iomanager.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/iomanager.cc.s
 .PHONY : iomanager.cc.s
 
 log.o: log.cc.o
@@ -207,7 +255,7 @@ log.o: log.cc.o
 
 # target to build an object file
 log.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.o
 .PHONY : log.cc.o
 
 log.i: log.cc.i
@@ -215,7 +263,7 @@ log.i: log.cc.i
 
 # target to preprocess a source file
 log.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.i
 .PHONY : log.cc.i
 
 log.s: log.cc.s
@@ -223,7 +271,7 @@ log.s: log.cc.s
 
 # target to generate assembly for a file
 log.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/log.cc.s
 .PHONY : log.cc.s
 
 scheduler.o: scheduler.cc.o
@@ -231,7 +279,7 @@ scheduler.o: scheduler.cc.o
 
 # target to build an object file
 scheduler.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o
 .PHONY : scheduler.cc.o
 
 scheduler.i: scheduler.cc.i
@@ -239,7 +287,7 @@ scheduler.i: scheduler.cc.i
 
 # target to preprocess a source file
 scheduler.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.i
 .PHONY : scheduler.cc.i
 
 scheduler.s: scheduler.cc.s
@@ -247,7 +295,7 @@ scheduler.s: scheduler.cc.s
 
 # target to generate assembly for a file
 scheduler.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.s
 .PHONY : scheduler.cc.s
 
 thread.o: thread.cc.o
@@ -255,7 +303,7 @@ thread.o: thread.cc.o
 
 # target to build an object file
 thread.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.o
 .PHONY : thread.cc.o
 
 thread.i: thread.cc.i
@@ -263,7 +311,7 @@ thread.i: thread.cc.i
 
 # target to preprocess a source file
 thread.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.i
 .PHONY : thread.cc.i
 
 thread.s: thread.cc.s
@@ -271,7 +319,7 @@ thread.s: thread.cc.s
 
 # target to generate assembly for a file
 thread.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/thread.cc.s
 .PHONY : thread.cc.s
 
 timer.o: timer.cc.o
@@ -279,7 +327,7 @@ timer.o: timer.cc.o
 
 # target to build an object file
 timer.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.o
 .PHONY : timer.cc.o
 
 timer.i: timer.cc.i
@@ -287,7 +335,7 @@ timer.i: timer.cc.i
 
 # target to preprocess a source file
 timer.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.i
 .PHONY : timer.cc.i
 
 timer.s: timer.cc.s
@@ -295,7 +343,7 @@ timer.s: timer.cc.s
 
 # target to generate assembly for a file
 timer.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/timer.cc.s
 .PHONY : timer.cc.s
 
 util.o: util.cc.o
@@ -303,7 +351,7 @@ util.o: util.cc.o
 
 # target to build an object file
 util.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.o
 .PHONY : util.cc.o
 
 util.i: util.cc.i
@@ -311,7 +359,7 @@ util.i: util.cc.i
 
 # target to preprocess a source file
 util.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.i
 .PHONY : util.cc.i
 
 util.s: util.cc.s
@@ -319,7 +367,7 @@ util.s: util.cc.s
 
 # target to generate assembly for a file
 util.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/util.cc.s
 .PHONY : util.cc.s
 
 # Help Target
@@ -334,9 +382,15 @@ help:
 	@echo "... config.o"
 	@echo "... config.i"
 	@echo "... config.s"
+	@echo "... fd_manager.o"
+	@echo "... fd_manager.i"
+	@echo "... fd_manager.s"
 	@echo "... fiber.o"
 	@echo "... fiber.i"
 	@echo "... fiber.s"
+	@echo "... hook.o"
+	@echo "... hook.i"
+	@echo "... hook.s"
 	@echo "... iomanager.o"
 	@echo "... iomanager.i"
 	@echo "... iomanager.s"
@@ -366,6 +420,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

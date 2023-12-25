@@ -1,12 +1,14 @@
 #pragma once
 
+#include <boost/concept_check.hpp>
 #include "stdhead.h"
+#include "noncopyable.h"
 
 //pthread_xxx
 //std::thread,pthread
 namespace Ricardo {
 
-class Semaphore{
+class Semaphore : Noncopyable{
 public:
     Semaphore(uint32_t count = 0);
     ~Semaphore();
@@ -14,11 +16,6 @@ public:
     void Wait();
     void Notify();
 
-private:
-    Semaphore(const Semaphore&) = delete;
-    Semaphore(const Semaphore&&) = delete;
-    Semaphore&operator=(const Semaphore&) = delete;
-    
 private:
     sem_t m_semaphore;
 };
@@ -109,7 +106,7 @@ private:
     bool m_locked;
 };
 
-class Mutex{
+class Mutex : Noncopyable{
 public:
     typedef ScopedLockImpl<Mutex> Lock;
 
@@ -131,7 +128,7 @@ private:
     pthread_mutex_t m_mutex;
 };
 
-class NullMutex{
+class NullMutex : Noncopyable{
 public:
     typedef ScopedLockImpl<NullMutex> Lock;
     NullMutex(){}
@@ -141,7 +138,7 @@ public:
 private:
 };
 
-class RWMutex{
+class RWMutex : Noncopyable{
 public:
     typedef ReadScopedLockImpl<RWMutex> ReadLock;
     typedef WriteScopedLockImpl<RWMutex> WriteLock;
@@ -170,7 +167,7 @@ private:
     pthread_rwlock_t m_lock;
 };
 
-class NullRWMutex{
+class NullRWMutex : Noncopyable{
 public:
     typedef ReadScopedLockImpl<NullRWMutex> ReadLock;
     typedef WriteScopedLockImpl<NullRWMutex> WriteLock;
@@ -182,7 +179,7 @@ public:
     void unlock(){}
 };
 
-class Spinlock{
+class Spinlock : Noncopyable{
 public:
     typedef ScopedLockImpl<Spinlock> Lock;
     Spinlock(){
@@ -202,7 +199,7 @@ private:
     pthread_spinlock_t m_mutex;
 };
 
-class CASLock{
+class CASLock : Noncopyable{
 public:
     typedef ScopedLockImpl<CASLock> Lock;
     CASLock(){

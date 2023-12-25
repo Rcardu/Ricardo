@@ -4,13 +4,17 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dricardo_EXPORTS
 
-CXX_INCLUDES = -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/include -I/home/Ricardo/Object/NetWork/Socket/SocketForCpp/yaml-cpp
+CXX_INCLUDES = -I/home/Ricardo/RiSer/SocketForCpp/include -I/home/Ricardo/RiSer/SocketForCpp/yaml-cpp
 
 CXX_FLAGS = -Wno-builtin-macro-redefined -fPIC
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/config.cc.o_DEFINES = __FILE__="ricardo/config.cc"
 
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o_DEFINES = __FILE__="ricardo/fd_manager.cc"
+
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/fiber.cc.o_DEFINES = __FILE__="ricardo/fiber.cc"
+
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/hook.cc.o_DEFINES = __FILE__="ricardo/hook.cc"
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o_DEFINES = __FILE__="ricardo/iomanager.cc"
 

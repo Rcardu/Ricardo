@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appschedler"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appschedler.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appschedler"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appschedler.pdb"
   "CMakeFiles/appschedler.dir/scheduler_t.cc.o"
   "CMakeFiles/appschedler.dir/scheduler_t.cc.o.d"
 )

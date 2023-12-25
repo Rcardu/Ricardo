@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/apputil"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/apputil.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/apputil"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/apputil.pdb"
   "CMakeFiles/apputil.dir/util_t.cc.o"
   "CMakeFiles/apputil.dir/util_t.cc.o.d"
 )

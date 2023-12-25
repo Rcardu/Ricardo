@@ -1,6 +1,6 @@
 #include "util.h"
-#include "log.h"
 #include "fiber.h"
+#include "log.h"
 
 Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 
@@ -10,8 +10,8 @@ pid_t GetThreadId() {
   return syscall(SYS_gettid);
 }
 
-uint64_t GetFiberId() { 
-    return Ricardo::Fiber::GetFiberId();
+uint64_t GetFiberId() {
+  return Ricardo::Fiber::GetFiberId();
 }
 
 void Backtrace(std::vector<std::string>& bt, int size, int skip) {
@@ -20,7 +20,7 @@ void Backtrace(std::vector<std::string>& bt, int size, int skip) {
 
   char** strings = backtrace_symbols(array, s);
   if (strings == NULL) {
-    ICEY_LOG_ERROR(g_logger)<<" error backtrace";
+    ICEY_LOG_ERROR(g_logger) << " error backtrace";
     return;
   }
   for (size_t i = skip; i < s; ++i) {
@@ -39,16 +39,17 @@ std::string BacktraceToString(int size, int skip, const std::string& prefix) {
   }
   return ss.str();
 }
-uint64_t GetCurrentMS(){
+
+uint64_t GetCurrentMS() {
   struct timeval tv;
   gettimeofday(&tv, NULL);
   return tv.tv_sec * 1000 + tv.tv_usec / 1000;
-
 }
-uint64_t GetCurrentUS(){
+
+uint64_t GetCurrentUS() {
   struct timeval tv;
   gettimeofday(&tv, NULL);
-  return tv.tv_sec * 1000 * 1000ul + tv.tv_usec ;
+  return tv.tv_sec * 1000 * 1000ul + tv.tv_usec;
 }
 
 }  // namespace Ricardo

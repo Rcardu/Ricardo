@@ -1,4 +1,4 @@
-# Install script for directory: /home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests
+# Install script for directory: /home/Ricardo/RiSer/SocketForCpp/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

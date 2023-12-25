@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appiomanager"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appiomanager.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appiomanager"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appiomanager.pdb"
   "CMakeFiles/appiomanager.dir/iomanager_t.cc.o"
   "CMakeFiles/appiomanager.dir/iomanager_t.cc.o.d"
 )

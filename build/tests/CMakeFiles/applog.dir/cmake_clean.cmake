@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/applog"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/applog.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/applog"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/applog.pdb"
   "CMakeFiles/applog.dir/log_t.cc.o"
   "CMakeFiles/applog.dir/log_t.cc.o.d"
 )

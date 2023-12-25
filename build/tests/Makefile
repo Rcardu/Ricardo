@@ -57,10 +57,10 @@ RM = /usr/local/lib/python3.10/dist-packages/cmake/data/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp
+CMAKE_SOURCE_DIR = /home/Ricardo/RiSer/SocketForCpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build
+CMAKE_BINARY_DIR = /home/Ricardo/RiSer/SocketForCpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/tests//CMakeFiles/progress.marks
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build/CMakeFiles 0
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles /home/Ricardo/RiSer/SocketForCpp/build/tests//CMakeFiles/progress.marks
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/applog.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/applog.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/applog.dir/rule
 .PHONY : tests/CMakeFiles/applog.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ applog: tests/CMakeFiles/applog.dir/rule
 
 # fast build rule for target.
 applog/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/build
 .PHONY : applog/fast
 
 # Convenience name for target.
 tests/CMakeFiles/appconfig.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appconfig.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appconfig.dir/rule
 .PHONY : tests/CMakeFiles/appconfig.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ appconfig: tests/CMakeFiles/appconfig.dir/rule
 
 # fast build rule for target.
 appconfig/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/build
 .PHONY : appconfig/fast
 
 # Convenience name for target.
 tests/CMakeFiles/appthread.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appthread.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appthread.dir/rule
 .PHONY : tests/CMakeFiles/appthread.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ appthread: tests/CMakeFiles/appthread.dir/rule
 
 # fast build rule for target.
 appthread/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/build
 .PHONY : appthread/fast
 
 # Convenience name for target.
 tests/CMakeFiles/apputil.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/apputil.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/apputil.dir/rule
 .PHONY : tests/CMakeFiles/apputil.dir/rule
 
 # Convenience name for target.
@@ -169,12 +169,12 @@ apputil: tests/CMakeFiles/apputil.dir/rule
 
 # fast build rule for target.
 apputil/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/build
 .PHONY : apputil/fast
 
 # Convenience name for target.
 tests/CMakeFiles/appfiber.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appfiber.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appfiber.dir/rule
 .PHONY : tests/CMakeFiles/appfiber.dir/rule
 
 # Convenience name for target.
@@ -183,12 +183,12 @@ appfiber: tests/CMakeFiles/appfiber.dir/rule
 
 # fast build rule for target.
 appfiber/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/build
 .PHONY : appfiber/fast
 
 # Convenience name for target.
 tests/CMakeFiles/appschedler.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appschedler.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appschedler.dir/rule
 .PHONY : tests/CMakeFiles/appschedler.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ appschedler: tests/CMakeFiles/appschedler.dir/rule
 
 # fast build rule for target.
 appschedler/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/build
 .PHONY : appschedler/fast
 
 # Convenience name for target.
 tests/CMakeFiles/appiomanager.dir/rule:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appiomanager.dir/rule
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appiomanager.dir/rule
 .PHONY : tests/CMakeFiles/appiomanager.dir/rule
 
 # Convenience name for target.
@@ -211,15 +211,29 @@ appiomanager: tests/CMakeFiles/appiomanager.dir/rule
 
 # fast build rule for target.
 appiomanager/fast:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/build
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/build
 .PHONY : appiomanager/fast
+
+# Convenience name for target.
+tests/CMakeFiles/apphook.dir/rule:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/apphook.dir/rule
+.PHONY : tests/CMakeFiles/apphook.dir/rule
+
+# Convenience name for target.
+apphook: tests/CMakeFiles/apphook.dir/rule
+.PHONY : apphook
+
+# fast build rule for target.
+apphook/fast:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/build
+.PHONY : apphook/fast
 
 config_t.o: config_t.cc.o
 .PHONY : config_t.o
 
 # target to build an object file
 config_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.o
 .PHONY : config_t.cc.o
 
 config_t.i: config_t.cc.i
@@ -227,7 +241,7 @@ config_t.i: config_t.cc.i
 
 # target to preprocess a source file
 config_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.i
 .PHONY : config_t.cc.i
 
 config_t.s: config_t.cc.s
@@ -235,7 +249,7 @@ config_t.s: config_t.cc.s
 
 # target to generate assembly for a file
 config_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appconfig.dir/build.make tests/CMakeFiles/appconfig.dir/config_t.cc.s
 .PHONY : config_t.cc.s
 
 fiber_t.o: fiber_t.cc.o
@@ -243,7 +257,7 @@ fiber_t.o: fiber_t.cc.o
 
 # target to build an object file
 fiber_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.o
 .PHONY : fiber_t.cc.o
 
 fiber_t.i: fiber_t.cc.i
@@ -251,7 +265,7 @@ fiber_t.i: fiber_t.cc.i
 
 # target to preprocess a source file
 fiber_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.i
 .PHONY : fiber_t.cc.i
 
 fiber_t.s: fiber_t.cc.s
@@ -259,15 +273,39 @@ fiber_t.s: fiber_t.cc.s
 
 # target to generate assembly for a file
 fiber_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appfiber.dir/build.make tests/CMakeFiles/appfiber.dir/fiber_t.cc.s
 .PHONY : fiber_t.cc.s
+
+hook_t.o: hook_t.cc.o
+.PHONY : hook_t.o
+
+# target to build an object file
+hook_t.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/hook_t.cc.o
+.PHONY : hook_t.cc.o
+
+hook_t.i: hook_t.cc.i
+.PHONY : hook_t.i
+
+# target to preprocess a source file
+hook_t.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/hook_t.cc.i
+.PHONY : hook_t.cc.i
+
+hook_t.s: hook_t.cc.s
+.PHONY : hook_t.s
+
+# target to generate assembly for a file
+hook_t.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/hook_t.cc.s
+.PHONY : hook_t.cc.s
 
 iomanager_t.o: iomanager_t.cc.o
 .PHONY : iomanager_t.o
 
 # target to build an object file
 iomanager_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.o
 .PHONY : iomanager_t.cc.o
 
 iomanager_t.i: iomanager_t.cc.i
@@ -275,7 +313,7 @@ iomanager_t.i: iomanager_t.cc.i
 
 # target to preprocess a source file
 iomanager_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.i
 .PHONY : iomanager_t.cc.i
 
 iomanager_t.s: iomanager_t.cc.s
@@ -283,7 +321,7 @@ iomanager_t.s: iomanager_t.cc.s
 
 # target to generate assembly for a file
 iomanager_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appiomanager.dir/build.make tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.s
 .PHONY : iomanager_t.cc.s
 
 log_t.o: log_t.cc.o
@@ -291,7 +329,7 @@ log_t.o: log_t.cc.o
 
 # target to build an object file
 log_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.o
 .PHONY : log_t.cc.o
 
 log_t.i: log_t.cc.i
@@ -299,7 +337,7 @@ log_t.i: log_t.cc.i
 
 # target to preprocess a source file
 log_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.i
 .PHONY : log_t.cc.i
 
 log_t.s: log_t.cc.s
@@ -307,7 +345,7 @@ log_t.s: log_t.cc.s
 
 # target to generate assembly for a file
 log_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/applog.dir/build.make tests/CMakeFiles/applog.dir/log_t.cc.s
 .PHONY : log_t.cc.s
 
 scheduler_t.o: scheduler_t.cc.o
@@ -315,7 +353,7 @@ scheduler_t.o: scheduler_t.cc.o
 
 # target to build an object file
 scheduler_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o
 .PHONY : scheduler_t.cc.o
 
 scheduler_t.i: scheduler_t.cc.i
@@ -323,7 +361,7 @@ scheduler_t.i: scheduler_t.cc.i
 
 # target to preprocess a source file
 scheduler_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.i
 .PHONY : scheduler_t.cc.i
 
 scheduler_t.s: scheduler_t.cc.s
@@ -331,7 +369,7 @@ scheduler_t.s: scheduler_t.cc.s
 
 # target to generate assembly for a file
 scheduler_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.s
 .PHONY : scheduler_t.cc.s
 
 thread_t.o: thread_t.cc.o
@@ -339,7 +377,7 @@ thread_t.o: thread_t.cc.o
 
 # target to build an object file
 thread_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.o
 .PHONY : thread_t.cc.o
 
 thread_t.i: thread_t.cc.i
@@ -347,7 +385,7 @@ thread_t.i: thread_t.cc.i
 
 # target to preprocess a source file
 thread_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.i
 .PHONY : thread_t.cc.i
 
 thread_t.s: thread_t.cc.s
@@ -355,7 +393,7 @@ thread_t.s: thread_t.cc.s
 
 # target to generate assembly for a file
 thread_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appthread.dir/build.make tests/CMakeFiles/appthread.dir/thread_t.cc.s
 .PHONY : thread_t.cc.s
 
 util_t.o: util_t.cc.o
@@ -363,7 +401,7 @@ util_t.o: util_t.cc.o
 
 # target to build an object file
 util_t.cc.o:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.o
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.o
 .PHONY : util_t.cc.o
 
 util_t.i: util_t.cc.i
@@ -371,7 +409,7 @@ util_t.i: util_t.cc.i
 
 # target to preprocess a source file
 util_t.cc.i:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.i
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.i
 .PHONY : util_t.cc.i
 
 util_t.s: util_t.cc.s
@@ -379,7 +417,7 @@ util_t.s: util_t.cc.s
 
 # target to generate assembly for a file
 util_t.cc.s:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.s
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apputil.dir/build.make tests/CMakeFiles/apputil.dir/util_t.cc.s
 .PHONY : util_t.cc.s
 
 # Help Target
@@ -392,6 +430,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... appconfig"
 	@echo "... appfiber"
+	@echo "... apphook"
 	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"
@@ -403,6 +442,9 @@ help:
 	@echo "... fiber_t.o"
 	@echo "... fiber_t.i"
 	@echo "... fiber_t.s"
+	@echo "... hook_t.o"
+	@echo "... hook_t.i"
+	@echo "... hook_t.s"
 	@echo "... iomanager_t.o"
 	@echo "... iomanager_t.i"
 	@echo "... iomanager_t.s"
@@ -429,6 +471,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/Ricardo/Object/NetWork/Socket/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

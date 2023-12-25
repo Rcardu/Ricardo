@@ -179,7 +179,7 @@ bool TimerManager::detectClockRollover(uint64_t now_ms) {
   return rollover;
 }
 
-bool TimerManager::hasTimer(){
+bool TimerManager::hasTimer() {
   RWMutexType::ReadLock rdlock(m_mutex);
   return !m_timers.empty();
 }

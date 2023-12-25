@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appfiber"
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/appfiber.pdb"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appfiber"
+  "/home/Ricardo/RiSer/SocketForCpp/bin/appfiber.pdb"
   "CMakeFiles/appfiber.dir/fiber_t.cc.o"
   "CMakeFiles/appfiber.dir/fiber_t.cc.o.d"
 )
