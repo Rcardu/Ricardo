@@ -1,3 +1,4 @@
+#pragma once
 //c库
 #include <pthread.h>
 #include <stdarg.h>
@@ -7,6 +8,7 @@
 #include <unistd.h>
 #include <cstdint>
 #include <cstring>
+#include <cstddef>
 #include <pthread.h>
 #include <unistd.h>
 #include <semaphore.h>
@@ -17,6 +19,9 @@
 #include <errno.h>
 #include <dlfcn.h>
 #include <time.h>
+#include <byteswap.h>
+#include <netdb.h>
+#include <ifaddrs.h>
 
 //c++库
 #include <cctype>
@@ -31,7 +36,8 @@
 #include <thread>
 #include <atomic>
 #include <stdexcept>
-
+#include <type_traits>
+#include <stdexcept>
 //stl容器
 #include <list>
 #include <map>
@@ -49,7 +55,11 @@
 #include <sys/time.h>
 #include <sys/stat.h>
 #include <sys/un.h>
+#include <sys/ucontext.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
 
 //第三方库
 #include <yaml-cpp/yaml.h>
 #include <boost/lexical_cast.hpp>
+

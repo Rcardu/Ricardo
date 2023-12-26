@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/Ricardo/RiSer/SocketForCpp/ricardo/address.cc" "ricardo/CMakeFiles/ricardo.dir/address.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/address.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/config.cc" "ricardo/CMakeFiles/ricardo.dir/config.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/config.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/fd_manager.cc" "ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/fiber.cc" "ricardo/CMakeFiles/ricardo.dir/fiber.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/fiber.cc.o.d"

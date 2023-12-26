@@ -233,6 +233,19 @@ apphook/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/build
 .PHONY : apphook/fast
 
+#=============================================================================
+# Target rules for targets named appaddress
+
+# Build rule for target.
+appaddress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appaddress
+.PHONY : appaddress
+
+# fast build rule for target.
+appaddress/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/build
+.PHONY : appaddress/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,6 +254,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... appaddress"
 	@echo "... appconfig"
 	@echo "... appfiber"
 	@echo "... apphook"

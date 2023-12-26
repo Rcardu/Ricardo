@@ -49,7 +49,7 @@ class IOManager : public Scheduler, public TimerManager {
   bool delEvent(int fd, Event event);
   bool cancelEvent(int fd, Event event);
 
-  bool canceAll(int fd);
+  bool cancelAll(int fd);
 
   static IOManager* GetThis();
 

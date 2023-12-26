@@ -130,6 +130,30 @@ ricardo/fast:
 	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/build
 .PHONY : ricardo/fast
 
+address.o: address.cc.o
+.PHONY : address.o
+
+# target to build an object file
+address.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/address.cc.o
+.PHONY : address.cc.o
+
+address.i: address.cc.i
+.PHONY : address.i
+
+# target to preprocess a source file
+address.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/address.cc.i
+.PHONY : address.cc.i
+
+address.s: address.cc.s
+.PHONY : address.s
+
+# target to generate assembly for a file
+address.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/address.cc.s
+.PHONY : address.cc.s
+
 config.o: config.cc.o
 .PHONY : config.o
 
@@ -379,6 +403,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ricardo"
+	@echo "... address.o"
+	@echo "... address.i"
+	@echo "... address.s"
 	@echo "... config.o"
 	@echo "... config.i"
 	@echo "... config.s"

@@ -228,6 +228,44 @@ apphook/fast:
 	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/apphook.dir/build.make tests/CMakeFiles/apphook.dir/build
 .PHONY : apphook/fast
 
+# Convenience name for target.
+tests/CMakeFiles/appaddress.dir/rule:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appaddress.dir/rule
+.PHONY : tests/CMakeFiles/appaddress.dir/rule
+
+# Convenience name for target.
+appaddress: tests/CMakeFiles/appaddress.dir/rule
+.PHONY : appaddress
+
+# fast build rule for target.
+appaddress/fast:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/build
+.PHONY : appaddress/fast
+
+address_t.o: address_t.cc.o
+.PHONY : address_t.o
+
+# target to build an object file
+address_t.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/address_t.cc.o
+.PHONY : address_t.cc.o
+
+address_t.i: address_t.cc.i
+.PHONY : address_t.i
+
+# target to preprocess a source file
+address_t.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/address_t.cc.i
+.PHONY : address_t.cc.i
+
+address_t.s: address_t.cc.s
+.PHONY : address_t.s
+
+# target to generate assembly for a file
+address_t.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/address_t.cc.s
+.PHONY : address_t.cc.s
+
 config_t.o: config_t.cc.o
 .PHONY : config_t.o
 
@@ -428,6 +466,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... appaddress"
 	@echo "... appconfig"
 	@echo "... appfiber"
 	@echo "... apphook"
@@ -436,6 +475,9 @@ help:
 	@echo "... appschedler"
 	@echo "... appthread"
 	@echo "... apputil"
+	@echo "... address_t.o"
+	@echo "... address_t.i"
+	@echo "... address_t.s"
 	@echo "... config_t.o"
 	@echo "... config_t.i"
 	@echo "... config_t.s"

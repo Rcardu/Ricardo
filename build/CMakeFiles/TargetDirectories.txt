@@ -11,5 +11,6 @@
 /home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/appschedler.dir
 /home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/appiomanager.dir
 /home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/apphook.dir
+/home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/appaddress.dir
 /home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/edit_cache.dir
 /home/Ricardo/RiSer/SocketForCpp/build/tests/CMakeFiles/rebuild_cache.dir

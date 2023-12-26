@@ -58,4 +58,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/CMakeFiles/appschedler.dir/DependInfo.cmake"
   "tests/CMakeFiles/appiomanager.dir/DependInfo.cmake"
   "tests/CMakeFiles/apphook.dir/DependInfo.cmake"
+  "tests/CMakeFiles/appaddress.dir/DependInfo.cmake"
   )

@@ -8,6 +8,8 @@ CXX_INCLUDES = -I/home/Ricardo/RiSer/SocketForCpp/include -I/home/Ricardo/RiSer/
 
 CXX_FLAGS = -Wno-builtin-macro-redefined -fPIC
 
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/address.cc.o_DEFINES = __FILE__="ricardo/address.cc"
+
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/config.cc.o_DEFINES = __FILE__="ricardo/config.cc"
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o_DEFINES = __FILE__="ricardo/fd_manager.cc"

@@ -557,6 +557,7 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/boost/utility/enable_if.hpp \
   /usr/include/boost/utility/identity_type.hpp \
   /usr/include/boost/version.hpp \
+  /usr/include/byteswap.h \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/array \
   /usr/include/c++/11/atomic \
@@ -772,6 +773,7 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/ifaddrs.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
@@ -784,8 +786,11 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/math.h \
+  /usr/include/netdb.h \
   /usr/include/netinet/in.h \
+  /usr/include/netinet/tcp.h \
   /usr/include/pthread.h \
+  /usr/include/rpc/netdb.h \
   /usr/include/sched.h \
   /usr/include/semaphore.h \
   /usr/include/stdc-predef.h \
@@ -840,6 +845,7 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/netdb.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -877,12 +883,14 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
@@ -936,6 +944,7 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+  /usr/include/x86_64-linux-gnu/sys/un.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/quadmath.h \
@@ -1012,6 +1021,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
+/usr/include/x86_64-linux-gnu/sys/un.h:
+
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
@@ -1036,8 +1047,6 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
@@ -1058,6 +1067,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -1067,6 +1078,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -1170,9 +1183,15 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 
 /usr/include/semaphore.h:
 
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/rpc/netdb.h:
+
 /usr/include/time.h:
 
 /usr/include/pthread.h:
+
+/usr/include/netinet/tcp.h:
 
 /usr/include/linux/stat.h:
 
@@ -1185,6 +1204,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 /usr/include/linux/close_range.h:
 
 /usr/include/limits.h:
+
+/usr/include/ifaddrs.h:
 
 /usr/include/features-time64.h:
 
@@ -2026,6 +2047,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 
 /usr/include/boost/assert/source_location.hpp:
 
+/usr/include/byteswap.h:
+
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
@@ -2075,6 +2098,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 /usr/include/boost/predef/os/bsd/net.h:
 
 /usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/netdb.h:
 
 /usr/include/c++/11/bits/regex_executor.tcc:
 
@@ -2747,6 +2772,8 @@ tests/CMakeFiles/appconfig.dir/config_t.cc.o: /home/Ricardo/RiSer/SocketForCpp/t
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/netdb.h:
 
 /usr/include/boost/type_traits/is_integral.hpp:
 

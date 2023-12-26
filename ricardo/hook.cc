@@ -377,7 +377,7 @@ int close(int fd) {
   if (ctx) {
     auto iom = Ricardo::IOManager::GetThis();
     if (iom) {
-      iom->canceAll(fd);
+      iom->cancelAll(fd);
     }
     Ricardo::FdMgr::GetInstance()->del(fd);
   }
