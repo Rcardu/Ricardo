@@ -25,6 +25,7 @@ set(NAME_IO appiomanager)
 set(NAME_HK apphook)
 set(NAME_AD appaddress)
 set(NAME_SK appsocket)
+set(NAME_BY appbytearray)
 
 
 #递归子目录
