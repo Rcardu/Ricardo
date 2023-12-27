@@ -15,6 +15,26 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
   typedef std::shared_ptr<Socket> ptr;
   typedef std::weak_ptr<Socket> weak_ptr;
 
+  enum type{
+    TCP = SOCK_STREAM,
+    UDP = SOCK_DGRAM
+  };
+  enum Family{
+    IPv4 = AF_INET,
+    IPv6 = AF_INET6,
+    UNIX = AF_UNIX,
+
+  };
+
+  static Socket::ptr CreateTCPSocket(Ricardo::Address::ptr address);
+  static Socket::ptr CreateUDPSocket(Ricardo::Address::ptr address);
+  static Socket::ptr CreateTCPSocket();
+  static Socket::ptr CreateUDPSocket();
+  static Socket::ptr CreateTCPSocket6();
+  static Socket::ptr CreateUDPSocket6();
+  static Socket::ptr CreateUnixTCPSocket();
+  static Socket::ptr CreateUniUDPPSocket();
+
   Socket(int family, int type, int protocol = 0);
   ~Socket();
 

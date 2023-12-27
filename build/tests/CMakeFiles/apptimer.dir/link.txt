@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wno-builtin-macro-redefined CMakeFiles/apptimer.dir/timer_t.cc.o -o /home/Ricardo/Object/NetWork/Socket/SocketForCpp/bin/apptimer   -L/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib /home/Ricardo/Object/NetWork/Socket/SocketForCpp/lib/libricardo.so -lyaml-cpp 

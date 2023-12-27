@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/Ricardo/Object/NetWork/Socket/SocketForCpp/tests/timer_t.cc" "tests/CMakeFiles/apptimer.dir/timer_t.cc.o" "gcc" "tests/CMakeFiles/apptimer.dir/timer_t.cc.o.d"
+  "/home/Ricardo/RiSer/SocketForCpp/tests/socket_t.cc" "tests/CMakeFiles/appsocket.dir/socket_t.cc.o" "gcc" "tests/CMakeFiles/appsocket.dir/socket_t.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

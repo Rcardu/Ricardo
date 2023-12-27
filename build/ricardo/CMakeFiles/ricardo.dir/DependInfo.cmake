@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/iomanager.cc" "ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/log.cc" "ricardo/CMakeFiles/ricardo.dir/log.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/log.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/scheduler.cc" "ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o.d"
+  "/home/Ricardo/RiSer/SocketForCpp/ricardo/socket_s.cc" "ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/thread.cc" "ricardo/CMakeFiles/ricardo.dir/thread.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/thread.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/timer.cc" "ricardo/CMakeFiles/ricardo.dir/timer.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/timer.cc.o.d"
   "/home/Ricardo/RiSer/SocketForCpp/ricardo/util.cc" "ricardo/CMakeFiles/ricardo.dir/util.cc.o" "gcc" "ricardo/CMakeFiles/ricardo.dir/util.cc.o.d"

@@ -21,6 +21,7 @@ add_executable(${NAME_S} scheduler_t.cc)
 add_executable(${NAME_IO} iomanager_t.cc)
 add_executable(${NAME_HK} hook_t.cc)
 add_executable(${NAME_AD} address_t.cc)
+add_executable(${NAME_SK} socket_t.cc)
 
 #重定义此路径为相对路径
 redefine_file_macro (${NAME_L})  #__FILE__ 
@@ -32,6 +33,7 @@ redefine_file_macro (${NAME_S})  #__FILE__
 redefine_file_macro (${NAME_IO})  #__FILE__ 
 redefine_file_macro (${NAME_HK})  #__FILE__ 
 redefine_file_macro (${NAME_AD})  #__FILE__ 
+redefine_file_macro (${NAME_SK})  #__FILE__ 
 
 
 #链接动态库
@@ -44,4 +46,5 @@ target_link_libraries(${NAME_S} ${RICARDO})
 target_link_libraries(${NAME_IO} ${RICARDO})
 target_link_libraries(${NAME_HK} ${RICARDO})
 target_link_libraries(${NAME_AD} ${RICARDO})
+target_link_libraries(${NAME_SK} ${RICARDO})
 

@@ -322,6 +322,30 @@ scheduler.cc.s:
 	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/scheduler.cc.s
 .PHONY : scheduler.cc.s
 
+socket_s.o: socket_s.cc.o
+.PHONY : socket_s.o
+
+# target to build an object file
+socket_s.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o
+.PHONY : socket_s.cc.o
+
+socket_s.i: socket_s.cc.i
+.PHONY : socket_s.i
+
+# target to preprocess a source file
+socket_s.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/socket_s.cc.i
+.PHONY : socket_s.cc.i
+
+socket_s.s: socket_s.cc.s
+.PHONY : socket_s.s
+
+# target to generate assembly for a file
+socket_s.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f ricardo/CMakeFiles/ricardo.dir/build.make ricardo/CMakeFiles/ricardo.dir/socket_s.cc.s
+.PHONY : socket_s.cc.s
+
 thread.o: thread.cc.o
 .PHONY : thread.o
 
@@ -427,6 +451,9 @@ help:
 	@echo "... scheduler.o"
 	@echo "... scheduler.i"
 	@echo "... scheduler.s"
+	@echo "... socket_s.o"
+	@echo "... socket_s.i"
+	@echo "... socket_s.s"
 	@echo "... thread.o"
 	@echo "... thread.i"
 	@echo "... thread.s"

@@ -181,10 +181,24 @@ ricardo/CMakeFiles/ricardo.dir/scheduler.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ricardo.dir/scheduler.cc.s"
 	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/scheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/RiSer/SocketForCpp/ricardo/scheduler.cc -o CMakeFiles/ricardo.dir/scheduler.cc.s
 
+ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o: ricardo/CMakeFiles/ricardo.dir/flags.make
+ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o: /home/Ricardo/RiSer/SocketForCpp/ricardo/socket_s.cc
+ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o: ricardo/CMakeFiles/ricardo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o"
+	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/socket_s.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o -MF CMakeFiles/ricardo.dir/socket_s.cc.o.d -o CMakeFiles/ricardo.dir/socket_s.cc.o -c /home/Ricardo/RiSer/SocketForCpp/ricardo/socket_s.cc
+
+ricardo/CMakeFiles/ricardo.dir/socket_s.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ricardo.dir/socket_s.cc.i"
+	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/socket_s.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Ricardo/RiSer/SocketForCpp/ricardo/socket_s.cc > CMakeFiles/ricardo.dir/socket_s.cc.i
+
+ricardo/CMakeFiles/ricardo.dir/socket_s.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ricardo.dir/socket_s.cc.s"
+	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/socket_s.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Ricardo/RiSer/SocketForCpp/ricardo/socket_s.cc -o CMakeFiles/ricardo.dir/socket_s.cc.s
+
 ricardo/CMakeFiles/ricardo.dir/thread.cc.o: ricardo/CMakeFiles/ricardo.dir/flags.make
 ricardo/CMakeFiles/ricardo.dir/thread.cc.o: /home/Ricardo/RiSer/SocketForCpp/ricardo/thread.cc
 ricardo/CMakeFiles/ricardo.dir/thread.cc.o: ricardo/CMakeFiles/ricardo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object ricardo/CMakeFiles/ricardo.dir/thread.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object ricardo/CMakeFiles/ricardo.dir/thread.cc.o"
 	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/thread.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ricardo/CMakeFiles/ricardo.dir/thread.cc.o -MF CMakeFiles/ricardo.dir/thread.cc.o.d -o CMakeFiles/ricardo.dir/thread.cc.o -c /home/Ricardo/RiSer/SocketForCpp/ricardo/thread.cc
 
 ricardo/CMakeFiles/ricardo.dir/thread.cc.i: cmake_force
@@ -198,7 +212,7 @@ ricardo/CMakeFiles/ricardo.dir/thread.cc.s: cmake_force
 ricardo/CMakeFiles/ricardo.dir/timer.cc.o: ricardo/CMakeFiles/ricardo.dir/flags.make
 ricardo/CMakeFiles/ricardo.dir/timer.cc.o: /home/Ricardo/RiSer/SocketForCpp/ricardo/timer.cc
 ricardo/CMakeFiles/ricardo.dir/timer.cc.o: ricardo/CMakeFiles/ricardo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object ricardo/CMakeFiles/ricardo.dir/timer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object ricardo/CMakeFiles/ricardo.dir/timer.cc.o"
 	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/timer.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ricardo/CMakeFiles/ricardo.dir/timer.cc.o -MF CMakeFiles/ricardo.dir/timer.cc.o.d -o CMakeFiles/ricardo.dir/timer.cc.o -c /home/Ricardo/RiSer/SocketForCpp/ricardo/timer.cc
 
 ricardo/CMakeFiles/ricardo.dir/timer.cc.i: cmake_force
@@ -212,7 +226,7 @@ ricardo/CMakeFiles/ricardo.dir/timer.cc.s: cmake_force
 ricardo/CMakeFiles/ricardo.dir/util.cc.o: ricardo/CMakeFiles/ricardo.dir/flags.make
 ricardo/CMakeFiles/ricardo.dir/util.cc.o: /home/Ricardo/RiSer/SocketForCpp/ricardo/util.cc
 ricardo/CMakeFiles/ricardo.dir/util.cc.o: ricardo/CMakeFiles/ricardo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object ricardo/CMakeFiles/ricardo.dir/util.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object ricardo/CMakeFiles/ricardo.dir/util.cc.o"
 	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && /usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"ricardo/util.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT ricardo/CMakeFiles/ricardo.dir/util.cc.o -MF CMakeFiles/ricardo.dir/util.cc.o.d -o CMakeFiles/ricardo.dir/util.cc.o -c /home/Ricardo/RiSer/SocketForCpp/ricardo/util.cc
 
 ricardo/CMakeFiles/ricardo.dir/util.cc.i: cmake_force
@@ -233,6 +247,7 @@ ricardo_OBJECTS = \
 "CMakeFiles/ricardo.dir/iomanager.cc.o" \
 "CMakeFiles/ricardo.dir/log.cc.o" \
 "CMakeFiles/ricardo.dir/scheduler.cc.o" \
+"CMakeFiles/ricardo.dir/socket_s.cc.o" \
 "CMakeFiles/ricardo.dir/thread.cc.o" \
 "CMakeFiles/ricardo.dir/timer.cc.o" \
 "CMakeFiles/ricardo.dir/util.cc.o"
@@ -248,12 +263,13 @@ ricardo_EXTERNAL_OBJECTS =
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/log.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o
+/home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/thread.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/timer.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/util.cc.o
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/build.make
 /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so: ricardo/CMakeFiles/ricardo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX shared library /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ricardo/RiSer/SocketForCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so"
 	cd /home/Ricardo/RiSer/SocketForCpp/build/ricardo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ricardo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

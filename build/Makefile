@@ -246,6 +246,19 @@ appaddress/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/build
 .PHONY : appaddress/fast
 
+#=============================================================================
+# Target rules for targets named appsocket
+
+# Build rule for target.
+appsocket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 appsocket
+.PHONY : appsocket
+
+# fast build rule for target.
+appsocket/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appsocket.dir/build.make tests/CMakeFiles/appsocket.dir/build
+.PHONY : appsocket/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -261,6 +274,7 @@ help:
 	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"
+	@echo "... appsocket"
 	@echo "... appthread"
 	@echo "... apputil"
 	@echo "... ricardo"

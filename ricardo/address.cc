@@ -349,7 +349,7 @@ uint32_t IPv4Address::getPort() const {
   return byteswapOnLittleEndian(m_addr.sin_port);
 }
 
-void IPv4Address::setPort(uint32_t v) {
+void IPv4Address::setPort(uint16_t v) {
   m_addr.sin_port = byteswapOnLittleEndian(v);
 }
 
@@ -454,7 +454,7 @@ uint32_t IPv6Address::getPort() const {
   return byteswapOnLittleEndian(m_addr.sin6_port);
 }
 
-void IPv6Address::setPort(uint32_t v) {
+void IPv6Address::setPort(uint16_t v) {
   m_addr.sin6_port = byteswapOnLittleEndian(v);
 }
 

@@ -103,7 +103,7 @@ void Fiber::reset(std::function<void()> cb) {
 void Fiber::call() {
   SetThis(this);
   m_state = EXEC;
-  ICEY_LOG_ERROR(g_logger) << "id = " << getId();
+  ICEY_LOG_DEBUG(g_logger) << "id = " << getId();
   if (swapcontext(&t_threadFiber->m_ctx, &m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }

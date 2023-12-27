@@ -56,7 +56,7 @@ class IPAddress : public Address {
   virtual IPAddress::ptr subnetMask(uint32_t prefix_len) = 0;
 
   virtual uint32_t getPort() const = 0;
-  virtual void setPort(uint32_t v) = 0;
+  virtual void setPort(uint16_t v) = 0;
 };
 
 class IPv4Address : public IPAddress {
@@ -76,7 +76,7 @@ class IPv4Address : public IPAddress {
   IPAddress::ptr networkAddress(uint32_t prefix_len) override;
   IPAddress::ptr subnetMask(uint32_t prefix_len) override;
   uint32_t getPort() const override;
-  void setPort(uint32_t v) override;
+  void setPort(uint16_t v) override;
 
  private:
   sockaddr_in m_addr;
@@ -100,7 +100,7 @@ class IPv6Address : public IPAddress {
   IPAddress::ptr networkAddress(uint32_t prefix_len) override;
   IPAddress::ptr subnetMask(uint32_t prefix_len) override;
   uint32_t getPort() const override;
-  void setPort(uint32_t v) override;
+  void setPort(uint16_t v) override;
 
  private:
   sockaddr_in6 m_addr;

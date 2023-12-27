@@ -242,6 +242,20 @@ appaddress/fast:
 	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appaddress.dir/build.make tests/CMakeFiles/appaddress.dir/build
 .PHONY : appaddress/fast
 
+# Convenience name for target.
+tests/CMakeFiles/appsocket.dir/rule:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/appsocket.dir/rule
+.PHONY : tests/CMakeFiles/appsocket.dir/rule
+
+# Convenience name for target.
+appsocket: tests/CMakeFiles/appsocket.dir/rule
+.PHONY : appsocket
+
+# fast build rule for target.
+appsocket/fast:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appsocket.dir/build.make tests/CMakeFiles/appsocket.dir/build
+.PHONY : appsocket/fast
+
 address_t.o: address_t.cc.o
 .PHONY : address_t.o
 
@@ -410,6 +424,30 @@ scheduler_t.cc.s:
 	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appschedler.dir/build.make tests/CMakeFiles/appschedler.dir/scheduler_t.cc.s
 .PHONY : scheduler_t.cc.s
 
+socket_t.o: socket_t.cc.o
+.PHONY : socket_t.o
+
+# target to build an object file
+socket_t.cc.o:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appsocket.dir/build.make tests/CMakeFiles/appsocket.dir/socket_t.cc.o
+.PHONY : socket_t.cc.o
+
+socket_t.i: socket_t.cc.i
+.PHONY : socket_t.i
+
+# target to preprocess a source file
+socket_t.cc.i:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appsocket.dir/build.make tests/CMakeFiles/appsocket.dir/socket_t.cc.i
+.PHONY : socket_t.cc.i
+
+socket_t.s: socket_t.cc.s
+.PHONY : socket_t.s
+
+# target to generate assembly for a file
+socket_t.cc.s:
+	cd /home/Ricardo/RiSer/SocketForCpp/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/appsocket.dir/build.make tests/CMakeFiles/appsocket.dir/socket_t.cc.s
+.PHONY : socket_t.cc.s
+
 thread_t.o: thread_t.cc.o
 .PHONY : thread_t.o
 
@@ -473,6 +511,7 @@ help:
 	@echo "... appiomanager"
 	@echo "... applog"
 	@echo "... appschedler"
+	@echo "... appsocket"
 	@echo "... appthread"
 	@echo "... apputil"
 	@echo "... address_t.o"
@@ -496,6 +535,9 @@ help:
 	@echo "... scheduler_t.o"
 	@echo "... scheduler_t.i"
 	@echo "... scheduler_t.s"
+	@echo "... socket_t.o"
+	@echo "... socket_t.i"
+	@echo "... socket_t.s"
 	@echo "... thread_t.o"
 	@echo "... thread_t.i"
 	@echo "... thread_t.s"

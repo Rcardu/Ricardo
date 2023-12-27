@@ -24,6 +24,8 @@ CXX_FLAGS = -Wno-builtin-macro-redefined -fPIC
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o_DEFINES = __FILE__="ricardo/scheduler.cc"
 
+# Custom defines: ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o_DEFINES = __FILE__="ricardo/socket_s.cc"
+
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/thread.cc.o_DEFINES = __FILE__="ricardo/thread.cc"
 
 # Custom defines: ricardo/CMakeFiles/ricardo.dir/timer.cc.o_DEFINES = __FILE__="ricardo/timer.cc"

@@ -24,6 +24,7 @@ set(NAME_S appschedler)
 set(NAME_IO appiomanager)
 set(NAME_HK apphook)
 set(NAME_AD appaddress)
+set(NAME_SK appsocket)
 
 
 #递归子目录

@@ -1,2 +1,2 @@
-# Empty dependencies file for apptimer.
+# Empty dependencies file for appsocket.
 # This may be replaced when dependencies are built.
