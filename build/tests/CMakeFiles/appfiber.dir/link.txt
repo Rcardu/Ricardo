@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wno-builtin-macro-redefined CMakeFiles/appfiber.dir/fiber_t.cc.o -o /home/Ricardo/RiSer/SocketForCpp/bin/appfiber   -L/home/Ricardo/RiSer/SocketForCpp/lib  -Wl,-rpath,/home/Ricardo/RiSer/SocketForCpp/lib /home/Ricardo/RiSer/SocketForCpp/lib/libricardo.so -lyaml-cpp 
