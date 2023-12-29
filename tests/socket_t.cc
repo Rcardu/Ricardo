@@ -14,7 +14,7 @@ void test_socket(){
     ICEY_LOG_ERROR(g_logger)<<"get address fail";
     return ;
   }
-  Ricardo::Socket::ptr sock = Ricardo::Socket::CreateTCPSocket(addr);
+  Ricardo::Socket::ptr sock = Ricardo::Socket::CreateTCP(addr);
   addr->setPort(80);
   if(!sock->connect(addr)){
     ICEY_LOG_ERROR(g_logger)<<"connect "<<addr->toString()<<" fail";

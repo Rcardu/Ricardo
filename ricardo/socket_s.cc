@@ -21,12 +21,12 @@ static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 
 namespace Ricardo {
 
-Socket::ptr Socket::CreateTCPSocket(Ricardo::Address::ptr address) {
+Socket::ptr Socket::CreateTCP(Ricardo::Address::ptr address) {
   Socket::ptr sock(new Socket(address->getFamily(), TCP, 0));
   return sock;
 }
 
-Socket::ptr Socket::CreateUDPSocket(Ricardo::Address::ptr address) {
+Socket::ptr Socket::CreateUDP(Ricardo::Address::ptr address) {
   Socket::ptr sock(new Socket(address->getFamily(), UDP, 0));
   return sock;
 }
@@ -212,7 +212,7 @@ bool Socket::connect(const Address::ptr addr, uint64_t timeout_ms) {
 }
 
 bool Socket::listen(int backlog) {
-  if (isValid()) {
+  if (!isValid()) {
     ICEY_LOG_ERROR(g_logger) << "listen error sock=-1";
     return false;
   }
@@ -448,4 +448,7 @@ void Socket::newSock() {
   }
 }
 
+std::ostream& operator<<(std::ostream& os, const Socket& sock){
+  return sock.dump(os);
+}
 }  // namespace Ricardo

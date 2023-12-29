@@ -26,8 +26,8 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
 
   };
 
-  static Socket::ptr CreateTCPSocket(Ricardo::Address::ptr address);
-  static Socket::ptr CreateUDPSocket(Ricardo::Address::ptr address);
+  static Socket::ptr CreateTCP(Ricardo::Address::ptr address);
+  static Socket::ptr CreateUDP(Ricardo::Address::ptr address);
   static Socket::ptr CreateTCPSocket();
   static Socket::ptr CreateUDPSocket();
   static Socket::ptr CreateTCPSocket6();
@@ -61,7 +61,6 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
 
   Socket::ptr accept();
 
-  bool init(int sock);
   bool bind(const Address::ptr addr);
   bool connect(const Address::ptr addr, uint64_t timeout_ms = -1);
   bool listen(int backlog = SOMAXCONN);
@@ -94,7 +93,6 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
   int getError();
 
   std::ostream& dump(std::ostream& os) const;
-
   int getSocket() const { return m_sock; }
 
   bool cancelRead();
@@ -106,6 +104,7 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
   void initSock();
   void newSock();
 
+  bool init(int sock);
  private:
   int m_sock;
   int m_family;
@@ -116,5 +115,5 @@ class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {
   Address::ptr m_localAddress;
   Address::ptr m_remoteAddress;
 };
-
+std::ostream& operator<<(std::ostream& os, const Socket& addr);
 }  // namespace Ricardo

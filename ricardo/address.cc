@@ -138,7 +138,7 @@ int Address::getFamily() const {
   return getAddr()->sa_family;
 }
 
-std::string Address::toString() {
+std::string Address::toString()const {
   std::stringstream ss;
   insert(ss);
   return ss.str();
@@ -235,7 +235,7 @@ bool Address::operator!=(const Address& rhs) const {
   next = results;
   while(next){
     result.push_back(Create(next->ai_addr,(socklen_t)next->ai_addrlen));
-    ICEY_LOG_INFO(g_logger)<<((sockaddr_in*)next->ai_addr)->sin_addr.s_addr;
+    //ICEY_LOG_INFO(g_logger)<<((sockaddr_in*)next->ai_addr)->sin_addr.s_addr;
     next = next->ai_next;
   }
   freeaddrinfo(results);
@@ -474,7 +474,7 @@ UnixAddress::UnixAddress(const std::string& path) {
   if (!path.empty() && path[0] == '\0') {
     --m_length;
   }
-  if (m_length <= sizeof(m_addr.sun_path)) {
+  if (m_length > sizeof(m_addr.sun_path)) {
     throw std::logic_error("path too long");
   }
   memcpy(m_addr.sun_path, path.c_str(), m_length);
@@ -529,4 +529,7 @@ std::ostream& UnknowAddress::insert(std::ostream& os) const {
   return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const Address& addr){
+  return addr.insert(os);
+}
 }  // namespace Ricardo

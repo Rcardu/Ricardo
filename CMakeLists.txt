@@ -6,7 +6,7 @@ include (cmake/utils.cmake)
 set(CMAKE_CXX_FLAGS "-Wno-builtin-macro-redefined")
 
 #头文件路径、库生成路径、可执行程序路径
-set(HEADPATH ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/yaml-cpp)
+set(HEADPATH ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/yaml-cpp ${CMAKE_CURRENT_SOURCE_DIR}/include/http)
 set(LIBPATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(EXECPATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
@@ -26,6 +26,9 @@ set(NAME_HK apphook)
 set(NAME_AD appaddress)
 set(NAME_SK appsocket)
 set(NAME_BY appbytearray)
+set(NAME_HP apphttp)
+set(NAME_PAR apphttpparser)
+set(NAME_TSR apptcpserver)
 
 
 #递归子目录

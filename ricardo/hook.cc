@@ -93,7 +93,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
     return fun(fd, std::forward<Args>(args)...);
   }
 
-  ICEY_LOG_DEBUG(g_logger)<<"do_io <"<<hook_fun_name<<">";
+  //ICEY_LOG_DEBUG(g_logger)<<"do_io <"<<hook_fun_name<<">";
   Ricardo::FdCtx::ptr ctx = Ricardo::FdMgr::GetInstance()->get(fd);
   if (!ctx) {
     return fun(fd, std::forward<Args>(args)...);
@@ -144,9 +144,9 @@ retry:
       }
       return -1;
     } else {
-      ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
+      //ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
       Ricardo::Fiber::YieldToHold();
-      ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
+      //ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
       if (timer) {
         timer->cancel();
       }

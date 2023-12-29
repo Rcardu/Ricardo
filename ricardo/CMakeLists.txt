@@ -1,5 +1,7 @@
 
-aux_source_directory(./ SRC)
+aux_source_directory(./ SRC1)
+aux_source_directory(./http SRC2)
+set(SRC ${SRC1} ${SRC2})
 include_directories(${HEADPATH})
 set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 link_directories(${LIBPATH})

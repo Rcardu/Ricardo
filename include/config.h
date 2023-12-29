@@ -264,6 +264,7 @@ class ConfigVar : public ConfigVarBase {
     try {
       setValue(FromStr()(val));
       // m_val=boost::lexical_cast<T>(val);
+      return true;
     } catch (std::exception& e) {
       ICEY_LOG_ERROR(ICEY_LOG_ROOT())
           << "ConfigVar::toString exception" << e.what()
