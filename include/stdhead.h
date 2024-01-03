@@ -1,29 +1,27 @@
 #pragma once
-//c库
+// c库
+#include <assert.h>
+#include <byteswap.h>
+#include <cstddef>
+#include <cstdint>
+#include <cstring>
+#include <dlfcn.h>
+#include <errno.h>
+#include <execinfo.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <netdb.h>
 #include <pthread.h>
+#include <semaphore.h>
 #include <stdarg.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
-#include <unistd.h>
-#include <cstdint>
-#include <cstring>
-#include <cstddef>
-#include <pthread.h>
-#include <unistd.h>
-#include <semaphore.h>
-#include <assert.h>
-#include <execinfo.h>
 #include <ucontext.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <dlfcn.h>
-#include <time.h>
-#include <byteswap.h>
-#include <netdb.h>
-#include <ifaddrs.h>
+#include <unistd.h>
 
-//c++库
+// c++库
+#include <atomic>
 #include <cctype>
 #include <exception>
 #include <fstream>
@@ -32,13 +30,11 @@
 #include <memory>
 #include <regex>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <thread>
-#include <atomic>
-#include <stdexcept>
 #include <type_traits>
-#include <stdexcept>
-//stl容器
+// stl容器
 #include <list>
 #include <map>
 #include <set>
@@ -46,20 +42,19 @@
 #include <unordered_set>
 #include <vector>
 
-//linux系统库
-#include <sys/syscall.h>
-#include <sys/types.h>
-#include <sys/epoll.h>
-#include <sys/socket.h>
+// linux系统库
 #include <arpa/inet.h>
-#include <sys/time.h>
-#include <sys/stat.h>
-#include <sys/un.h>
-#include <sys/ucontext.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
+#include <sys/epoll.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/syscall.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/ucontext.h>
+#include <sys/un.h>
 
-//第三方库
-#include <yaml-cpp/yaml.h>
+// 第三方库
 #include <boost/lexical_cast.hpp>
-
+#include <yaml-cpp/yaml.h>
