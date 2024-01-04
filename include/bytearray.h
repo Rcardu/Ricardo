@@ -2,9 +2,11 @@
 
 #include <bits/types/struct_iovec.h>
 #include <pthread.h>
+
 #include <cstdint>
 #include <memory>
 #include <vector>
+
 #include "stdhead.h"
 
 namespace Ricardo {
@@ -26,7 +28,7 @@ class ByteArray {
   ByteArray(size_t base_size = 4096);
   ~ByteArray();
 
-  //write
+  // write
   void writeFint8(int8_t value);
   void writeFuint8(uint8_t value);
   void writeFint16(int16_t value);
@@ -43,18 +45,18 @@ class ByteArray {
 
   void writeFloat(float value);
   void writeDouble(double value);
-  //length: int16, data
+  // length: int16, data
   void writeString16(const std::string& value);
-  //length: int32, data
+  // length: int32, data
   void writeString32(const std::string& value);
-  //length: int64, data
+  // length: int64, data
   void writeString64(const std::string& value);
-  //length: varint, data
+  // length: varint, data
   void writeStringVint(const std::string& value);
-  //data
+  // data
   void writeStringWithoutLength(const std::string& value);
 
-  //read
+  // read
   int8_t readFint8();
   uint8_t readFuint8();
   int16_t readFint16();
@@ -72,16 +74,16 @@ class ByteArray {
   float readFloat();
   double readDouble();
 
-  //length: int16 ,data
+  // length: int16 ,data
   std::string readStringF16();
-  //length: int32 ,data
+  // length: int32 ,data
   std::string readStringF32();
-  //length: int64 ,data
+  // length: int64 ,data
   std::string readStringF64();
-  //length: varint ,data
+  // length: varint ,data
   std::string readStringVint();
 
-  //内部操作
+  // 内部操作
   void clear();
 
   void write(const void* buf, size_t size);
@@ -89,7 +91,6 @@ class ByteArray {
   void read(void* buf, size_t size, size_t position) const;
 
   size_t getPosition() const { return m_position; }
-
   void setPosition(size_t v);
 
   bool writeToFile(const std::string& name) const;
@@ -105,29 +106,30 @@ class ByteArray {
   std::string toString() const;
   std::string toHexString() const;
 
-  //只获取内容，不修改position
+  // 只获取内容，不修改position
   uint64_t getReadBuffers(std::vector<iovec>& buffers,
                           uint64_t len = ~0ull) const;
   uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len,
                           uint64_t position) const;
-  //增加容量，不该position
+  // 增加容量，不该position
   uint64_t getWriteBuffers(std::vector<iovec>& buffers, uint64_t len);
 
-  size_t getSize()const {return m_size;}
+  size_t getSize() const { return m_size; }
+
  private:
   void addCapacity(size_t size);
 
   size_t getCapacity() const { return m_capacity - m_position; }
 
  private:
-  size_t m_basesize;  //每个Node基础大小
-  size_t m_position;  //当前结点位置
-  size_t m_capacity;  //容量
-  size_t m_size;      //真实的数据大小
+  size_t m_basesize;  // 每个Node基础大小
+  size_t m_position;  // 当前结点位置
+  size_t m_capacity;  // 容量
+  size_t m_size;      // 真实的数据大小
   int8_t m_endian;
 
-  Node* m_root;  //链表头
-  Node* m_cur;   //当前结点指针
+  Node* m_root;  // 链表头
+  Node* m_cur;   // 当前结点指针
 };
 
 }  // namespace Ricardo

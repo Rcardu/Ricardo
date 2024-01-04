@@ -53,7 +53,7 @@
 
 /** Data **/
 
-#line 54 "httpclient_parser.cc"
+#line 54 "httpclient_parser.rl.cc"
 static const int httpclient_parser_start = 1;
 static const int httpclient_parser_first_final = 120;
 static const int httpclient_parser_error = 0;
@@ -68,7 +68,7 @@ int httpclient_parser_init(httpclient_parser *parser)  {
 	int cs = 0;
 	
 
-#line 66 "httpclient_parser.cc"
+#line 66 "httpclient_parser.rl.cc"
 	{
 		cs = (int)httpclient_parser_start;
 	}
@@ -107,7 +107,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 	
 	
 
-#line 102 "httpclient_parser.cc"
+#line 102 "httpclient_parser.rl.cc"
 {
 		switch ( cs ) {
 			case 1:
@@ -386,7 +386,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 52 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 380 "httpclient_parser.cc"
+#line 380 "httpclient_parser.rl.cc"
 
 		goto _st2;
 		_st2:
@@ -432,7 +432,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			} // else skip it
 		}
 		
-#line 425 "httpclient_parser.cc"
+#line 425 "httpclient_parser.rl.cc"
 
 			{
 #line 109 "httpclient_parser.rl"
@@ -443,7 +443,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 120; goto _out;}
 		}
 		
-#line 435 "httpclient_parser.cc"
+#line 435 "httpclient_parser.rl.cc"
 
 		goto _st120;
 		_ctr9:
@@ -456,7 +456,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 120; goto _out;}
 		}
 		
-#line 447 "httpclient_parser.cc"
+#line 447 "httpclient_parser.rl.cc"
 
 		goto _st120;
 		_ctr13:
@@ -466,13 +466,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 456 "httpclient_parser.cc"
+#line 456 "httpclient_parser.rl.cc"
 
 			{
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 461 "httpclient_parser.cc"
+#line 461 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -482,7 +482,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 470 "httpclient_parser.cc"
+#line 470 "httpclient_parser.rl.cc"
 
 			{
 #line 109 "httpclient_parser.rl"
@@ -493,7 +493,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 120; goto _out;}
 		}
 		
-#line 480 "httpclient_parser.cc"
+#line 480 "httpclient_parser.rl.cc"
 
 		goto _st120;
 		_ctr20:
@@ -505,7 +505,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 491 "httpclient_parser.cc"
+#line 491 "httpclient_parser.rl.cc"
 
 			{
 #line 109 "httpclient_parser.rl"
@@ -516,7 +516,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 120; goto _out;}
 		}
 		
-#line 501 "httpclient_parser.cc"
+#line 501 "httpclient_parser.rl.cc"
 
 		goto _st120;
 		_ctr85:
@@ -526,7 +526,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->close = 1;
 		}
 		
-#line 510 "httpclient_parser.cc"
+#line 510 "httpclient_parser.rl.cc"
 
 			{
 #line 109 "httpclient_parser.rl"
@@ -537,7 +537,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 120; goto _out;}
 		}
 		
-#line 520 "httpclient_parser.cc"
+#line 520 "httpclient_parser.rl.cc"
 
 		goto _st120;
 		_st120:
@@ -561,7 +561,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			} // else skip it
 		}
 		
-#line 543 "httpclient_parser.cc"
+#line 543 "httpclient_parser.rl.cc"
 
 		goto _st3;
 		_ctr14:
@@ -571,13 +571,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 552 "httpclient_parser.cc"
+#line 552 "httpclient_parser.rl.cc"
 
 			{
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 557 "httpclient_parser.cc"
+#line 557 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -587,7 +587,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 566 "httpclient_parser.cc"
+#line 566 "httpclient_parser.rl.cc"
 
 		goto _st3;
 		_ctr21:
@@ -599,7 +599,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 577 "httpclient_parser.cc"
+#line 577 "httpclient_parser.rl.cc"
 
 		goto _st3;
 		_ctr86:
@@ -609,7 +609,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->close = 1;
 		}
 		
-#line 586 "httpclient_parser.cc"
+#line 586 "httpclient_parser.rl.cc"
 
 		goto _st3;
 		_st3:
@@ -636,7 +636,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			} // else skip it
 		}
 		
-#line 612 "httpclient_parser.cc"
+#line 612 "httpclient_parser.rl.cc"
 
 		goto _st4;
 		_ctr15:
@@ -646,13 +646,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 621 "httpclient_parser.cc"
+#line 621 "httpclient_parser.rl.cc"
 
 			{
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 626 "httpclient_parser.cc"
+#line 626 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -662,7 +662,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 635 "httpclient_parser.cc"
+#line 635 "httpclient_parser.rl.cc"
 
 		goto _st4;
 		_ctr22:
@@ -674,7 +674,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 646 "httpclient_parser.cc"
+#line 646 "httpclient_parser.rl.cc"
 
 		goto _st4;
 		_st4:
@@ -722,7 +722,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 693 "httpclient_parser.cc"
+#line 693 "httpclient_parser.rl.cc"
 
 		goto _st5;
 		_st5:
@@ -784,13 +784,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 754 "httpclient_parser.cc"
+#line 754 "httpclient_parser.rl.cc"
 
 			{
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 759 "httpclient_parser.cc"
+#line 759 "httpclient_parser.rl.cc"
 
 		goto _st6;
 		_st6:
@@ -838,7 +838,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 806 "httpclient_parser.cc"
+#line 806 "httpclient_parser.rl.cc"
 
 		goto _st7;
 		_st7:
@@ -895,7 +895,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 52 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 862 "httpclient_parser.cc"
+#line 862 "httpclient_parser.rl.cc"
 
 		goto _st8;
 		_st8:
@@ -984,7 +984,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->http_version(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 950 "httpclient_parser.cc"
+#line 950 "httpclient_parser.rl.cc"
 
 		goto _st16;
 		_st16:
@@ -1001,7 +1001,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 52 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 966 "httpclient_parser.cc"
+#line 966 "httpclient_parser.rl.cc"
 
 		goto _st17;
 		_st17:
@@ -1026,7 +1026,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->status_code(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 990 "httpclient_parser.cc"
+#line 990 "httpclient_parser.rl.cc"
 
 		goto _st18;
 		_st18:
@@ -1043,7 +1043,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 52 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1006 "httpclient_parser.cc"
+#line 1006 "httpclient_parser.rl.cc"
 
 		goto _st19;
 		_st19:
@@ -1069,7 +1069,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1031 "httpclient_parser.cc"
+#line 1031 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_ctr39:
@@ -1080,7 +1080,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->reason_phrase(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1041 "httpclient_parser.cc"
+#line 1041 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_ctr50:
@@ -1088,7 +1088,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1048 "httpclient_parser.cc"
+#line 1048 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -1098,7 +1098,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1057 "httpclient_parser.cc"
+#line 1057 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_ctr126:
@@ -1110,7 +1110,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1068 "httpclient_parser.cc"
+#line 1068 "httpclient_parser.rl.cc"
 
 			{
 #line 105 "httpclient_parser.rl"
@@ -1118,7 +1118,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->chunked = 1;
 		}
 		
-#line 1075 "httpclient_parser.cc"
+#line 1075 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_ctr129:
@@ -1128,7 +1128,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->chunked = 1;
 		}
 		
-#line 1084 "httpclient_parser.cc"
+#line 1084 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_ctr181:
@@ -1138,7 +1138,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->content_len = strtol(PTR_TO(mark), NULL, 10);
 		}
 		
-#line 1093 "httpclient_parser.cc"
+#line 1093 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -1148,7 +1148,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1102 "httpclient_parser.cc"
+#line 1102 "httpclient_parser.rl.cc"
 
 		goto _st20;
 		_st20:
@@ -1214,7 +1214,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1167 "httpclient_parser.cc"
+#line 1167 "httpclient_parser.rl.cc"
 
 		goto _st21;
 		_ctr87:
@@ -1224,13 +1224,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->close = 1;
 		}
 		
-#line 1176 "httpclient_parser.cc"
+#line 1176 "httpclient_parser.rl.cc"
 
 			{
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1181 "httpclient_parser.cc"
+#line 1181 "httpclient_parser.rl.cc"
 
 		goto _st21;
 		_st21:
@@ -1281,7 +1281,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1231 "httpclient_parser.cc"
+#line 1231 "httpclient_parser.rl.cc"
 
 		goto _st22;
 		_ctr46:
@@ -1291,7 +1291,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 1240 "httpclient_parser.cc"
+#line 1240 "httpclient_parser.rl.cc"
 
 		goto _st22;
 		_st22:
@@ -1319,7 +1319,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1267 "httpclient_parser.cc"
+#line 1267 "httpclient_parser.rl.cc"
 
 		goto _st23;
 		_st23:
@@ -1345,7 +1345,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1292 "httpclient_parser.cc"
+#line 1292 "httpclient_parser.rl.cc"
 
 		goto _st24;
 		_ctr40:
@@ -1356,7 +1356,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->reason_phrase(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1302 "httpclient_parser.cc"
+#line 1302 "httpclient_parser.rl.cc"
 
 		goto _st24;
 		_ctr51:
@@ -1364,7 +1364,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1309 "httpclient_parser.cc"
+#line 1309 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -1374,7 +1374,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1318 "httpclient_parser.cc"
+#line 1318 "httpclient_parser.rl.cc"
 
 		goto _st24;
 		_ctr182:
@@ -1384,7 +1384,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->content_len = strtol(PTR_TO(mark), NULL, 10);
 		}
 		
-#line 1327 "httpclient_parser.cc"
+#line 1327 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -1394,7 +1394,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1336 "httpclient_parser.cc"
+#line 1336 "httpclient_parser.rl.cc"
 
 		goto _st24;
 		_st24:
@@ -1411,7 +1411,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1352 "httpclient_parser.cc"
+#line 1352 "httpclient_parser.rl.cc"
 
 		goto _st25;
 		_ctr88:
@@ -1421,13 +1421,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->close = 1;
 		}
 		
-#line 1361 "httpclient_parser.cc"
+#line 1361 "httpclient_parser.rl.cc"
 
 			{
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1366 "httpclient_parser.cc"
+#line 1366 "httpclient_parser.rl.cc"
 
 		goto _st25;
 		_st25:
@@ -1925,7 +1925,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1863 "httpclient_parser.cc"
+#line 1863 "httpclient_parser.rl.cc"
 
 		goto _st35;
 		_ctr67:
@@ -1935,7 +1935,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 1872 "httpclient_parser.cc"
+#line 1872 "httpclient_parser.rl.cc"
 
 		goto _st35;
 		_st35:
@@ -1969,7 +1969,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 1905 "httpclient_parser.cc"
+#line 1905 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -1979,7 +1979,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 1914 "httpclient_parser.cc"
+#line 1914 "httpclient_parser.rl.cc"
 
 		goto _st36;
 		_st36:
@@ -2146,7 +2146,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 2080 "httpclient_parser.cc"
+#line 2080 "httpclient_parser.rl.cc"
 
 		goto _st43;
 		_st43:
@@ -2212,7 +2212,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 2145 "httpclient_parser.cc"
+#line 2145 "httpclient_parser.rl.cc"
 
 		goto _st44;
 		_ctr89:
@@ -2222,13 +2222,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->close = 1;
 		}
 		
-#line 2154 "httpclient_parser.cc"
+#line 2154 "httpclient_parser.rl.cc"
 
 			{
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 2159 "httpclient_parser.cc"
+#line 2159 "httpclient_parser.rl.cc"
 
 		goto _st44;
 		_st44:
@@ -3059,7 +3059,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 2989 "httpclient_parser.cc"
+#line 2989 "httpclient_parser.rl.cc"
 
 		goto _st61;
 		_ctr107:
@@ -3069,7 +3069,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 2998 "httpclient_parser.cc"
+#line 2998 "httpclient_parser.rl.cc"
 
 		goto _st61;
 		_st61:
@@ -3103,7 +3103,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 3031 "httpclient_parser.cc"
+#line 3031 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -3113,7 +3113,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 3040 "httpclient_parser.cc"
+#line 3040 "httpclient_parser.rl.cc"
 
 		goto _st62;
 		_st62:
@@ -3206,7 +3206,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 3132 "httpclient_parser.cc"
+#line 3132 "httpclient_parser.rl.cc"
 
 		goto _st64;
 		_st64:
@@ -3316,7 +3316,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 3241 "httpclient_parser.cc"
+#line 3241 "httpclient_parser.rl.cc"
 
 		goto _st71;
 		_st71:
@@ -3338,7 +3338,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 121; goto _out;}
 		}
 		
-#line 3262 "httpclient_parser.cc"
+#line 3262 "httpclient_parser.rl.cc"
 
 		goto _st121;
 		_st121:
@@ -3389,13 +3389,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 3312 "httpclient_parser.cc"
+#line 3312 "httpclient_parser.rl.cc"
 
 			{
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 3317 "httpclient_parser.cc"
+#line 3317 "httpclient_parser.rl.cc"
 
 		goto _st73;
 		_st73:
@@ -3752,7 +3752,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 3673 "httpclient_parser.cc"
+#line 3673 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -3762,7 +3762,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 3682 "httpclient_parser.cc"
+#line 3682 "httpclient_parser.rl.cc"
 
 		goto _st80;
 		_st80:
@@ -3793,7 +3793,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 3712 "httpclient_parser.cc"
+#line 3712 "httpclient_parser.rl.cc"
 
 		goto _st81;
 		_st81:
@@ -3939,7 +3939,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 3857 "httpclient_parser.cc"
+#line 3857 "httpclient_parser.rl.cc"
 
 		goto _st88;
 		_st88:
@@ -3961,7 +3961,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 122; goto _out;}
 		}
 		
-#line 3878 "httpclient_parser.cc"
+#line 3878 "httpclient_parser.rl.cc"
 
 		goto _st122;
 		_st122:
@@ -4012,7 +4012,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 3928 "httpclient_parser.cc"
+#line 3928 "httpclient_parser.rl.cc"
 
 		goto _st90;
 		_st90:
@@ -4271,7 +4271,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 4186 "httpclient_parser.cc"
+#line 4186 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -4281,7 +4281,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 4195 "httpclient_parser.cc"
+#line 4195 "httpclient_parser.rl.cc"
 
 		goto _st95;
 		_st95:
@@ -4312,7 +4312,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 4225 "httpclient_parser.cc"
+#line 4225 "httpclient_parser.rl.cc"
 
 		goto _st96;
 		_st96:
@@ -4943,7 +4943,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 4855 "httpclient_parser.cc"
+#line 4855 "httpclient_parser.rl.cc"
 
 		goto _st112;
 		_ctr168:
@@ -4953,7 +4953,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 4864 "httpclient_parser.cc"
+#line 4864 "httpclient_parser.rl.cc"
 
 		goto _st112;
 		_st112:
@@ -4985,7 +4985,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 4895 "httpclient_parser.cc"
+#line 4895 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -4995,7 +4995,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 4904 "httpclient_parser.cc"
+#line 4904 "httpclient_parser.rl.cc"
 
 		goto _st113;
 		_st113:
@@ -5084,7 +5084,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 4992 "httpclient_parser.cc"
+#line 4992 "httpclient_parser.rl.cc"
 
 		goto _st115;
 		_st115:
@@ -5114,7 +5114,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			{p+= 1; cs = 123; goto _out;}
 		}
 		
-#line 5021 "httpclient_parser.cc"
+#line 5021 "httpclient_parser.rl.cc"
 
 		goto _st123;
 		_st123:
@@ -5159,13 +5159,13 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 5065 "httpclient_parser.cc"
+#line 5065 "httpclient_parser.rl.cc"
 
 			{
 #line 54 "httpclient_parser.rl"
 			MARK(field_start, p); }
 		
-#line 5070 "httpclient_parser.cc"
+#line 5070 "httpclient_parser.rl.cc"
 
 		goto _st117;
 		_st117:
@@ -5222,7 +5222,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 5126 "httpclient_parser.cc"
+#line 5126 "httpclient_parser.rl.cc"
 
 			{
 #line 70 "httpclient_parser.rl"
@@ -5232,7 +5232,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 			}
 		}
 		
-#line 5135 "httpclient_parser.cc"
+#line 5135 "httpclient_parser.rl.cc"
 
 		goto _st118;
 		_st118:
@@ -5261,7 +5261,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 #line 60 "httpclient_parser.rl"
 			MARK(mark, p); }
 		
-#line 5163 "httpclient_parser.cc"
+#line 5163 "httpclient_parser.rl.cc"
 
 		goto _st119;
 		_st119:
@@ -5421,10 +5421,10 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 	check(parser->field_len <= len, "field has length longer than whole buffer");
 	check(parser->field_start < len, "field starts after buffer end");
 	
-	if(parser->body_start) {
-		/* final \r\n combo encountered so stop right here */
-		parser->nread++;
-	}
+	//if(parser->body_start) {
+		//    /* final \r\n combo encountered so stop right here */
+		//    parser->nread++;
+		//}
 	
 	return(parser->nread);
 	

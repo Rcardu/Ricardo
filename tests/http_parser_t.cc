@@ -1,4 +1,5 @@
 #include <pthread.h>
+
 #include "http/http.h"
 #include "http/http_parser.h"
 #include "log.h"
@@ -22,8 +23,8 @@ void test_request() {
                            << " total=" << tmp.size()
                            << " content-length=" << parser.getContentLength();
   tmp.resize(tmp.size() - s);
-  ICEY_LOG_INFO(g_logger)<<parser.getData()->toString();
-  ICEY_LOG_INFO(g_logger)<<tmp;
+  ICEY_LOG_INFO(g_logger) << parser.getData()->toString();
+  ICEY_LOG_INFO(g_logger) << tmp;
 }
 
 const char test_response_data[] =
@@ -53,21 +54,19 @@ Cache-Control: max-age=86400
 Expires: Sat, 30 Dec 2023 08:07:02 GMT
 Connection: Keep-Alive
 Content-Type: text/html
-
-
 <html>
 <meta http-equiv="refresh" content="0;url=http://www.baidu.com/">
 </html>")";
-void test_response(){
+void test_response() {
   Ricardo::http::HttpResponseParser parser;
   std::string tmp = test_response_data1;
   size_t s = parser.execute(&tmp[0], tmp.size());
-  ICEY_LOG_ERROR(g_logger)<<"execute rt="<<s
-    <<" has_error="<<parser.hasError()
-    <<" is_finished="<<parser.isFinished()
-    <<" total="<<tmp.size()
-    <<" content_length="<<parser.getContentLength()
-    <<" tmp[s]= "<<tmp[s];
+  ICEY_LOG_ERROR(g_logger) << "execute rt=" << s
+                           << " has_error=" << parser.hasError()
+                           << " is_finished=" << parser.isFinished()
+                           << " total=" << tmp.size()
+                           << " content_length=" << parser.getContentLength()
+                           << " tmp[s]= " << tmp[s];
   tmp.resize(tmp.size() - s);
   ICEY_LOG_INFO(g_logger) << parser.getData()->toString();
   ICEY_LOG_INFO(g_logger) << tmp;
@@ -75,7 +74,7 @@ void test_response(){
 
 int main() {
   test_request();
-  ICEY_LOG_INFO(g_logger)<<"-------------------------------";
+  ICEY_LOG_INFO(g_logger) << "-------------------------------";
   test_response();
   return 0;
 }

@@ -29,8 +29,11 @@ set(NAME_BY appbytearray)
 set(NAME_HP apphttp)
 set(NAME_PAR apphttpparser)
 set(NAME_TSR apptcpserver)
+set(NAME_ECHO appechoserver)
 
 
 #递归子目录
 add_subdirectory(ricardo)
 add_subdirectory(tests)
+add_subdirectory(examples)
+

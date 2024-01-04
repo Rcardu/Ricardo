@@ -1,8 +1,10 @@
+#include <netinet/in.h>
+
+#include <vector>
+
 #include "address.h"
 #include "log.h"
 #include "util.h"
-#include <netinet/in.h>
-#include <vector>
 
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
@@ -41,8 +43,8 @@ void test_ipv4() {
     }
 }
 int main() {
-    test_ipv4();
-    // test_iface();
+    // test_ipv4();
+    test_iface();
     // test();
     return 0;
 }

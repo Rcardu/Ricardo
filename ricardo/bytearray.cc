@@ -1,5 +1,7 @@
 #include "bytearray.h"
+
 #include <linux/limits.h>
+
 #include <cmath>
 #include <cstdarg>
 #include <cstddef>
@@ -8,6 +10,7 @@
 #include <iomanip>
 #include <sstream>
 #include <stdexcept>
+
 #include "endian_s.h"
 #include "log.h"
 #include "macro.h"
@@ -56,13 +59,9 @@ void ByteArray::setIsLittleEndian(bool val) {
   }
 }
 
-void ByteArray::writeFint8(int8_t value) {
-  write(&value, sizeof(value));
-}
+void ByteArray::writeFint8(int8_t value) { write(&value, sizeof(value)); }
 
-void ByteArray::writeFuint8(uint8_t value) {
-  write(&value, sizeof(value));
-}
+void ByteArray::writeFuint8(uint8_t value) { write(&value, sizeof(value)); }
 
 void ByteArray::writeFint16(int16_t value) {
   if (m_endian != ICEY_BYTE_ORDER) {
@@ -123,13 +122,9 @@ static uint64_t EncodeZigzag64(const int64_t& v) {
   }
 }
 
-static int32_t DecodeZigzag32(const uint32_t& v) {
-  return (v >> 1) ^ -(v & 1);
-}
+static int32_t DecodeZigzag32(const uint32_t& v) { return (v >> 1) ^ -(v & 1); }
 
-static int64_t DecodeZigzag64(const uint64_t& v) {
-  return (v >> 1) ^ -(v & 1);
-}
+static int64_t DecodeZigzag64(const uint64_t& v) { return (v >> 1) ^ -(v & 1); }
 
 void ByteArray::writeInt32(int32_t value) {
   writeUint32(EncodeZigzag32(value));
@@ -218,33 +213,19 @@ uint8_t ByteArray::readFuint8() {
     return byteswap(v);              \
   }
 
-int16_t ByteArray::readFint16() {
-  XX(int16_t);
-}
+int16_t ByteArray::readFint16() { XX(int16_t); }
 
-uint16_t ByteArray::readFuint16() {
-  XX(uint16_t);
-}
+uint16_t ByteArray::readFuint16() { XX(uint16_t); }
 
-int32_t ByteArray::readFint32() {
-  XX(int32_t);
-}
+int32_t ByteArray::readFint32() { XX(int32_t); }
 
-uint32_t ByteArray::readFuint32() {
-  XX(uint32_t);
-}
+uint32_t ByteArray::readFuint32() { XX(uint32_t); }
 
-int64_t ByteArray::readFint64() {
-  XX(int64_t);
-}
+int64_t ByteArray::readFint64() { XX(int64_t); }
 
-uint64_t ByteArray::readFuint64() {
-  XX(uint64_t);
-}
+uint64_t ByteArray::readFuint64() { XX(uint64_t); }
 #undef XX
-int32_t ByteArray::readInt32() {
-  return DecodeZigzag32(readUint32());
-}
+int32_t ByteArray::readInt32() { return DecodeZigzag32(readUint32()); }
 
 uint32_t ByteArray::readUint32() {
   uint32_t result = 0;
@@ -260,9 +241,7 @@ uint32_t ByteArray::readUint32() {
   return result;
 }
 
-int64_t ByteArray::readInt64() {
-  return DecodeZigzag64(readUint64());
-}
+int64_t ByteArray::readInt64() { return DecodeZigzag64(readUint64()); }
 
 uint64_t ByteArray::readUint64() {
   uint64_t result = 0;
@@ -430,10 +409,13 @@ void ByteArray::read(void* buf, size_t size, size_t position) const {
 }
 
 void ByteArray::setPosition(size_t v) {
-  if (v > m_size) {
+  if (v > m_capacity) {
     throw std::out_of_range("set_postion out of range");
   }
   m_position = v;
+  if (m_position > m_size) {
+    m_size = m_position;
+  }
   m_cur = m_root;
   while (v > m_cur->size) {
     v -= m_cur->size;
