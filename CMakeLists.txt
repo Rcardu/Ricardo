@@ -30,7 +30,11 @@ set(NAME_HP apphttp)
 set(NAME_PAR apphttpparser)
 set(NAME_TSR apptcpserver)
 set(NAME_ECHO appechoserver)
+set(NAME_HTSR apphttpserver)
 
+#设置子目录别名
+set(TESTS tests)
+set(EXAMPLES examples)
 
 #递归子目录
 add_subdirectory(ricardo)
