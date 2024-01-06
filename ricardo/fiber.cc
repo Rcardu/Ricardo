@@ -1,4 +1,5 @@
 #include "fiber.h"
+
 #include "config.h"
 #include "log.h"
 #include "macro.h"
@@ -58,9 +59,9 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
   m_ctx.uc_link = nullptr;
   m_ctx.uc_stack.ss_sp = m_stack;
   m_ctx.uc_stack.ss_size = m_stacksize;
-  if(!use_caller){
+  if (!use_caller) {
     makecontext(&m_ctx, &Fiber::MainFunc, 0);
-  }else{
+  } else {
     makecontext(&m_ctx, &Fiber::CallerMainFunc, 0);
   }
 
@@ -127,16 +128,13 @@ void Fiber::swapIn() {
 }
 
 void Fiber::swapOut() {
-
   SetThis(Scheduler::GetMainFiber());
   if (swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }
 }
 
-void Fiber::SetThis(Fiber* f) {
-  t_fiber = f;
-}
+void Fiber::SetThis(Fiber* f) { t_fiber = f; }
 
 Fiber::ptr Fiber::GetThis() {
   if (t_fiber) {
@@ -160,9 +158,7 @@ void Fiber::YieldToHold() {
   cur->swapOut();
 }
 
-uint64_t Fiber::TotalFibers() {
-  return s_fiber_count;
-}
+uint64_t Fiber::TotalFibers() { return s_fiber_count; }
 
 void Fiber::MainFunc() {
   Fiber::ptr cur = GetThis();
