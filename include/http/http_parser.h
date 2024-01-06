@@ -20,12 +20,16 @@ class HttpRequestParser {
 
   uint64_t getContentLength();
 
+ public:
+  static uint64_t GetHttpRequsetBufferSize();
+  static uint64_t GetHttpRequestMaxBodySize();
+
  private:
   http_parser m_parser;
   HttpRequest::ptr m_data;
-  //1000: invalid method
-  //1001: invalid verion
-  //1002: invalid filed
+  // 1000: invalid method
+  // 1001: invalid verion
+  // 1002: invalid filed
   int m_error;
 };
 
@@ -46,9 +50,9 @@ class HttpResponseParser {
  private:
   httpclient_parser m_parser;
   HttpResponse::ptr m_data;
-  //1000: invalid method
-  //1001: invalid verion
-  //1002: invalid filed
+  // 1000: invalid method
+  // 1001: invalid verion
+  // 1002: invalid filed
   int m_error;
 };
 

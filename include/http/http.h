@@ -5,6 +5,7 @@
 #include <boost/lexical_cast.hpp>
 #include <memory>
 #include <ostream>
+
 #include "stdhead.h"
 
 namespace Ricardo {
@@ -168,7 +169,8 @@ T getAs(const MapType& m, const std::string& key, const T& def = T()) {
   }
   try {
     return boost::lexical_cast<T>(it->second);
-  } catch (...) {}
+  } catch (...) {
+  }
   return def;
 }
 
@@ -236,33 +238,34 @@ class HttpRequest {
   bool hasParam(const std::string& key, std::string* val = nullptr);
   bool hasCookie(const std::string& key, std::string* val = nullptr);
 
-  template<class T>
-    bool checkGetHeaderAs(const std::string& key, T& val, const T& def = T()){
-      return checkGetAs(m_headers, key, val, def);
-    }
-  template<class T>
-    T getHeaderAs(const std::string& key, const T& def = T()){
-      return getAs(m_headers, key, def);
-    }
-  template<class T>
-    bool checkGetParamAs(const std::string& key, T& val, const T& def = T()){
-      return checkGetAs(m_headers, key, val, def);
-    }
-  template<class T>
-    T getParamAs(const std::string& key, const T& def = T()){
-      return getAs(m_headers, key, def);
-    }
-  template<class T>
-    bool checkCookieAs(const std::string& key, T& val, const T& def = T()){
-      return checkGetAs(m_headers, key, val, def);
-    }
-  template<class T>
-    T getCookieAs(const std::string& key, const T& def = T()){
-      return getAs(m_headers, key, def);
-    }
+  template <class T>
+  bool checkGetHeaderAs(const std::string& key, T& val, const T& def = T()) {
+    return checkGetAs(m_headers, key, val, def);
+  }
+  template <class T>
+  T getHeaderAs(const std::string& key, const T& def = T()) {
+    return getAs(m_headers, key, def);
+  }
+  template <class T>
+  bool checkGetParamAs(const std::string& key, T& val, const T& def = T()) {
+    return checkGetAs(m_headers, key, val, def);
+  }
+  template <class T>
+  T getParamAs(const std::string& key, const T& def = T()) {
+    return getAs(m_headers, key, def);
+  }
+  template <class T>
+  bool checkCookieAs(const std::string& key, T& val, const T& def = T()) {
+    return checkGetAs(m_headers, key, val, def);
+  }
+  template <class T>
+  T getCookieAs(const std::string& key, const T& def = T()) {
+    return getAs(m_headers, key, def);
+  }
 
-  std::ostream& dump(std::ostream& os)const;
-  std::string toString()const;
+  std::ostream& dump(std::ostream& os) const;
+  std::string toString() const;
+
  private:
   HttpMethod m_method;
   uint8_t m_version;
@@ -278,29 +281,30 @@ class HttpRequest {
   MapType m_cookies;
 };
 
-class HttpResponse{
-public:
+class HttpResponse {
+ public:
   typedef std::shared_ptr<HttpResponse> ptr;
   typedef std::map<std::string, std::string, CaseInsensitiveLess> MapType;
 
   HttpResponse(uint8_t version = 0x11, bool close = true);
-  
-  HttpStatus getStatus()const {return m_status;}
-  uint8_t getVersion() const {return m_version;}
-  const std::string& getBody() const {return m_body;}
-  const std::string& getReason()const{return m_reason;}
-  const MapType& getHeaders() const {return m_headers;}
 
-  void setStatus(HttpStatus v) {m_status = v;}
-  void setVersion(uint8_t v){m_version = v;}
-  void setBody(const std::string& v){m_body = v;}
-  void setReason(const std::string& v) {m_reason = v;}
-  void setHeaders(const MapType& v){m_headers = v;}
+  HttpStatus getStatus() const { return m_status; }
+  uint8_t getVersion() const { return m_version; }
+  const std::string& getBody() const { return m_body; }
+  const std::string& getReason() const { return m_reason; }
+  const MapType& getHeaders() const { return m_headers; }
 
-  bool isClose()const {return m_close;}
-  void setClose(bool v) {m_close = v;}
+  void setStatus(HttpStatus v) { m_status = v; }
+  void setVersion(uint8_t v) { m_version = v; }
+  void setBody(const std::string& v) { m_body = v; }
+  void setReason(const std::string& v) { m_reason = v; }
+  void setHeaders(const MapType& v) { m_headers = v; }
 
-  std::string getHeader(const std::string& key, const std::string& def = "")const;
+  bool isClose() const { return m_close; }
+  void setClose(bool v) { m_close = v; }
+
+  std::string getHeader(const std::string& key,
+                        const std::string& def = "") const;
   void setHeader(const std::string& key, const std::string& val);
   void delHeader(const std::string& key);
 
@@ -314,16 +318,19 @@ public:
     return getAs(m_headers, key, def);
   }
 
-  std::ostream& dump(std::ostream& os)const;
-  std::string toString()const;
-private:
+  std::ostream& dump(std::ostream& os) const;
+  std::string toString() const;
+
+ private:
   HttpStatus m_status;
   uint8_t m_version;
   bool m_close;
-  
+
   std::string m_body;
   std::string m_reason;
   MapType m_headers;
 };
+std::ostream& operator<<(std::ostream& os, const HttpRequest& req);
+std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp);
 }  // namespace http
 }  // namespace Ricardo
