@@ -26,22 +26,11 @@ add_executable(${NAME_BY} bytearray_t.cc)
 add_executable(${NAME_HP} http_t.cc)
 add_executable(${NAME_PAR} http_parser_t.cc)
 add_executable(${NAME_TSR} tcp_server_t.cc)
+add_executable(${NAME_HTSR} http_server_t.cc)
 
 #重定义此路径为相对路径
-redefine_file_macro (${NAME_L})  #__FILE__ 
-redefine_file_macro (${NAME_C})  #__FILE__ 
-redefine_file_macro (${NAME_T})  #__FILE__ 
-redefine_file_macro (${NAME_U})  #__FILE__ 
-redefine_file_macro (${NAME_F})  #__FILE__ 
-redefine_file_macro (${NAME_S})  #__FILE__ 
-redefine_file_macro (${NAME_IO})  #__FILE__ 
-redefine_file_macro (${NAME_HK})  #__FILE__ 
-redefine_file_macro (${NAME_AD})  #__FILE__ 
-redefine_file_macro (${NAME_SK})  #__FILE__ 
-redefine_file_macro (${NAME_BY})  #__FILE__ 
-redefine_file_macro (${NAME_HP})  #__FILE__ 
-redefine_file_macro (${NAME_PAR})  #__FILE__ 
-redefine_file_macro (${NAME_TSR})  #__FILE__ 
+#将所有源文件路径重定义
+#force_redefine_file_macro_for_sources(${TESTS}) #__FILE__
 
 
 #链接动态库
@@ -59,4 +48,5 @@ target_link_libraries(${NAME_BY} ${RICARDO})
 target_link_libraries(${NAME_HP} ${RICARDO})
 target_link_libraries(${NAME_PAR} ${RICARDO})
 target_link_libraries(${NAME_TSR} ${RICARDO})
+target_link_libraries(${NAME_HTSR} ${RICARDO})
 
