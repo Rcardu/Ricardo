@@ -1,5 +1,7 @@
 #include "http/http.h"
+
 #include <strings.h>
+
 #include <sstream>
 
 namespace Ricardo {
@@ -16,9 +18,9 @@ HttpMethod StringToHttpMethod(const std::string& m) {
 }
 
 HttpMethod CharsToHttpMethod(const char* m) {
-#define XX(num, name, string)    \
+#define XX(num, name, string)                      \
   if (strncmp(#string, m, strlen(#string)) == 0) { \
-    return HttpMethod::name;     \
+    return HttpMethod::name;                       \
   }
   HTTP_METHOD_MAP(XX);
 #undef XX
@@ -57,7 +59,10 @@ bool CaseInsensitiveLess::operator()(const std::string& lhs,
 }
 
 HttpRequest::HttpRequest(uint8_t version, bool close)
-    : m_method(HttpMethod::GET), m_version(version), m_close(close),m_path("/") {}
+    : m_method(HttpMethod::GET),
+      m_version(version),
+      m_close(close),
+      m_path("/") {}
 
 std::string HttpRequest::getHeaders(const std::string& key,
                                     const std::string& def) const {
@@ -89,17 +94,11 @@ void HttpRequest::setCookie(const std::string& key, const std::string& val) {
   m_cookies[key] = val;
 }
 
-void HttpRequest::delHeader(const std::string& key) {
-  m_headers.erase(key);
-}
+void HttpRequest::delHeader(const std::string& key) { m_headers.erase(key); }
 
-void HttpRequest::delParam(const std::string& key) {
-  m_params.erase(key);
-}
+void HttpRequest::delParam(const std::string& key) { m_params.erase(key); }
 
-void HttpRequest::delCookie(const std::string& key) {
-  m_cookies.erase(key);
-}
+void HttpRequest::delCookie(const std::string& key) { m_cookies.erase(key); }
 
 bool HttpRequest::hasHeader(const std::string& key, std::string* val) {
   auto it = m_headers.find(key);
@@ -133,15 +132,15 @@ bool HttpRequest::hasCookie(const std::string& key, std::string* val) {
   }
   return true;
 }
-std::string HttpRequest::toString()const{
+std::string HttpRequest::toString() const {
   std::stringstream ss;
   dump(ss);
   return ss.str();
 }
 
-std::ostream& HttpRequest::dump(std::ostream& os)const{
-  //GET /uri HTTP/1.1
-  //Host: www.baidu.com
+std::ostream& HttpRequest::dump(std::ostream& os) const {
+  // GET /uri HTTP/1.1
+  // Host: www.baidu.com
   //
   //
   os << HttpMethodToString(m_method) << " " << m_path
@@ -177,40 +176,38 @@ void HttpResponse::setHeader(const std::string& key, const std::string& val) {
   m_headers[key] = val;
 }
 
-void HttpResponse::delHeader(const std::string& key) {
-  m_headers.erase(key);
-}
+void HttpResponse::delHeader(const std::string& key) { m_headers.erase(key); }
 
-std::string HttpResponse::toString()const{
+std::string HttpResponse::toString() const {
   std::stringstream ss;
   dump(ss);
   return ss.str();
 }
-std::ostream& HttpResponse::dump(std::ostream& os)const {
-  os<<"HTTP/ "
-    <<((uint32_t)(m_version >> 4))
-    <<"."
-    <<((uint32_t)(m_version & 0x0f))
-    <<" "
-    <<(uint32_t)m_status
-    <<" "
-    <<(m_reason.empty() ? HttpStatusToString(m_status) : m_reason)
-    <<"\r\n";
-  for(auto& i : m_headers){
-    if(strcasecmp(i.first.c_str(), "connection") == 0){
+std::ostream& HttpResponse::dump(std::ostream& os) const {
+  os << "HTTP/ " << ((uint32_t)(m_version >> 4)) << "."
+     << ((uint32_t)(m_version & 0x0f)) << " " << (uint32_t)m_status << " "
+     << (m_reason.empty() ? HttpStatusToString(m_status) : m_reason) << "\r\n";
+  for (auto& i : m_headers) {
+    if (strcasecmp(i.first.c_str(), "connection") == 0) {
       continue;
     }
-    os<<i.first<<": "<<i.second<<"\r\n";
+    os << i.first << ": " << i.second << "\r\n";
   }
-  os<<"connection:"<<(m_close ? "close" : "keep-alive")<<"\r\n";
+  os << "connection:" << (m_close ? "close" : "keep-alive") << "\r\n";
 
-  if(!m_body.empty()){
-    os<<"content-length:"<<m_body.size()<<"\r\n";
-  }else{
-    os<<"\r\n";
+  if (!m_body.empty()) {
+    os << "content-length:" << m_body.size() << "\r\n\r\n" << m_body;
+  } else {
+    os << "\r\n";
   }
   return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const HttpRequest& req) {
+  return req.dump(os);
+}
+std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp) {
+  return rsp.dump(os);
+}
 }  // namespace http
 }  // namespace Ricardo

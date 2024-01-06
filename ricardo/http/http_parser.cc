@@ -1,10 +1,13 @@
 #include "http/http_parser.h"
+
 #include <pthread.h>
 #include <sys/ucontext.h>
+
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+
 #include "config.h"
 #include "http/http.h"
 #include "http/http11_parser.h"
@@ -26,7 +29,13 @@ static Ricardo::ConfigVar<uint64_t>::ptr g_http_request_max_body_size =
 
 static uint64_t s_http_request_buffer_size = 0;
 static uint64_t s_http_request_max_body_size = 0;
-
+uint64_t HttpRequestParser::GetHttpRequsetBufferSize() {
+  return s_http_request_buffer_size;
+}
+uint64_t HttpRequestParser::GetHttpRequestMaxBodySize() {
+  return s_http_request_max_body_size;
+}
+namespace {
 struct _RequestSizeIniter {
   _RequestSizeIniter() {
     s_http_request_buffer_size = g_http_request_buffer_size->getValue();
@@ -45,7 +54,7 @@ struct _RequestSizeIniter {
 };
 
 static _RequestSizeIniter _init;
-
+}  // namespace
 void on_request_method(void* data, const char* at, size_t length) {
   HttpRequestParser* parser = static_cast<HttpRequestParser*>(data);
   HttpMethod m = CharsToHttpMethod(at);
@@ -120,10 +129,10 @@ HttpRequestParser::HttpRequestParser() : m_error(0) {
   m_parser.data = this;
 }
 
-uint64_t HttpRequestParser::getContentLength(){
+uint64_t HttpRequestParser::getContentLength() {
   return m_data->getHeaderAs<uint64_t>("content-length", 0);
 }
-//1： 成功
+// 1： 成功
 //-1： 失败有错误
 //>0：已处理的字节数，且data有效数据为len - v；
 size_t HttpRequestParser::execute(char* data, size_t len) {
@@ -132,9 +141,7 @@ size_t HttpRequestParser::execute(char* data, size_t len) {
   return offset;
 }
 
-int HttpRequestParser::isFinished() {
-  return http_parser_finish(&m_parser);
-}
+int HttpRequestParser::isFinished() { return http_parser_finish(&m_parser); }
 
 int HttpRequestParser::hasError() {
   return m_error || http_parser_has_error(&m_parser);
@@ -198,7 +205,7 @@ HttpResponseParser::HttpResponseParser() : m_error(0) {
   m_parser.data = this;
 }
 
-uint64_t HttpResponseParser::getContentLength(){
+uint64_t HttpResponseParser::getContentLength() {
   return m_data->getHeaderAs<uint64_t>("content-length", 0);
 }
 size_t HttpResponseParser::execute(char* data, size_t len) {
