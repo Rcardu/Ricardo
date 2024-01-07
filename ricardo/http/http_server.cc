@@ -8,7 +8,10 @@ namespace Ricardo {
 namespace http {
 
 HttpServer::HttpServer(bool keepalive, Ricardo::IOManager* worker,
-                       Ricardo::IOManager* accept_worker) {}
+                       Ricardo::IOManager* accept_worker)
+    : TcpServer(worker, accept_worker), m_isKeepalive(keepalive) {
+  m_dispatch.reset(new ServletDispatch);
+}
 void HttpServer::handleClient(Socket::ptr client) {
   HttpSession::ptr session(new HttpSession(client));
   do {
@@ -19,11 +22,13 @@ void HttpServer::handleClient(Socket::ptr client) {
           << " errstr=" << strerror(errno) << " client: " << *client;
       break;
     }
+
     HttpResponse::ptr rsp(
         new HttpResponse(req->getVersion(), req->isClose() || !m_isKeepalive));
-    rsp->setBody("hello Ricardo");
-    ICEY_LOG_INFO(g_logger) << "requset: " << std::endl << *req;
-    ICEY_LOG_INFO(g_logger) << "response: " << std::endl << *rsp;
+    m_dispatch->handle(req, rsp, session);
+    // rsp->setBody("hello Ricardo");
+    // ICEY_LOG_INFO(g_logger) << "requset: " << std::endl << *req;
+    // ICEY_LOG_INFO(g_logger) << "response: " << std::endl << *rsp;
 
     session->sendResponse(rsp);
   } while (m_isKeepalive);

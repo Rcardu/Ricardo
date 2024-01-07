@@ -93,6 +93,9 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 {
 	if(len == 0) return 0;
 	parser->nread = 0;
+	parser->mark=0;
+	parser->field_len = len;
+	parser->field_start = 0;
 	
 	const char *p, *pe;
 	int cs = parser->cs;
@@ -105,7 +108,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 	assert(pe - p == (int)len - (int)off && "pointers aren't same distance");
 	
 
-#line 100 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 103 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 {
 		int _ck;
 		switch ( cs ) {
@@ -838,7 +841,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 832 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 835 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st2;
 		_st2:
@@ -865,7 +868,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_method(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 858 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 861 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st3;
 		_st3:
@@ -904,7 +907,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 896 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 899 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -919,7 +922,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 910 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 913 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -931,7 +934,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 921 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 924 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -961,7 +964,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 950 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 953 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 95 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -970,7 +973,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 958 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 961 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -979,7 +982,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 966 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 969 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_ctr48:
@@ -990,7 +993,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 976 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 979 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -999,7 +1002,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 984 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 987 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_ctr55:
@@ -1007,7 +1010,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 991 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 994 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 79 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1016,7 +1019,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->fragment(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 999 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1002 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_ctr60:
@@ -1027,7 +1030,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->fragment(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1009 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1012 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_ctr69:
@@ -1035,7 +1038,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 84 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(query_start, p); }
 		
-#line 1016 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1019 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 85 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1044,7 +1047,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->query_string(parser->data, PTR_TO(query_start), LEN(query_start, p));
 		}
 		
-#line 1024 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1027 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1053,7 +1056,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1032 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1035 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_ctr75:
@@ -1064,7 +1067,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->query_string(parser->data, PTR_TO(query_start), LEN(query_start, p));
 		}
 		
-#line 1042 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1045 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1073,7 +1076,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1050 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1053 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st4;
 		_st4:
@@ -1090,7 +1093,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1066 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1069 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st5;
 		_st5:
@@ -1178,7 +1181,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->http_version(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1153 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1156 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st13;
 		_ctr39:
@@ -1186,7 +1189,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 61 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1160 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1163 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 63 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1196,7 +1199,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			}
 		}
 		
-#line 1169 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1172 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st13;
 		_ctr42:
@@ -1208,7 +1211,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			}
 		}
 		
-#line 1180 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1183 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st13;
 		_st13:
@@ -1270,7 +1273,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 56 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1241 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1244 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st14;
 		_st14:
@@ -1331,7 +1334,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->field_len = LEN(field_start, p);
 		}
 		
-#line 1301 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1304 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st15;
 		_ctr38:
@@ -1339,7 +1342,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 61 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1308 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1311 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st15;
 		_st15:
@@ -1373,7 +1376,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 61 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1341 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1344 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st16;
 		_st16:
@@ -1404,7 +1407,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->http_version(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1371 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1374 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st17;
 		_ctr40:
@@ -1412,7 +1415,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 61 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1378 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1381 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 63 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1422,7 +1425,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			}
 		}
 		
-#line 1387 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1390 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st17;
 		_ctr43:
@@ -1434,7 +1437,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			}
 		}
 		
-#line 1398 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1401 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st17;
 		_st17:
@@ -1451,7 +1454,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 56 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1414 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1417 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 100 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1470,7 +1473,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			{p+= 1; cs = 348; goto _out;}
 		}
 		
-#line 1432 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1435 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st348;
 		_ctr46:
@@ -1491,7 +1494,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			{p+= 1; cs = 348; goto _out;}
 		}
 		
-#line 1452 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1455 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st348;
 		_st348:
@@ -1550,7 +1553,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 56 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(field_start, p); }
 		
-#line 1510 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1513 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st18;
 		_st18:
@@ -1612,7 +1615,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1571 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1574 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st19;
 		_ctr10:
@@ -1620,7 +1623,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1578 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1581 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st19;
 		_st19:
@@ -1656,7 +1659,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1613 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1616 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1671,7 +1674,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1627 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1630 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1683,7 +1686,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1638 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1641 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1713,7 +1716,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1667 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1670 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 95 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1722,7 +1725,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 1675 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1678 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1731,7 +1734,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1683 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1686 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st20;
 		_ctr49:
@@ -1742,7 +1745,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 1693 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1696 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1751,7 +1754,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1701 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1704 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st20;
 		_ctr71:
@@ -1759,7 +1762,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 84 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(query_start, p); }
 		
-#line 1708 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1711 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 85 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1768,7 +1771,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->query_string(parser->data, PTR_TO(query_start), LEN(query_start, p));
 		}
 		
-#line 1716 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1719 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1777,7 +1780,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1724 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1727 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st20;
 		_ctr76:
@@ -1788,7 +1791,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->query_string(parser->data, PTR_TO(query_start), LEN(query_start, p));
 		}
 		
-#line 1734 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1737 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 74 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -1797,7 +1800,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_uri(parser->data, PTR_TO(mark), LEN(mark, p));
 		}
 		
-#line 1742 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1745 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st20;
 		_st20:
@@ -1821,7 +1824,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1765 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1768 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1836,7 +1839,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1779 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1782 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1848,7 +1851,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1790 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1793 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1878,7 +1881,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1819 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1822 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st21;
 		_ctr56:
@@ -1886,7 +1889,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1826 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1829 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st21;
 		_st21:
@@ -1910,7 +1913,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1849 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1852 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1925,7 +1928,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1863 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1866 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1937,7 +1940,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 1874 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1877 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -1967,7 +1970,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1903 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1906 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st22;
 		_st22:
@@ -2009,7 +2012,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1944 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1947 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st24;
 		_st24:
@@ -2051,7 +2054,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1985 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1988 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st26;
 		_ctr226:
@@ -2059,7 +2062,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 1992 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 1995 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st26;
 		_st26:
@@ -2089,7 +2092,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2021 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2024 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2104,7 +2107,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2035 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2038 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2116,7 +2119,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2046 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2049 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2146,7 +2149,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 2075 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2078 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st27;
 		_st27:
@@ -2188,7 +2191,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 2116 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2119 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 95 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -2197,7 +2200,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 2124 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2127 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st29;
 		_ctr52:
@@ -2208,7 +2211,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 2134 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2137 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st29;
 		_st29:
@@ -2235,7 +2238,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2160 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2163 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2250,7 +2253,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2174 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2177 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2262,7 +2265,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2185 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2188 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2292,7 +2295,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 84 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(query_start, p); }
 		
-#line 2214 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2217 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st30;
 		_ctr70:
@@ -2300,7 +2303,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 84 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(query_start, p); }
 		
-#line 2221 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2224 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st30;
 		_st30:
@@ -2327,7 +2330,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2247 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2250 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2342,7 +2345,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2261 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2264 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2354,7 +2357,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2272 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2275 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2384,7 +2387,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 84 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(query_start, p); }
 		
-#line 2301 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2304 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st31;
 		_st31:
@@ -2426,7 +2429,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 2342 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2345 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st33;
 		_st33:
@@ -2459,7 +2462,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2374 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2377 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2474,7 +2477,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2388 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2391 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2486,7 +2489,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2399 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2402 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2550,7 +2553,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2462 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2465 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2565,7 +2568,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2476 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2479 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2577,7 +2580,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2487 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2490 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2638,7 +2641,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2547 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2550 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2653,7 +2656,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2561 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2564 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2665,7 +2668,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2572 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2575 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2757,7 +2760,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2663 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2666 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2772,7 +2775,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2677 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2680 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2784,7 +2787,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2688 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2691 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2838,7 +2841,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2741 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2744 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2853,7 +2856,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2755 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2758 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2865,7 +2868,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2766 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2769 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2964,7 +2967,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2864 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2867 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2979,7 +2982,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2878 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2881 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -2991,7 +2994,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2889 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2892 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -3049,7 +3052,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2946 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2949 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -3064,7 +3067,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2960 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2963 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -3076,7 +3079,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 2971 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 2974 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5600,7 +5603,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5494 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5497 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5615,7 +5618,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5508 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5511 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5627,7 +5630,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5519 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5522 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5677,7 +5680,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5568 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5571 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5692,7 +5695,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5582 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5585 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5704,7 +5707,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5593 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5596 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5738,7 +5741,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 5626 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5629 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st173;
 		_st173:
@@ -5783,7 +5786,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5670 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5673 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5798,7 +5801,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5684 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5687 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5810,7 +5813,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5695 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5698 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5869,7 +5872,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5753 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5756 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5884,7 +5887,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5767 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5770 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -5896,7 +5899,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 5778 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 5781 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6223,7 +6226,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 6104 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6107 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st194;
 		_st194:
@@ -6287,7 +6290,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 6167 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6170 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st196;
 		_st196:
@@ -6320,7 +6323,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->xml_sent = 1;
 		}
 		
-#line 6199 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6202 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 100 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -6339,7 +6342,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			{p+= 1; cs = 349; goto _out;}
 		}
 		
-#line 6217 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6220 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st349;
 		_ctr263:
@@ -6349,7 +6352,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->json_sent = 1;
 		}
 		
-#line 6226 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6229 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 			{
 #line 100 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
@@ -6368,7 +6371,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			{p+= 1; cs = 349; goto _out;}
 		}
 		
-#line 6244 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6247 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st349;
 		_st349:
@@ -6382,7 +6385,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 6257 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6260 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st198;
 		_st198:
@@ -6412,7 +6415,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6286 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6289 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6427,7 +6430,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6300 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6303 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6439,7 +6442,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6311 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6314 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6472,7 +6475,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			parser->request_path(parser->data, PTR_TO(mark), LEN(mark,p));
 		}
 		
-#line 6343 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6346 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st199;
 		_st199:
@@ -6489,7 +6492,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 #line 53 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 			MARK(mark, p); }
 		
-#line 6359 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6362 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
 
 		goto _st200;
 		_st200:
@@ -6542,7 +6545,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6411 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6414 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6557,7 +6560,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6425 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6428 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6569,7 +6572,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6436 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6439 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6649,7 +6652,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6515 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6518 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6664,7 +6667,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6529 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6532 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6676,7 +6679,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6540 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6543 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6759,7 +6762,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6622 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6625 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6774,7 +6777,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6636 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6639 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6786,7 +6789,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6647 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6650 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6844,7 +6847,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6704 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6707 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6859,7 +6862,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6718 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6721 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6871,7 +6874,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6729 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6732 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6926,7 +6929,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6783 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6786 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6941,7 +6944,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6797 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6800 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -6953,7 +6956,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6808 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6811 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7039,7 +7042,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6893 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6896 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7054,7 +7057,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6907 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6910 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7066,7 +7069,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6918 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6921 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7120,7 +7123,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6971 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6974 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7135,7 +7138,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6985 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6988 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7147,7 +7150,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 6996 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 6999 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7240,7 +7243,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7088 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7091 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7255,7 +7258,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7102 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7105 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7267,7 +7270,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7113 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7116 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7319,7 +7322,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7164 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7167 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7334,7 +7337,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7178 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7181 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -7346,7 +7349,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 7189 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 7192 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9858,7 +9861,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9700 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9703 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9873,7 +9876,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9714 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9717 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9885,7 +9888,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9725 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9728 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9935,7 +9938,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 94: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9774 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9777 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9950,7 +9953,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 123: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9788 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9791 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -9962,7 +9965,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 			case 125: {
 				_ck = 0;
 				if ( ( parser->uri_relaxed )
-#line 9799 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+#line 9802 "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
  )
 				_ck += 1;
 				if ( 1 <= _ck )
@@ -10344,7 +10347,7 @@ size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, 
 		_out: {}
 	}
 	
-#line 293 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
+#line 296 "/home/Ricardo/ICEY/Ricardo/ricardo/./http/http11_parser.rl"
 
 	
 	assert(p <= pe && "Buffer overflow after parsing.");

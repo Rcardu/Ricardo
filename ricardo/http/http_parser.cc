@@ -14,7 +14,7 @@
 #include "http/httpclient_parser.h"
 #include "log.h"
 
-static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("name");
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 
 namespace Ricardo {
 namespace http {
