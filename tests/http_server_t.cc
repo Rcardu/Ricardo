@@ -9,6 +9,19 @@ void run() {
   while (!server->bind(addr)) {
     sleep(2);
   }
+  auto sd = server->getServletDispatch();
+  sd->addServlet("/Ricardo/xx", [](Ricardo::http::HttpRequest::ptr req,
+                                   Ricardo::http::HttpResponse::ptr rsp,
+                                   Ricardo::http::HttpSession::ptr session) {
+    rsp->setBody(req->toString());
+    return 0;
+  });
+  sd->addServlet("/Ricardo/*", [](Ricardo::http::HttpRequest::ptr req,
+                                  Ricardo::http::HttpResponse::ptr rsp,
+                                  Ricardo::http::HttpSession::ptr session) {
+    rsp->setBody("Glob:\r\n" + req->toString());
+    return 0;
+  });
   server->start();
 }
 
