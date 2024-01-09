@@ -27,19 +27,38 @@ static Ricardo::ConfigVar<uint64_t>::ptr g_http_request_max_body_size =
     Ricardo::Config::Lookup("http.request.max_body_size", 64 * 1024 * 1024ul,
                             "http request max body size");
 
+static Ricardo::ConfigVar<uint64_t>::ptr g_http_response_buffer_size =
+    Ricardo::Config::Lookup("http.response.buffer_size", 4 * 1024ul,
+                            "http response buffer size");
+
+static Ricardo::ConfigVar<uint64_t>::ptr g_http_response_max_body_size =
+    Ricardo::Config::Lookup("http.response.max_body_size", 4 * 1024ul,
+                            "http response max body size");
+
 static uint64_t s_http_request_buffer_size = 0;
 static uint64_t s_http_request_max_body_size = 0;
+static uint64_t s_http_response_buffer_size = 0;
+static uint64_t s_http_response_max_body_size = 0;
+
 uint64_t HttpRequestParser::GetHttpRequsetBufferSize() {
   return s_http_request_buffer_size;
 }
 uint64_t HttpRequestParser::GetHttpRequestMaxBodySize() {
   return s_http_request_max_body_size;
 }
+uint64_t HttpResponseParser::GetHttpResponseBufferSize() {
+  return s_http_response_buffer_size;
+}
+uint64_t HttpResponseParser::GetHttpResponseMaxBodySize() {
+  return s_http_response_max_body_size;
+}
 namespace {
 struct _RequestSizeIniter {
   _RequestSizeIniter() {
     s_http_request_buffer_size = g_http_request_buffer_size->getValue();
     s_http_request_max_body_size = g_http_request_max_body_size->getValue();
+    s_http_response_buffer_size = g_http_response_buffer_size->getValue();
+    s_http_response_max_body_size = g_http_response_max_body_size->getValue();
 
     g_http_request_buffer_size->addListener(
         [](const uint64_t& ov, const uint64_t& nv) {
@@ -49,6 +68,15 @@ struct _RequestSizeIniter {
     g_http_request_buffer_size->addListener(
         [](const uint64_t& ov, const uint64_t& nv) {
           s_http_request_max_body_size = nv;
+        });
+
+    g_http_response_buffer_size->addListener(
+        [](const uint64_t& ov, const uint64_t& nv) {
+          s_http_response_buffer_size = nv;
+        });
+    g_http_response_max_body_size->addListener(
+        [](const uint64_t& ov, const uint64_t& nv) {
+          s_http_response_max_body_size = nv;
         });
   }
 };
@@ -92,6 +120,8 @@ void on_request_version(void* data, const char* at, size_t length) {
     v = 0x11;
   } else if (strncmp(at, "HTTP/1.0", length) == 0) {
     v = 0x10;
+  } else if (strncmp(at, "HTTP/2.0", length) == 0) {
+    v = 0x12;
   } else {
     ICEY_LOG_WARN(g_logger)
         << "invalid http request version: " << std::string(at, length);
@@ -108,7 +138,7 @@ void on_request_http_field(void* data, const char* field, size_t flen,
   HttpRequestParser* parser = static_cast<HttpRequestParser*>(data);
   if (flen == 0) {
     ICEY_LOG_WARN(g_logger) << "invalid http request field length == 0";
-    parser->setError(1002);
+    // parser->setError(1002);
     return;
   }
   parser->getData()->setHeader(std::string(field, flen),
@@ -167,6 +197,8 @@ void on_response_version(void* data, const char* at, size_t length) {
     v = 0x11;
   } else if (strncmp(at, "HTTP/1.0", length) == 0) {
     v = 0x10;
+  } else if (strncmp(at, "HTTP/2.0", length) == 0) {
+    v = 0x12;
   } else {
     ICEY_LOG_WARN(g_logger)
         << "invalid http response version: " << std::string(at, length);
@@ -185,7 +217,7 @@ void on_response_http_field(void* data, const char* field, size_t flen,
   HttpResponseParser* parser = static_cast<HttpResponseParser*>(data);
   if (flen == 0) {
     ICEY_LOG_WARN(g_logger) << "invalid http response field length == 0";
-    parser->setError(1002);
+    // parser->setError(1002);
     return;
   }
   parser->getData()->setHeader(std::string(field, flen),

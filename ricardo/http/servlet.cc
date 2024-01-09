@@ -98,14 +98,14 @@ NotFoundServlet::NotFoundServlet() : Servlet("NotFoundServlet") {}
 int32_t NotFoundServlet::handle(Ricardo::http::HttpRequest::ptr request,
                                 Ricardo::http::HttpResponse::ptr response,
                                 Ricardo::http::HttpSession::ptr session) {
-  // static const std::string& RSP_BODY =
-  //     R"(<html><head><title> 404 Not Found</title></head><body><center>
-  //     <hl>404 Not Found</ hl></ center><hr><center> nginx / 1.16.0 < / center
-  //     > < / body > < html > )";
   static const std::string& RSP_BODY =
-      "<html><head><title> 404 Not Found"
-      "</title></head><body><center><hl>404 Not Found</hl></center>"
-      "<hr><center>icey/1.0.0</center></body><html>";
+      R"(<html><head><title> 404 Not Found</title></head><body><center>
+       <hl>404 Not Found</ hl></ center><hr><center> nginx / 1.16.0 < / center
+       > < / body > < html > )";
+  // static const std::string& RSP_BODY =
+  //     "<html><head><title> 404 Not Found"
+  //     "</title></head><body><center><hl>404 Not Found</hl></center>"
+  //     "<hr><center>icey/1.0.0</center></body><html>";
   response->setStatus(Ricardo::http::HttpStatus::NOT_FOUND);
   response->setHeader("Server", "icey/1.0.0");
   response->setHeader("Content-Type", "text / html");
