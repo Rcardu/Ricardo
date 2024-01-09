@@ -31,6 +31,7 @@ set(NAME_PAR apphttpparser)
 set(NAME_TSR apptcpserver)
 set(NAME_ECHO appechoserver)
 set(NAME_HTSR apphttpserver)
+set(NAME_HTCN apphttpconnect)
 
 #设置子目录别名
 set(TESTS tests)
