@@ -32,7 +32,7 @@ static Ricardo::ConfigVar<uint64_t>::ptr g_http_response_buffer_size =
                             "http response buffer size");
 
 static Ricardo::ConfigVar<uint64_t>::ptr g_http_response_max_body_size =
-    Ricardo::Config::Lookup("http.response.max_body_size", 4 * 1024ul,
+    Ricardo::Config::Lookup("http.response.max_body_size", 64 * 1024ul,
                             "http response max body size");
 
 static uint64_t s_http_request_buffer_size = 0;
@@ -65,7 +65,7 @@ struct _RequestSizeIniter {
           s_http_request_buffer_size = nv;
         });
 
-    g_http_request_buffer_size->addListener(
+    g_http_request_max_body_size->addListener(
         [](const uint64_t& ov, const uint64_t& nv) {
           s_http_request_max_body_size = nv;
         });
@@ -120,8 +120,6 @@ void on_request_version(void* data, const char* at, size_t length) {
     v = 0x11;
   } else if (strncmp(at, "HTTP/1.0", length) == 0) {
     v = 0x10;
-  } else if (strncmp(at, "HTTP/2.0", length) == 0) {
-    v = 0x12;
   } else {
     ICEY_LOG_WARN(g_logger)
         << "invalid http request version: " << std::string(at, length);
@@ -197,8 +195,6 @@ void on_response_version(void* data, const char* at, size_t length) {
     v = 0x11;
   } else if (strncmp(at, "HTTP/1.0", length) == 0) {
     v = 0x10;
-  } else if (strncmp(at, "HTTP/2.0", length) == 0) {
-    v = 0x12;
   } else {
     ICEY_LOG_WARN(g_logger)
         << "invalid http response version: " << std::string(at, length);
@@ -240,7 +236,10 @@ HttpResponseParser::HttpResponseParser() : m_error(0) {
 uint64_t HttpResponseParser::getContentLength() {
   return m_data->getHeaderAs<uint64_t>("content-length", 0);
 }
-size_t HttpResponseParser::execute(char* data, size_t len) {
+size_t HttpResponseParser::execute(char* data, size_t len, bool chunck) {
+  if (chunck) {
+    httpclient_parser_init(&m_parser);
+  }
   size_t offset = httpclient_parser_execute(&m_parser, data, len, 0);
   memmove(data, data + offset, (len - offset));
   return offset;

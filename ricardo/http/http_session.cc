@@ -1,6 +1,10 @@
 #include "http_session.h"
 
-#include "http/http_parser.h"
+#include "http_parser.h"
+#include "log.h"
+#include "util.h"
+
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 namespace http {
 
@@ -17,15 +21,18 @@ HttpRequest::ptr HttpSession::recvRequest() {
   do {
     int len = read(data + offset, buff_size - offset);
     if (len <= 0) {
+      close();
       return nullptr;
     }
     len += offset;
     size_t nparse = parser->execute(data, len);
     if (parser->hasError()) {
+      close();
       return nullptr;
     }
     offset = len - nparse;
     if (offset == buff_size) {
+      close();
       return nullptr;
     }
     if (parser->isFinished()) {
@@ -48,6 +55,9 @@ HttpRequest::ptr HttpSession::recvRequest() {
     length -= offset;
     if (length > 0) {
       if (readFixSize(&body[len], length) <= 0) {
+        auto placeholder = "readFixSize failed";
+        ICEY_LOG_DEBUG(g_logger) << placeholder;
+        close();
         return nullptr;
       }
     }

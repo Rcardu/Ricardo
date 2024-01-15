@@ -71,7 +71,11 @@ Servlet::ptr ServletDispatch::getServlet(const std::string& uri) {
 Servlet::ptr ServletDispatch::getGlobServlet(const std::string& uri) {
   RWMutexType::ReadLock rdlock(m_mutex);
   for (auto it = m_globs.begin(); it != m_globs.end(); ++it) {
+    ICEY_LOG_DEBUG(g_logger)
+        << "it->first.c_str(): " << it->first.c_str() << std::endl
+        << "uri.c_str(): " << uri.c_str();
     if (it->first == uri) {
+      ICEY_LOG_DEBUG(g_logger) << "Real Uri";
       return it->second;
     }
   }
@@ -98,14 +102,14 @@ NotFoundServlet::NotFoundServlet() : Servlet("NotFoundServlet") {}
 int32_t NotFoundServlet::handle(Ricardo::http::HttpRequest::ptr request,
                                 Ricardo::http::HttpResponse::ptr response,
                                 Ricardo::http::HttpSession::ptr session) {
-  static const std::string& RSP_BODY =
-      R"(<html><head><title> 404 Not Found</title></head><body><center>
-       <hl>404 Not Found</ hl></ center><hr><center> nginx / 1.16.0 < / center
-       > < / body > < html > )";
   // static const std::string& RSP_BODY =
-  //     "<html><head><title> 404 Not Found"
-  //     "</title></head><body><center><hl>404 Not Found</hl></center>"
-  //     "<hr><center>icey/1.0.0</center></body><html>";
+  //     R"(<html><head><title> 404 Not Found
+  //       </title></head><body><center><hl>404 Not Found</hl></center>
+  //       <hr><center>icey/1.0.0 </center></body></html> )";
+  static const std::string& RSP_BODY =
+      "<html><head><title> 404 Not Found"
+      "</title></head><body><center><hl>404 Not Found</hl></center>"
+      "<hr><center>icey/1.0.0</center></body><html>";
   response->setStatus(Ricardo::http::HttpStatus::NOT_FOUND);
   response->setHeader("Server", "icey/1.0.0");
   response->setHeader("Content-Type", "text / html");
