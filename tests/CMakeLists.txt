@@ -28,6 +28,7 @@ add_executable(${NAME_PAR} http_parser_t.cc)
 add_executable(${NAME_TSR} tcp_server_t.cc)
 add_executable(${NAME_HTSR} http_server_t.cc)
 add_executable(${NAME_HTCN} http_connection_t.cc)
+add_executable(${NAME_URI} uri_t.cc)
 
 #重定义此路径为相对路径
 #将所有源文件路径重定义
@@ -51,4 +52,5 @@ target_link_libraries(${NAME_PAR} ${RICARDO})
 target_link_libraries(${NAME_TSR} ${RICARDO})
 target_link_libraries(${NAME_HTSR} ${RICARDO})
 target_link_libraries(${NAME_HTCN} ${RICARDO})
+target_link_libraries(${NAME_URI} ${RICARDO})
 

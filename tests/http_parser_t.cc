@@ -60,7 +60,7 @@ Content-Type: text/html
 void test_response() {
   Ricardo::http::HttpResponseParser parser;
   std::string tmp = test_response_data1;
-  size_t s = parser.execute(&tmp[0], tmp.size());
+  size_t s = parser.execute(&tmp[0], tmp.size(), true);
   ICEY_LOG_ERROR(g_logger) << "execute rt=" << s
                            << " has_error=" << parser.hasError()
                            << " is_finished=" << parser.isFinished()

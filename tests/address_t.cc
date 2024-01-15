@@ -1,7 +1,5 @@
 #include <netinet/in.h>
-
 #include <vector>
-
 #include "address.h"
 #include "log.h"
 #include "util.h"

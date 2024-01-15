@@ -7,7 +7,7 @@ static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void run() {
   Ricardo::Address::ptr addr =
-      Ricardo::Address::LookupAnyIPAddress("www.sylar.top:80");
+      Ricardo::Address::LookupAnyIPAddress("www.dujiale.top:80");
   if (!addr) {
     ICEY_LOG_ERROR(g_logger) << "get addr error";
     return;
@@ -21,8 +21,7 @@ void run() {
   Ricardo::http::HttpConnection::ptr conn(
       new Ricardo::http::HttpConnection(sock));
   Ricardo::http::HttpRequest::ptr req(new Ricardo::http::HttpRequest);
-  req->setPath("/blog/");
-  req->setHeader("host", "www.sylar.top");
+  req->setHeader("host", "www.dujiale.top");
   ICEY_LOG_INFO(g_logger) << "req: " << std::endl << *req;
 
   conn->sendRequest(req);
@@ -33,6 +32,8 @@ void run() {
     return;
   }
   ICEY_LOG_INFO(g_logger) << "rsp: " << std::endl << *rsp;
+  std::ofstream ofs("rsp.dat");
+  ofs << *rsp;
 }
 
 int main(int argc, char** argv) {
