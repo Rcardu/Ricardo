@@ -1,0 +1,217 @@
+[
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/address.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/address.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/address.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/address.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/bytearray.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/bytearray.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/bytearray.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/bytearray.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/config.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/config.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/config.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/config.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/fd_manager.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/fd_manager.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/fd_manager.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/fd_manager.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/fiber.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/fiber.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/fiber.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/fiber.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/hook.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/hook.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/hook.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/hook.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/iomanager.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/iomanager.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/iomanager.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/iomanager.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/log.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/log.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/log.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/log.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/scheduler.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/scheduler.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/scheduler.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/scheduler.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/socket_s.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/socket_s.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/socket_s.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/socket_s.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/socket_stream.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/socket_stream.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/socket_stream.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/socket_stream.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/streams.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/streams.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/streams.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/streams.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/tcp_server.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/tcp_server.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/tcp_server.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/tcp_server.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/thread.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/thread.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/thread.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/thread.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/timer.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/timer.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/timer.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/timer.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/uri.rl.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/uri.rl.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/uri.rl.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/uri.rl.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/util.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/util.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/util.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/util.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http11_parser.rl.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http11_parser.rl.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http11_parser.rl.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http_connection.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http_connection.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http_connection.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http_connection.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http_parser.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http_parser.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http_parser.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http_parser.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http_server.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http_server.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http_server.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http_server.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/http_session.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/http_session.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/http_session.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/http_session.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/httpclient_parser.rl.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/httpclient_parser.rl.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/httpclient_parser.rl.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/httpclient_parser.rl.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -Dricardo_EXPORTS -D__FILE__=\\\"ricardo/http/servlet.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -fPIC -o ricardo/CMakeFiles/ricardo.dir/http/servlet.cc.o -c /home/Ricardo/ICEY/Ricardo/ricardo/http/servlet.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/ricardo/http/servlet.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/applog.dir/log_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/log_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/log_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appconfig.dir/config_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/config_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/config_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appthread.dir/thread_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/thread_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/thread_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apputil.dir/util_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/util_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/util_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appfiber.dir/fiber_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/fiber_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/fiber_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appschedler.dir/scheduler_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/scheduler_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/scheduler_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appiomanager.dir/iomanager_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/iomanager_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/iomanager_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apphook.dir/hook_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/hook_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/hook_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appaddress.dir/address_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/address_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/address_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appsocket.dir/socket_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/socket_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/socket_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appbytearray.dir/bytearray_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/bytearray_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/bytearray_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apphttp.dir/http_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/http_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/http_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apphttpparser.dir/http_parser_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/http_parser_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/http_parser_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apptcpserver.dir/tcp_server_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/tcp_server_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/tcp_server_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apphttpserver.dir/http_server_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/http_server_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/http_server_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -D__FILE__=\\\"tests/http_connection_t.cc\\\" -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/apphttpconnect.dir/http_connection_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/http_connection_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/http_connection_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o tests/CMakeFiles/appuri.dir/uri_t.cc.o -c /home/Ricardo/ICEY/Ricardo/tests/uri_t.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/tests/uri_t.cc"
+},
+{
+  "directory": "/home/Ricardo/ICEY/Ricardo/build",
+  "command": "/usr/bin/g++ -I/home/Ricardo/ICEY/Ricardo/include -I/home/Ricardo/ICEY/Ricardo/yaml-cpp -I/home/Ricardo/ICEY/Ricardo/include/http -Wno-builtin-macro-redefined -g -o examples/CMakeFiles/appechoserver.dir/echo_server.cc.o -c /home/Ricardo/ICEY/Ricardo/examples/echo_server.cc",
+  "file": "/home/Ricardo/ICEY/Ricardo/examples/echo_server.cc"
+}
+]

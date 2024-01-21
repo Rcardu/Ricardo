@@ -1,15 +1,15 @@
 #include "thread.h"
+
 #include "log.h"
 #include "util.h"
 
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 
-//指向当前的线程
+// 指向当前的线程
 static thread_local Thread* t_thread = nullptr;
-//记录当前线程的名称
+// 记录当前线程的名称
 static thread_local std::string t_thread_name = "UNKNOW";
-
 
 Semaphore::Semaphore(uint32_t count) {
   if (sem_init(&m_semaphore, 0, count)) {
@@ -17,9 +17,7 @@ Semaphore::Semaphore(uint32_t count) {
   }
 }
 
-Semaphore::~Semaphore() {
-  sem_destroy(&m_semaphore);
-}
+Semaphore::~Semaphore() { sem_destroy(&m_semaphore); }
 
 void Semaphore::Wait() {
   if (sem_wait(&m_semaphore)) {
@@ -33,15 +31,14 @@ void Semaphore::Notify() {
   }
 }
 
-Thread* Thread::GetThis() {
-  return t_thread;
-}
+Thread* Thread::GetThis() { return t_thread; }
 
-const std::string& Thread::GetName() {
-  return t_thread_name;
-}
+const std::string& Thread::GetName() { return t_thread_name; }
 
 void Thread::SetName(const std::string& name) {
+  if (name.empty()) {
+    return;
+  }
   if (t_thread) {
     t_thread->m_name = name;
   }

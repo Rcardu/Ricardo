@@ -1,20 +1,17 @@
 #include "timer.h"
+
+#include "thread.h"
 #include "util.h"
 
 namespace Ricardo {
 
 bool Timer::Comparator::operator()(const Timer::ptr& lhs,
                                    const Timer::ptr& rhs) const {
-  if (!lhs && !rhs)
-    return false;
-  if (!lhs)
-    return true;
-  if (!rhs)
-    return false;
-  if (lhs->m_next < rhs->m_next)
-    return true;
-  if (rhs->m_next < lhs->m_next)
-    return false;
+  if (!lhs && !rhs) return false;
+  if (!lhs) return true;
+  if (!rhs) return false;
+  if (lhs->m_next < rhs->m_next) return true;
+  if (rhs->m_next < lhs->m_next) return false;
   return lhs.get() < rhs.get();
 }
 
@@ -78,9 +75,7 @@ bool Timer::reset(uint64_t ms, bool from_now) {
   return true;
 }
 
-TimerManager::TimerManager() {
-  m_previouseTime = Ricardo::GetCurrentMS();
-}
+TimerManager::TimerManager() { m_previouseTime = Ricardo::GetCurrentMS(); }
 
 TimerManager::~TimerManager() {}
 
@@ -133,6 +128,9 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()>>& cbs) {
     }
   }
   RWMutexType::WriteLock wrlock(m_mutex);
+  if(m_timers.empty()){
+    return;
+  }
   bool rollover = detectClockRollover(now_ms);
   if (!rollover && (*m_timers.begin())->m_next > now_ms) {
     return;
@@ -160,7 +158,7 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()>>& cbs) {
 
 void TimerManager::addTimer(Timer::ptr val, RWMutexType::WriteLock& wrlock) {
   auto it = m_timers.insert(val).first;
-  bool at_front = (it == m_timers.begin() && !m_tickled);
+  bool at_front = (it == m_timers.begin()) && !m_tickled;
   if (at_front) {
     m_tickled = true;
   }

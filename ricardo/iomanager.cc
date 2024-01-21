@@ -3,6 +3,50 @@
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 
+enum EpollCtlOp {};
+static std::ostream& operator<<(std::ostream& os, const EpollCtlOp& op) {
+  switch ((int)op) {
+    ;
+#define XX(ctl) \
+  case ctl:     \
+    return os << #ctl;
+    XX(EPOLL_CTL_ADD);
+    XX(EPOLL_CTL_MOD);
+    XX(EPOLL_CTL_DEL);
+    default:
+      return os << (int)op;
+  }
+#undef XX
+}
+static std::ostream& operator<<(std::ostream& os, EPOLL_EVENTS events) {
+  if (!events) {
+    return os << "0";
+  }
+  bool first = true;
+#define XX(E)       \
+  if (events & E) { \
+    if (!first) {   \
+      os << "|";    \
+    }               \
+    os << #E;       \
+    first = false;  \
+  }
+  XX(EPOLLIN);
+  XX(EPOLLPRI);
+  XX(EPOLLOUT);
+  XX(EPOLLRDNORM);
+  XX(EPOLLRDBAND);
+  XX(EPOLLWRNORM);
+  XX(EPOLLWRBAND);
+  XX(EPOLLMSG);
+  XX(EPOLLERR);
+  XX(EPOLLHUP);
+  XX(EPOLLRDHUP);
+  XX(EPOLLONESHOT);
+  XX(EPOLLET);
+#undef XX
+  return os;
+}
 
 IOManager::FdContext::EventContext& IOManager::FdContext::getContext(
     IOManager::Event event) {
@@ -14,6 +58,7 @@ IOManager::FdContext::EventContext& IOManager::FdContext::getContext(
     default:
       ICEY_ASSERT2(false, "getContext");
   }
+  throw std::invalid_argument("getContext invalid event");
 }
 
 void IOManager::FdContext::resetContext(EventContext& ctx) {
@@ -113,8 +158,8 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
   int rt = epoll_ctl(m_epfd, op, fd, &epevent);
   if (rt) {
     ICEY_LOG_ERROR(g_logger)
-        << "epoll_ctl(" << m_epfd << " " << op << ", " << fd << ", "
-        << epevent.events << "): " << rt << " (" << errno << ") ("
+        << "epoll_ctl(" << m_epfd << ", " << (EpollCtlOp)op << ", " << fd
+        << ", " << epevent.events << "): " << rt << " (" << errno << ") ("
         << strerror(errno) << ")";
     return -1;
   }
@@ -128,7 +173,8 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
     event_ctx.cb.swap(cb);
   } else {
     event_ctx.fiber = Fiber::GetThis();
-    ICEY_ASSERT(event_ctx.fiber->getState() == Fiber::EXEC);
+    ICEY_ASSERT2(event_ctx.fiber->getState() == Fiber::EXEC,
+                 "state=" << event_ctx.fiber->getState());
   }
   return 0;
 }
@@ -155,7 +201,7 @@ bool IOManager::delEvent(int fd, Event event) {
   int rt = epoll_ctl(m_epfd, op, fd, &epevent);
   if (rt) {
     ICEY_LOG_ERROR(g_logger)
-        << "epoll_ctl(" << m_epfd << " " << op << ", " << fd << ", "
+        << "epoll_ctl(" << m_epfd << " " << (EpollCtlOp)op << ", " << fd << ", "
         << epevent.events << "): " << rt << " (" << errno << ") ("
         << strerror(errno) << ")";
     return false;
@@ -190,7 +236,7 @@ bool IOManager::cancelEvent(int fd, Event event) {
   int rt = epoll_ctl(m_epfd, op, fd, &epevent);
   if (rt) {
     ICEY_LOG_ERROR(g_logger)
-        << "epoll_ctl(" << m_epfd << " " << op << ", " << fd << ", "
+        << "epoll_ctl(" << m_epfd << " " << (EpollCtlOp)op << ", " << fd << ", "
         << epevent.events << "): " << rt << " (" << errno << ") ("
         << strerror(errno) << ")";
     return false;
@@ -222,7 +268,7 @@ bool IOManager::cancelAll(int fd) {
   int rt = epoll_ctl(m_epfd, op, fd, &epevent);
   if (rt) {
     ICEY_LOG_ERROR(g_logger)
-        << "epoll_ctl(" << m_epfd << " " << op << ", " << fd << ", "
+        << "epoll_ctl(" << m_epfd << " " << (EpollCtlOp)op << ", " << fd << ", "
         << epevent.events << "): " << rt << " (" << errno << ") ("
         << strerror(errno) << ")";
     return false;
@@ -246,7 +292,7 @@ IOManager* IOManager::GetThis() {
 
 void IOManager::tickle() {
   if (hasIdleThreads()) {
-    //:ICEY_LOG_INFO(g_logger) << "no thread tickle";
+    //: ICEY_LOG_INFO(g_logger) << "no thread tickle";
     return;
   }
   int rt = write(m_tickleFds[1], "T", 1);
@@ -293,11 +339,11 @@ void IOManager::idel() {
       }
     } while (true);
 
-    //获取当前时间点满足条件的回调函数
+    // 获取当前时间点满足条件的回调函数
     std::vector<std::function<void()>> cbs;
     listExpiredCb(cbs);
     if (!cbs.empty()) {
-      //ICEY_LOG_DEBUG(g_logger)<<"no timer cbs.size = "<<cbs.size();
+      // ICEY_LOG_DEBUG(g_logger)<<"no timer cbs.size = "<<cbs.size();
       schedule(cbs.begin(), cbs.end());
       cbs.clear();
     }
@@ -333,9 +379,9 @@ void IOManager::idel() {
       int rt2 = epoll_ctl(m_epfd, op, fd_ctx->fd, &event);
       if (rt2) {
         ICEY_LOG_ERROR(g_logger)
-            << "epoll_ctl(" << m_epfd << " " << op << ", " << fd_ctx->fd << ", "
-            << event.events << "): " << rt2 << " (" << errno << ") ("
-            << strerror(errno) << ")";
+            << "epoll_ctl(" << m_epfd << " " << (EpollCtlOp)op << ", "
+            << fd_ctx->fd << ", " << event.events << "): " << rt2 << " ("
+            << errno << ") (" << strerror(errno) << ")";
         continue;
       }
       if (real_events & READ) {
@@ -355,7 +401,5 @@ void IOManager::idel() {
   }
 }
 
-void IOManager::onTimerInsertedAtFront() {
-  tickle();
-}
+void IOManager::onTimerInsertedAtFront() { tickle(); }
 }  // namespace Ricardo

@@ -1,14 +1,17 @@
 #include "socket_s.h"
+
 #include <asm-generic/socket.h>
 #include <bits/types/struct_iovec.h>
 #include <bits/types/struct_timeval.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
 #include <cstddef>
 #include <cstring>
 #include <ctime>
 #include <memory>
+
 #include "address.h"
 #include "fd_manager.h"
 #include "hook.h"
@@ -68,9 +71,7 @@ Socket::Socket(int family, int type, int protocol)
       m_protocol(protocol),
       m_isConnected(false) {}
 
-Socket::~Socket() {
-  close();
-}
+Socket::~Socket() { close(); }
 
 int64_t Socket::getSendTimeout() {
   FdCtx::ptr ctx = FdMgr::GetInstance()->get(m_sock);
@@ -279,8 +280,10 @@ int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to,
 
 int Socket::recv(void* buffer, size_t length, int flags) {
   if (isConnected()) {
+    ICEY_LOG_DEBUG(g_logger) << "Socket::recv start";
     return ::recv(m_sock, buffer, length, flags);
   }
+  ICEY_LOG_DEBUG(g_logger) << "Socket::recv return -1";
   return -1;
 }
 
@@ -386,9 +389,7 @@ Address::ptr Socket::getLocalAddress() {
   return m_localAddress;
 }
 
-bool Socket::isValid() const {
-  return m_sock != -1;
-}
+bool Socket::isValid() const { return m_sock != -1; }
 
 int Socket::getError() {
   int error = 0;
@@ -425,9 +426,7 @@ bool Socket::cancelAccept() {
   return IOManager::GetThis()->cancelEvent(m_sock, Ricardo::IOManager::READ);
 }
 
-bool Socket::cancelAll() {
-  return IOManager::GetThis()->cancelAll(m_sock);
-}
+bool Socket::cancelAll() { return IOManager::GetThis()->cancelAll(m_sock); }
 
 void Socket::initSock() {
   int val = 1;
@@ -448,7 +447,7 @@ void Socket::newSock() {
   }
 }
 
-std::ostream& operator<<(std::ostream& os, const Socket& sock){
+std::ostream& operator<<(std::ostream& os, const Socket& sock) {
   return sock.dump(os);
 }
 }  // namespace Ricardo

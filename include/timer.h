@@ -14,16 +14,19 @@ class Timer : public std::enable_shared_from_this<Timer> {
   bool cancel();
   bool refresh();
   bool reset(uint64_t ms, bool from_now = true);
+
  private:
   Timer(uint64_t ms, std::function<void()> cb, bool recurring,
         TimerManager* manager);
   Timer(uint64_t next);
+
  private:
-  bool m_recurring = false;  //是否为循环定时器
-  uint64_t m_ms = 0;         //执行周期
-  uint64_t m_next = 0;       //精确的执行时间
+  bool m_recurring = false;  // 是否为循环定时器
+  uint64_t m_ms = 0;         // 执行周期
+  uint64_t m_next = 0;       // 精确的执行时间
   std::function<void()> m_cb;
   TimerManager* m_manager = nullptr;
+
  private:
   struct Comparator {
     bool operator()(const Timer::ptr& lhs, const Timer::ptr& rhs) const;
@@ -50,7 +53,7 @@ class TimerManager {
 
  protected:
   virtual void onTimerInsertedAtFront() = 0;
-  void addTimer(Timer::ptr val, RWMutexType::WriteLock& wrlock);
+  void addTimer(Timer::ptr val, RWMutexType::WriteLock& lock);
 
  private:
   bool detectClockRollover(uint64_t now_ms);

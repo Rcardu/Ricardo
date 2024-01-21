@@ -6,3 +6,8 @@ lib
 lib
 bin
 bin
+log.txt
+.ycm_extra_conf.py
+netrw.vim
+*.dat
+t1

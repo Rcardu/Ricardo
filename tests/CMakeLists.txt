@@ -53,4 +53,6 @@ target_link_libraries(${NAME_TSR} ${RICARDO})
 target_link_libraries(${NAME_HTSR} ${RICARDO})
 target_link_libraries(${NAME_HTCN} ${RICARDO})
 target_link_libraries(${NAME_URI} ${RICARDO})
+#设置相对路径
+force_redefine_file_macro_for_sources (${NAME_HTCN})  #__FILE__ 
 
