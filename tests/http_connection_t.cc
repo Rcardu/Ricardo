@@ -7,7 +7,7 @@ static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void test_pool() {
   Ricardo::http::HttpConnectionPool::ptr pool(
-      new Ricardo::http::HttpConnectionPool("www.dujiale.top", "", 80, 10,
+      new Ricardo::http::HttpConnectionPool("www.baidu.com", "", 80, 10,
                                             1000 * 30, 5));
   Ricardo::IOManager::GetThis()->addTimer(
       1000,

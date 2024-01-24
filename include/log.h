@@ -1,10 +1,11 @@
 #pragma once
 #include <ostream>
+
 #include "singleton.h"
 #include "stdhead.h"
 #include "thread.h"
 
-//使用logger写入日志级别为level的日志（流式日志）
+// 使用logger写入日志级别为level的日志（流式日志）
 #define ICEY_LOG_LEVEL(logger, level)                                   \
   if (logger->getLevel() <= level)                                      \
   Ricardo::LogEventWrap(                                                \
@@ -13,15 +14,15 @@
           Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName()))) \
       .getSS()
 
-//使用logger写入日志界别为debug的日志（流式日志）
+// 使用logger写入日志界别为debug的日志（流式日志）
 #define ICEY_LOG_DEBUG(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::DEBUG)
-//使用logger写入日志界别为info的日志（流式日志）
+// 使用logger写入日志界别为info的日志（流式日志）
 #define ICEY_LOG_INFO(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::INFO)
-//使用logger写入日志界别为warn的日志（流式日志）
+// 使用logger写入日志界别为warn的日志（流式日志）
 #define ICEY_LOG_WARN(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::WARN)
-//使用logger写入日志界别为error的日志（流式日志）
+// 使用logger写入日志界别为error的日志（流式日志）
 #define ICEY_LOG_ERROR(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
-//使用logger写入日志界别为fatal的日志（流式日志）
+// 使用logger写入日志界别为fatal的日志（流式日志）
 #define ICEY_LOG_FATAL(logger) YLAR_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
 
 #define ICEY_LOG_FMT_LEVEL(logger, level, fmt, ...)                     \
@@ -32,19 +33,19 @@
           Ricardo::GetFiberId(), time(0), Ricardo::Thread::GetName()))) \
       .getEvent()                                                       \
       ->format(fmt, __VA_ARGS__)
-//使用logger写入日志界别为debug的日志（格式化,printf）
+// 使用logger写入日志界别为debug的日志（格式化,printf）
 #define ICEY_LOG_FMT_DEBUG(logger, fmt, ...) \
   ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::DEBUG, fmt, __VA_ARGS__)
-//使用logger写入日志界别为info的日志（格式化,printf）
+// 使用logger写入日志界别为info的日志（格式化,printf）
 #define ICEY_LOG_FMT_INFO(logger, fmt, ...) \
   ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::INFO, fmt, __VA_ARGS__)
-//使用logger写入日志界别为warn的日志（格式化,printf）
+// 使用logger写入日志界别为warn的日志（格式化,printf）
 #define ICEY_LOG_FMT_WARN(logger, fmt, ...) \
   ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::WARN, fmt, __VA_ARGS__)
-//使用logger写入日志界别为error的日志（格式化,printf）
+// 使用logger写入日志界别为error的日志（格式化,printf）
 #define ICEY_LOG_FMT_ERROR(logger, fmt, ...) \
   ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::ERROR, fmt, __VA_ARGS__)
-//使用logger写入日志界别为fatal的日志（格式化,printf）
+// 使用logger写入日志界别为fatal的日志（格式化,printf）
 #define ICEY_LOG_FMT_FATAL(logger, fmt, ...) \
   ICEY_LOG_FMT_LEVEL(logger, Ricardo::LogLevel::FATAL, fmt, __VA_ARGS__)
 
@@ -56,63 +57,123 @@ namespace Ricardo {
 class Logger;
 class LoggerManager;
 
-//日志级别
+// 日志级别
 class LogLevel {
  public:
-  //日志级别
+  // 日志级别
   enum Level {
+    /// 未知级别
     UNKNOW = 0,
+    /// DEBUG 级别
     DEBUG = 1,
+    /// INFO 级别
     INFO = 2,
+    /// WARN 级别
     WARN = 3,
+    /// ERROR 级别
     ERROR = 4,
+    /// FATAL 级别
     FATAL = 5
   };
-
+  /**
+   * @brief 将日志级别转成文本输出
+   * @param[in] level 日志级别
+   */
   static const char* ToString(LogLevel::Level level);
+  /**
+   * @brief 将文本转换成日志级别
+   * @param[in] str 日志级别文本
+   */
   static LogLevel::Level FormString(const std::string& str);
 };
 
-//日志事件
+// 日志事件
 class LogEvent {
  public:
   typedef std::shared_ptr<LogEvent> ptr;
+  /**
+   *@brief 构造函数
+   *@param[in] logger 日志器
+   *@param[in] level 日志级别
+   *@param[in] file 文件名
+   *@param[in] line 文件行号
+   *@param[in] elapse 程序启动依赖的耗时
+   *@param[in] thread_id 线程id
+   *@param[in] fiber_id 协程id
+   *@param[in] time 时间戳
+   */
   LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level,
            const char* file, int32_t line, uint32_t elapse, uint32_t thread_id,
            uint32_t fiber_id, uint32_t time, const std::string& thread_name);
 
+  /**
+   *@brief 返回文件名
+   */
   const char* getFile() const { return m_file; }
 
+  /**
+   *@brief 返回文件行号
+   */
   int32_t getLine() const { return m_line; }
 
+  /**
+   *@brief 返回程序启动到现在为止的耗时
+   */
   uint32_t getElapse() const { return m_elapse; }
 
+  /**
+   *@brief 返回线程id
+   */
   uint32_t getThreadId() const { return m_threadId; }
 
+  /**
+   *@brief 返回协程id
+   */
   uint32_t getFiberId() const { return m_fiberId; }
 
+  /**
+   *@brief 返回时间戳
+   */
   uint32_t getTime() const { return m_time; }
 
+  /**
+   *@brief 获取线程名
+   */
   const std::string getThredName() const { return m_threadName; }
 
+  /**
+   *@brief 获取连接
+   */
   std::string getContent() const { return m_ss.str(); }
 
+  /**
+   *@brief 获取日志器
+   */
   std::shared_ptr<Logger> getLogger() const { return m_logger; }
 
+  /**
+   *@brief 获取日志级别
+   */
   LogLevel::Level getLevel() const { return m_level; }
 
+  /**
+   *@brief 获取输出
+   */
   std::stringstream& getSS() { return m_ss; }
 
+  /**
+   *@brief 输出
+   */
   void format(const char* fmt, ...);
   void format(const char* fmt, va_list al);
 
  private:
-  const char* m_file = nullptr;  //文件名
-  int32_t m_line = 0;            //行号
-  int32_t m_elapse = 0;          //程序启动到现在的毫秒数
-  int32_t m_threadId = 0;        //线程id
-  uint32_t m_fiberId = 0;        //协程id
-  uint64_t m_time = 0;           //时间戳
+  const char* m_file = nullptr;  // 文件名
+  int32_t m_line = 0;            // 行号
+  int32_t m_elapse = 0;          // 程序启动到现在的毫秒数
+  int32_t m_threadId = 0;        // 线程id
+  uint32_t m_fiberId = 0;        // 协程id
+  uint64_t m_time = 0;           // 时间戳
   std::string m_threadName;
   std::stringstream m_ss;
 
@@ -132,7 +193,7 @@ class LogEventWrap {
   LogEvent::ptr m_event;
 };
 
-//日志格式器
+// 日志格式器
 class LogFormatter {
  public:
   typedef std::shared_ptr<LogFormatter> ptr;
@@ -168,7 +229,7 @@ class LogFormatter {
   bool m_error = false;
 };
 
-//日志输出地
+// 日志输出地
 class LogAppender {
   friend class Logger;
 
@@ -196,7 +257,7 @@ class LogAppender {
   LogFormatter::ptr m_formatter;
 };
 
-//日志器
+// 日志器
 class Logger : public std::enable_shared_from_this<Logger> {
   friend class LoggerManager;
 
@@ -230,15 +291,15 @@ class Logger : public std::enable_shared_from_this<Logger> {
   std::string toYamlString();
 
  private:
-  std::string m_name;       //日志名称
-  LogLevel::Level m_level;  //日志级别
+  std::string m_name;       // 日志名称
+  LogLevel::Level m_level;  // 日志级别
   MutexType m_mutex;
-  std::list<LogAppender::ptr> m_appenders;  //Appender集合
+  std::list<LogAppender::ptr> m_appenders;  // Appender集合
   LogFormatter::ptr m_formatter;
   Logger::ptr m_root;
 };
 
-//输出到控制台的Appender
+// 输出到控制台的Appender
 class StdoutLogAppender : public LogAppender {
  public:
   typedef std::shared_ptr<StdoutLogAppender> ptr;
@@ -250,7 +311,7 @@ class StdoutLogAppender : public LogAppender {
  private:
 };
 
-//输出到文件的Appender
+// 输出到文件的Appender
 class FileLogAppender : public LogAppender {
  public:
   typedef std::shared_ptr<FileLogAppender> ptr;
@@ -259,7 +320,7 @@ class FileLogAppender : public LogAppender {
                    LogEvent::ptr event) override;
 
   std::string toYamlString() override;
-  //重新打开文件，文件打开成功返回True
+  // 重新打开文件，文件打开成功返回True
   bool reopen();
 
  private:
