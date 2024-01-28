@@ -1,6 +1,6 @@
 #include "ricardo.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void test_fiber() {
   static int s_count = 5;

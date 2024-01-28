@@ -1,7 +1,7 @@
 #include "iomanager.h"
 #include "ricardo.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("icey");
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("icey");
 
 void test_fiber() {
   ICEY_LOG_INFO(g_logger) << "test_fiber";

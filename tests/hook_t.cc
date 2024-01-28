@@ -2,7 +2,7 @@
 #include "iomanager.h"
 #include "log.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void test_sleep() {
   Ricardo::IOManager iom(1);
@@ -19,7 +19,6 @@ void test_sleep() {
 }
 
 void test_sock() {
-
   int sock = socket(AF_INET, SOCK_STREAM, 0);
 
   sockaddr_in addr;
@@ -58,10 +57,9 @@ void test_sock() {
 }
 
 int main(int argc, char** agrv) {
-  //test_sleep();
+  // test_sleep();
   Ricardo::IOManager iom;
   iom.schedule(test_sock);
-
 
   return 0;
 }

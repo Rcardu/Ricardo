@@ -12,6 +12,9 @@ set(EXECPATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 #库名
 set(RICARDO ricardo)
+#库名静态
+set(RICARDOA ricardoint)
+#库名
 set(YAML_CPP yaml-cpp)
 
 #可执行程序名
