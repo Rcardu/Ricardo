@@ -280,7 +280,7 @@ int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to,
 
 int Socket::recv(void* buffer, size_t length, int flags) {
   if (isConnected()) {
-    ICEY_LOG_DEBUG(g_logger) << "Socket::recv start";
+    // ICEY_LOG_DEBUG(g_logger) << "Socket::recv start";
     return ::recv(m_sock, buffer, length, flags);
   }
   ICEY_LOG_DEBUG(g_logger) << "Socket::recv return -1";

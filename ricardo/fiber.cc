@@ -51,7 +51,6 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller)
     : m_id(s_fiber_id++), m_cb(cb) {
   ++s_fiber_count;
   m_stacksize = stacksize ? stacksize : g_fiber_stack_size->getValue();
-
   m_stack = StackAllocator::Alloc(m_stacksize);
   if (getcontext(&m_ctx)) {
     ICEY_ASSERT2(false, "getcontext");
@@ -104,7 +103,7 @@ void Fiber::reset(std::function<void()> cb) {
 void Fiber::call() {
   SetThis(this);
   m_state = EXEC;
-  ICEY_LOG_DEBUG(g_logger) << "id = " << getId();
+  // ICEY_LOG_DEBUG(g_logger) << "Fiber " << getId() << " call.";
   if (swapcontext(&t_threadFiber->m_ctx, &m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }
@@ -112,6 +111,7 @@ void Fiber::call() {
 
 void Fiber::back() {
   SetThis(t_threadFiber.get());
+  // ICEY_LOG_DEBUG(g_logger) << "Fiber " << getId() << " back.";
   if (swapcontext(&m_ctx, &t_threadFiber->m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }
@@ -119,6 +119,7 @@ void Fiber::back() {
 
 void Fiber::swapIn() {
   SetThis(this);
+  // ICEY_LOG_DEBUG(g_logger) << "Fiber " << getId() << " swapIn.";
   ICEY_ASSERT(m_state != EXEC);
   m_state = EXEC;
 
@@ -129,6 +130,7 @@ void Fiber::swapIn() {
 
 void Fiber::swapOut() {
   SetThis(Scheduler::GetMainFiber());
+  // ICEY_LOG_DEBUG(g_logger) << "Fiber " << getId() << " swapOut.";
   if (swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }

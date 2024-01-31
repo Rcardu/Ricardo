@@ -282,6 +282,7 @@ HttpConnection::ptr HttpConnectionPool::getConnection() {
   MutexType::Lock lock(m_mutex);
   while (!m_conns.empty()) {
     auto conn = *m_conns.begin();
+    m_conns.pop_front();
     if (!conn->isConnected()) {
       invalid_conns.push_back(conn);
       continue;
@@ -314,6 +315,7 @@ HttpConnection::ptr HttpConnectionPool::getConnection() {
       ICEY_LOG_ERROR(g_logger) << "sock connect fail: " << *addr;
       return nullptr;
     }
+    ICEY_LOG_DEBUG(g_logger) << "Create Http Connection";
     ptr = new HttpConnection(sock);
     ++m_total;
   }
@@ -322,13 +324,21 @@ HttpConnection::ptr HttpConnectionPool::getConnection() {
 }
 void HttpConnectionPool::ReleasePtr(HttpConnection* ptr,
                                     HttpConnectionPool* pool) {
-  ++ptr->m_request;
+  // ICEY_LOG_DEBUG(g_logger) << "Request Count: " << ptr->m_request++;
+  ptr->m_request++;
   if (!ptr->isConnected() ||
       ((ptr->m_createTime + pool->m_maxAliveTime) >= Ricardo::GetCurrentMS()) ||
       (ptr->m_request >= pool->m_maxRequest)) {
+    // ICEY_LOG_DEBUG(g_logger)
+    //     << "IsConnected: " << ptr->isConnected() << std::endl
+    //     << "CreateTime: " << ptr->m_createTime
+    //     << "    maxAliveTime: " << pool->m_maxAliveTime
+    //     << "    CurrentMs: " << Ricardo::GetCurrentMS() << std::endl
+    //     << "Request count: " << ptr->m_request
+    //     << "    Max Reauest Count: " << pool->m_maxRequest;
     delete ptr;
     --pool->m_total;
-    ICEY_LOG_DEBUG(g_logger) << "free success";
+    // ICEY_LOG_DEBUG(g_logger) << "free success";
     return;
   }
   MutexType::Lock lock(pool->m_mutex);
@@ -447,6 +457,7 @@ HttpResult::ptr HttpConnectionPool::doRequest(HttpRequest::ptr req,
     return std::make_shared<HttpResult>(
         (int)HttpResult::Error::TIMEOUT, nullptr,
         "recv response timeout: " + sock->getRemoteAddress()->toString() +
+
             " timeout_ms: " + std::to_string(timeout_ms));
   }
   return std::make_shared<HttpResult>((int)HttpResult::Error::OK, rsp, "ok");

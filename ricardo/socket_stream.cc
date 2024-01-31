@@ -14,15 +14,15 @@ SocketStream::~SocketStream() {
   }
 }
 bool SocketStream::isConnected() const {
-  ICEY_LOG_DEBUG(g_logger) << (m_socket ? "m_socket" : "nullptr");
+  // ICEY_LOG_DEBUG(g_logger) << (m_socket ? "m_socket" : "nullptr");
   return m_socket && m_socket->isConnected();
 }
 int SocketStream::read(void* buffer, size_t length) {
   if (!isConnected()) {
-    ICEY_LOG_DEBUG(g_logger) << "not connected";
+    // ICEY_LOG_DEBUG(g_logger) << "not connected";
     return -1;
   }
-  ICEY_LOG_DEBUG(g_logger) << "recv";
+  // ICEY_LOG_DEBUG(g_logger) << "recv";
   return m_socket->recv(buffer, length);
 }
 int SocketStream::read(ByteArray::ptr ba, size_t length) {

@@ -45,13 +45,12 @@ void test1() {
 Ricardo::Timer::ptr s_timer;
 
 void test_timer() {
-  Ricardo::IOManager iom(3);
-  s_timer = iom.addTimer(
+  s_timer = Ricardo::IOManager::GetThis()->addTimer(
       1000,
       []() {
         static int i = 0;
         ICEY_LOG_INFO(g_logger) << "hello timer i = " << i;
-        if (++i == 5) {
+        if (i++ == 5) {
           // s_timer->reset(2000);
           s_timer->cancel();
         }
@@ -60,7 +59,10 @@ void test_timer() {
 }
 
 int main(int argc, char* argv[]) {
+  Ricardo::IOManager iom(2);
+  iom.schedule(&test_timer);
+
   // test1();
-  test_timer();
+  // test_timer();
   return 0;
 }
