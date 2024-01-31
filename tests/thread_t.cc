@@ -1,19 +1,19 @@
 #include "ricardo.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 int count = 0;
-//Ricardo::RWMutex s_mutex;
+// Ricardo::RWMutex s_mutex;
 Ricardo::Mutex s_mutex;
 
 void fun1() {
   ICEY_LOG_INFO(g_logger) << "name = " << Ricardo::Thread::GetName()
-                           << " this.name: "
-                           << Ricardo::Thread::GetThis()->getName()
-                           << " id: " << Ricardo::GetThreadId() << " this.id: "
-                           << Ricardo::Thread::GetThis()->getId();
+                          << " this.name: "
+                          << Ricardo::Thread::GetThis()->getName()
+                          << " id: " << Ricardo::GetThreadId() << " this.id: "
+                          << Ricardo::Thread::GetThis()->getId();
   for (int i = 0; i < 100000; ++i) {
-    //Ricardo::RWMutex::WriteLock lock(s_mutex);
+    // Ricardo::RWMutex::WriteLock lock(s_mutex);
     Ricardo::Mutex::Lock lock(s_mutex);
     ++count;
   }
@@ -52,7 +52,6 @@ int main(int argc, char* argv[]) {
   }
   ICEY_LOG_INFO(g_logger) << "thread test end";
   ICEY_LOG_INFO(g_logger) << "count = " << count;
-
 
   return 0;
 }

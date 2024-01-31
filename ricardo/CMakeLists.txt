@@ -10,6 +10,7 @@ include_directories(${HEADPATH})
 set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 link_directories(${LIBPATH})
 add_library(${RICARDO} SHARED ${SRC})
+##add_library(${RICARDOA} STATIC ${SRC})
 #重定义此路径为相对路径
 force_redefine_file_macro_for_sources (${RICARDO})  #__FILE__ 
 target_link_libraries(${RICARDO} ${YAML_CPP})

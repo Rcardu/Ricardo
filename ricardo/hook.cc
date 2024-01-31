@@ -1,25 +1,29 @@
 #include "hook.h"
-#include <sys/ioctl.h>
+
 #include <asm-generic/errno.h>
 #include <asm-generic/socket.h>
 #include <asm-generic/sockios.h>
 #include <fcntl.h>
+#include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
 #include <cstdarg>
 #include <memory>
+
+#include "config.h"
 #include "fd_manager.h"
 #include "iomanager.h"
 #include "log.h"
+#include "macro.h"
 #include "timer.h"
-#include "config.h"
 
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 
 namespace Ricardo {
 
-static Ricardo::ConfigVar<int>::ptr g_tcp_connect_timeout = 
-  Ricardo::Config::Lookup("tcp.connetc.timeout", 5000, "tcp connect timeout");
+static Ricardo::ConfigVar<int>::ptr g_tcp_connect_timeout =
+    Ricardo::Config::Lookup("tcp.connetc.timeout", 5000, "tcp connect timeout");
 static thread_local bool t_hook_enable = false;
 
 #define HOOK_FUN(XX) \
@@ -57,28 +61,24 @@ void hook_init() {
 
 static uint64_t s_connect_timeout = -1;
 struct _HookIniter {
-  _HookIniter() { hook_init(); 
-  s_connect_timeout = g_tcp_connect_timeout->getValue();
+  _HookIniter() {
+    hook_init();
+    s_connect_timeout = g_tcp_connect_timeout->getValue();
 
-  g_tcp_connect_timeout->addListener(
-      [](const int& old_value, const int& new_value) {
-        ICEY_LOG_INFO(g_logger) << "tcp connect timeout changed from "
-                                << old_value << " to " << new_value;
-        s_connect_timeout = new_value;
-      });
+    g_tcp_connect_timeout->addListener(
+        [](const int& old_value, const int& new_value) {
+          ICEY_LOG_INFO(g_logger) << "tcp connect timeout changed from "
+                                  << old_value << " to " << new_value;
+          s_connect_timeout = new_value;
+        });
   }
-
 };
 
 static _HookIniter s_hook_initer;
 
-bool is_hook_enable() {
-  return t_hook_enable;
-}
+bool is_hook_enable() { return t_hook_enable; }
 
-void set_hook_enable(bool flag) {
-  t_hook_enable = flag;
-}
+void set_hook_enable(bool flag) { t_hook_enable = flag; }
 
 }  // namespace Ricardo
 
@@ -90,10 +90,11 @@ template <typename OriginFun, typename... Args>
 static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
                      uint32_t event, int timeout_so, Args&&... args) {
   if (!Ricardo::t_hook_enable) {
+    ICEY_LOG_DEBUG(g_logger) << "hook fail...";
     return fun(fd, std::forward<Args>(args)...);
   }
 
-  //ICEY_LOG_DEBUG(g_logger)<<"do_io <"<<hook_fun_name<<">";
+  // ICEY_LOG_DEBUG(g_logger)<<"do_io <"<<hook_fun_name<<">";
   Ricardo::FdCtx::ptr ctx = Ricardo::FdMgr::GetInstance()->get(fd);
   if (!ctx) {
     return fun(fd, std::forward<Args>(args)...);
@@ -101,6 +102,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
 
   if (ctx->isClose()) {
     errno = EBADF;
+    ICEY_LOG_DEBUG(g_logger) << "is Close";
     return -1;
   }
 
@@ -136,7 +138,7 @@ retry:
     }
 
     int rt = iom->addEvent(fd, (Ricardo::IOManager::Event)(event));
-    if (rt) {
+    if (ICEY_UNLICKLY((rt))) {
       ICEY_LOG_ERROR(g_logger)
           << hook_fun_name << " addEvent(" << fd << ", " << event << ")";
       if (timer) {
@@ -144,14 +146,15 @@ retry:
       }
       return -1;
     } else {
-      //ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
+      // ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
       Ricardo::Fiber::YieldToHold();
-      //ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
+      // ICEY_LOG_DEBUG(g_logger) << "do_io if <" << hook_fun_name << ">";
       if (timer) {
         timer->cancel();
       }
       if (tinfo->cancelled) {
         errno = tinfo->cancelled;
+        ICEY_LOG_DEBUG(g_logger) << "cancelled ... ";
         return -1;
       }
 
@@ -237,7 +240,7 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
   Ricardo::FdCtx::ptr ctx = Ricardo::FdMgr::GetInstance()->get(fd);
   if (!ctx || ctx->isClose()) {
     errno = EBADF;
-    ICEY_LOG_ERROR(g_logger)<<"Isclosed";
+    ICEY_LOG_ERROR(g_logger) << "Isclosed";
     return -1;
   }
 
@@ -280,7 +283,7 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
     }
     if (tinfo->cancelled) {
       errno = tinfo->cancelled;
-      ICEY_LOG_ERROR(g_logger)<<"callcelled= "<<errno;
+      ICEY_LOG_ERROR(g_logger) << "callcelled= " << errno;
       return -1;
     }
   } else {
@@ -304,8 +307,8 @@ int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen,
 }
 
 int connect(int sockfd, const struct sockaddr* addr, socklen_t addrlen) {
-  return connect_with_timeout(sockfd, addr, addrlen,Ricardo::s_connect_timeout);
-
+  return connect_with_timeout(sockfd, addr, addrlen,
+                              Ricardo::s_connect_timeout);
 }
 
 int accept(int s, struct sockaddr* addr, socklen_t* addrlen) {
@@ -359,7 +362,7 @@ ssize_t send(int s, const void* msg, size_t len, int flags) {
 }
 
 ssize_t sendto(int s, const void* msg, size_t len, int flags,
-           const struct sockaddr* to, socklen_t tolen) {
+               const struct sockaddr* to, socklen_t tolen) {
   return do_io(s, sendto_f, "sendto", Ricardo::IOManager::WRITE, SO_SNDTIMEO,
                msg, len, flags, to, tolen);
 }
@@ -385,7 +388,6 @@ int close(int fd) {
 }
 
 int fcntl(int fd, int cmd, ... /* arg */) {
-
   va_list va;
   va_start(va, cmd);
   switch (cmd) {
@@ -417,7 +419,7 @@ int fcntl(int fd, int cmd, ... /* arg */) {
         return arg & O_NONBLOCK;
       }
     } break;
-    //int
+    // int
     case F_DUPFD:
     case F_DUPFD_CLOEXEC:
     case F_SETFD:
@@ -433,7 +435,7 @@ int fcntl(int fd, int cmd, ... /* arg */) {
 
     } break;
 
-    //uint64_t
+    // uint64_t
     case F_GET_RW_HINT:
     case F_SET_RW_HINT:
     case F_GET_FILE_RW_HINT:
@@ -445,7 +447,7 @@ int fcntl(int fd, int cmd, ... /* arg */) {
 
     } break;
 
-    //void
+    // void
     case F_GETFD:
     case F_GETOWN:
     case F_GETSIG:
@@ -456,7 +458,7 @@ int fcntl(int fd, int cmd, ... /* arg */) {
       return fcntl_f(fd, cmd);
     } break;
 
-    //lock
+    // lock
     case F_SETLK:
     case F_SETLKW:
     case F_GETLK:
@@ -468,7 +470,7 @@ int fcntl(int fd, int cmd, ... /* arg */) {
       return fcntl_f(fd, cmd, arg);
     } break;
 
-    //own
+    // own
     case F_GETOWN_EX:
     case F_SETOWN_EX: {
       struct f_owner_exlock* arg = va_arg(va, struct f_owner_exlock*);

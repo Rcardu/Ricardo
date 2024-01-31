@@ -1,11 +1,12 @@
 #include "scheduler.h"
+
 #include "hook.h"
 
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 
 static thread_local Scheduler* t_scheduler = nullptr;
-static thread_local Fiber* t_fiber = nullptr;
+static thread_local Fiber* t_scheduler_fiber = nullptr;
 
 Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
     : m_name(name) {
@@ -21,7 +22,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
     m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
     Ricardo::Thread::SetName(m_name);
 
-    t_fiber = m_rootFiber.get();
+    t_scheduler_fiber = m_rootFiber.get();
     m_rootThread = Ricardo::GetThreadId();
     m_threadIds.push_back(m_rootThread);
   } else {
@@ -37,13 +38,9 @@ Scheduler::~Scheduler() {
   }
 }
 
-Scheduler* Scheduler::GetThis() {
-  return t_scheduler;
-}
+Scheduler* Scheduler::GetThis() { return t_scheduler; }
 
-Fiber* Scheduler::GetMainFiber() {
-  return t_fiber;
-}
+Fiber* Scheduler::GetMainFiber() { return t_scheduler_fiber; }
 
 void Scheduler::start() {
   MutexType::Lock lock(m_mutex);
@@ -61,12 +58,12 @@ void Scheduler::start() {
     m_threadIds.push_back(m_threads[i]->getId());
   }
   lock.unlock();
-  
-  //if(m_rootFiber){
-  //  //m_rootFiber->swapIn();
-  //  m_rootFiber->call();
-  //  ICEY_LOG_INFO(g_logger)<<"call out "<<m_rootFiber->getState();
-  //}
+
+  // if(m_rootFiber){
+  //   //m_rootFiber->swapIn();
+  //   m_rootFiber->call();
+  //   ICEY_LOG_INFO(g_logger)<<"call out "<<m_rootFiber->getState();
+  // }
 }
 
 void Scheduler::stop() {
@@ -82,7 +79,7 @@ void Scheduler::stop() {
     }
   }
 
-  //bool exit_on_this_fiber = false;
+  // bool exit_on_this_fiber = false;
   if (m_rootThread != -1) {
     ICEY_ASSERT(GetThis() == this);
 
@@ -99,16 +96,17 @@ void Scheduler::stop() {
     tickle();
   }
   if (m_rootFiber) {
-    //while (!stopping()){
-    //  if (m_rootFiber->getState() == Fiber::TERM ||
-    //      m_rootFiber->getState() == Fiber::EXCEPT) {
-    //    m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
-    //    ICEY_LOG_INFO(g_logger)<<"root fiber is term, reset";
-    //    t_fiber = m_rootFiber.get();
-    //  }
-    //  m_rootFiber->call();
-    //}
-    if(!stopping()){
+    // while (!stopping()) {
+    //   if (m_rootFiber->getState() == Fiber::TERM ||
+    //       m_rootFiber->getState() == Fiber::EXCEPT) {
+    //     m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0,
+    //     true)); ICEY_LOG_INFO(g_logger) << "root fiber is term, reset";
+    //     t_fiber = m_rootFiber.get();
+    //   }
+    //   m_rootFiber->call();
+    // }
+    if (!stopping()) {
+      ICEY_LOG_DEBUG(g_logger) << "call";
       m_rootFiber->call();
     }
   }
@@ -118,7 +116,7 @@ void Scheduler::stop() {
     MutexType::Lock lock(m_mutex);
     thrs.swap(m_threads);
   }
-  for(auto& i: thrs){
+  for (auto& i : thrs) {
     i->join();
   }
 
@@ -126,17 +124,15 @@ void Scheduler::stop() {
   // }
 }
 
-void Scheduler::setThis() {
-  t_scheduler = this;
-}
+void Scheduler::setThis() { t_scheduler = this; }
 
 void Scheduler::run() {
-  ICEY_LOG_INFO(g_logger)<<"run";
+  ICEY_LOG_INFO(g_logger) << "run";
   set_hook_enable(true);
   setThis();
 
   if (Ricardo::GetThreadId() != m_rootThread) {
-    t_fiber = Fiber::GetThis().get();
+    t_scheduler_fiber = Fiber::GetThis().get();
   }
 
   Fiber::ptr idle_fiber(new Fiber(std::bind(&Scheduler::idel, this)));
@@ -200,17 +196,17 @@ void Scheduler::run() {
       } else if (cb_fiber->getState() == Fiber::EXCEPT ||
                  cb_fiber->getState() == Fiber::TERM) {
         cb_fiber->reset(nullptr);
-      } else {  //if(cb_fiber->getState() != Fiber::TERM){
+      } else {  // if(cb_fiber->getState() != Fiber::TERM){
         cb_fiber->m_state = Fiber::HOLD;
         cb_fiber.reset();
       }
     } else {
-      if(is_active){
+      if (is_active) {
         --m_activeThreadCount;
         continue;
       }
-      if(idle_fiber->getState() == Fiber::TERM){
-        ICEY_LOG_INFO(g_logger)<<"idel fiber term";
+      if (idle_fiber->getState() == Fiber::TERM) {
+        ICEY_LOG_INFO(g_logger) << "idel fiber term";
         break;
       }
 
@@ -224,22 +220,54 @@ void Scheduler::run() {
     }
   }
 }
-void Scheduler::tickle(){
-  ICEY_LOG_INFO(g_logger)<<"tickle";
-}
-bool Scheduler::stopping(){
+void Scheduler::tickle() { ICEY_LOG_INFO(g_logger) << "tickle"; }
+
+bool Scheduler::stopping() {
   MutexType::Lock lock(m_mutex);
   return m_autoStop && m_stopping && m_fibers.empty() &&
          m_activeThreadCount == 0;
 }
-void Scheduler::idel(){
-  ICEY_LOG_INFO(g_logger)<<"idel";
-  while(!stopping()){
+void Scheduler::idel() {
+  ICEY_LOG_INFO(g_logger) << "idel";
+  while (!stopping()) {
     Ricardo::Fiber::YieldToHold();
   }
 }
 
+void Scheduler::switchTo(int thread) {
+  ICEY_ASSERT(Scheduler::GetThis() != nullptr);
+  if (Scheduler::GetThis() == this) {
+    if (thread == -1 || thread == Ricardo::GetThreadId()) {
+      return;
+    }
+  }
+  schedule(Fiber::GetThis(), thread);
+  Fiber::YieldToHold();
+}
+std::ostream& Scheduler::dump(std::ostream& os) {
+  os << "[Scheduler name=" << m_name << " size=" << m_threadCount
+     << " active_count=" << m_activeThreadCount
+     << " idle_count=" << m_idleThreadCount << " stopping=" << m_stopping
+     << " ]" << std::endl
+     << "    ";
+  for (size_t i = 0; i < m_threadIds.size(); ++i) {
+    if (i) {
+      os << ", ";
+    }
+    os << m_threadIds[i];
+  }
+  return os;
+}
 
-
-
+SchedulerSwitcher::SchedulerSwitcher(Scheduler* target) {
+  m_caller = Scheduler::GetThis();
+  if (target) {
+    target->switchTo();
+  }
+}
+SchedulerSwitcher::~SchedulerSwitcher() {
+  if (m_caller) {
+    m_caller->switchTo();
+  }
+}
 }  // namespace Ricardo

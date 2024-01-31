@@ -1,7 +1,7 @@
 #include "iomanager.h"
 #include "ricardo.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("icey");
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("icey");
 
 void test_fiber() {
   ICEY_LOG_INFO(g_logger) << "test_fiber";
@@ -15,7 +15,6 @@ void test_fiber() {
   inet_pton(AF_INET, "39.156.66.10", &addr.sin_addr.s_addr);
 
   if (!connect(sock, (const sockaddr*)&addr, sizeof(addr))) {
-
   } else if (errno == EINPROGRESS) {
     ICEY_LOG_INFO(g_logger)
         << "add event errno = " << errno << " " << strerror(errno);
@@ -26,8 +25,9 @@ void test_fiber() {
     Ricardo::IOManager::GetThis()->addEvent(
         sock, Ricardo::IOManager::WRITE, [&sock]() {
           ICEY_LOG_INFO(g_logger) << "write callback";
-          //close(sock);
-          Ricardo::IOManager::GetThis()->cancelEvent(sock, Ricardo::IOManager::READ);
+          // close(sock);
+          Ricardo::IOManager::GetThis()->cancelEvent(sock,
+                                                     Ricardo::IOManager::READ);
           close(sock);
         });
   } else {
@@ -36,30 +36,33 @@ void test_fiber() {
 }
 
 void test1() {
-  std::cout << "EPOLLIN = " << EPOLLIN<< std::endl << "EPOLLOUT = " << EPOLLOUT << std::endl;
-  Ricardo::IOManager iom(2,false);
+  std::cout << "EPOLLIN = " << EPOLLIN << std::endl
+            << "EPOLLOUT = " << EPOLLOUT << std::endl;
+  Ricardo::IOManager iom(5, false);
   iom.schedule(&test_fiber);
 }
 
 Ricardo::Timer::ptr s_timer;
 
 void test_timer() {
-  Ricardo::IOManager iom(2);
-  s_timer = iom.addTimer(
+  s_timer = Ricardo::IOManager::GetThis()->addTimer(
       1000,
       []() {
         static int i = 0;
         ICEY_LOG_INFO(g_logger) << "hello timer i = " << i;
-        if (++i == 3) {
-          s_timer->reset(2000);
-          //s_timer->cancel();
+        if (i++ == 5) {
+          // s_timer->reset(2000);
+          s_timer->cancel();
         }
       },
       true);
 }
 
 int main(int argc, char* argv[]) {
-  //test1();
-  test_timer();
+  Ricardo::IOManager iom(2);
+  iom.schedule(&test_timer);
+
+  // test1();
+  // test_timer();
   return 0;
 }

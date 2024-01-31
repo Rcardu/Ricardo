@@ -1,9 +1,8 @@
 #include "ricardo.h"
 
-Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
+static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void run_in_fiber() {
-
   ICEY_LOG_INFO(g_logger) << "run_in_fiber begin";
   Ricardo::Fiber::YieldToHold();
   ICEY_LOG_INFO(g_logger) << "run_in_fiber end";
