@@ -13,9 +13,11 @@ static Logger::ptr g_logger = ICEY_LOG_NAME("system");
 static std::atomic<uint64_t> s_fiber_id{0};
 static std::atomic<uint64_t> s_fiber_count{0};
 
+/// 当前协程
 static thread_local Fiber* t_fiber = nullptr;
+/// 主协程
 static thread_local Fiber::ptr t_threadFiber = nullptr;
-
+// 创建协程配置
 static ConfigVar<uint32_t>::ptr g_fiber_stack_size = Config::Lookup<uint32_t>(
     "fiber.stack_size", 128 * 1024, "fiber stack size");
 
@@ -122,7 +124,7 @@ void Fiber::swapIn() {
   // ICEY_LOG_DEBUG(g_logger) << "Fiber " << getId() << " swapIn.";
   ICEY_ASSERT(m_state != EXEC);
   m_state = EXEC;
-
+  /// 将当前协程（例如协程2，切换到当前执行）
   if (swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx)) {
     ICEY_ASSERT2(false, "swapcontext");
   }
