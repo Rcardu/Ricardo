@@ -399,6 +399,8 @@ class CASLock : Noncopyable {
 };
 
 class Scheduler;
+
+// 协程信号量
 class FiberSemaphore : Noncopyable {
  public:
   typedef Spinlock MutexType;
