@@ -5,7 +5,9 @@
 static Ricardo::Logger::ptr g_logger = ICEY_LOG_NAME("system");
 namespace Ricardo {
 
+/// 当前线程池指针
 static thread_local Scheduler* t_scheduler = nullptr;
+/// 当前协程指针
 static thread_local Fiber* t_scheduler_fiber = nullptr;
 
 Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
@@ -142,33 +144,45 @@ void Scheduler::run() {
 
   while (true) {
     ft.reset();
+    /// 是否进行协程调度
     bool tickle_me = false;
+    /// 是否在运行
     bool is_active = false;
     {
       MutexType::Lock lock(m_mutex);
+      /// 遍历协程等待队列
       auto it = m_fibers.begin();
       while (it != m_fibers.end()) {
+        /// 如果是任意线程且此线程不是当前线程
         if (it->thread != -1 && it->thread != Ricardo::GetThreadId()) {
           ++it;
+          // 进行协程调度
           tickle_me = true;
           continue;
         }
+        /// 如果此协程不存在并且协程执行函数也不存在,断言
         ICEY_ASSERT(it->fiber || it->cb);
+        /// 如果此协程存在且在执行状态，跳过此次调度
         if (it->fiber && it->fiber->getState() == Fiber::EXEC) {
           ++it;
           continue;
         }
+        /// 从协程调度队列中删除不满足条件的协程
         ft = *it;
         m_fibers.erase(it);
         ++m_activeThreadCount;
+        /// 设置调度活动为true
         is_active = true;
         break;
       }
     }
+    /// 需要调度
     if (tickle_me) {
       tickle();
     }
 
+    /// 进行协程调度
+    /// 按协程调度
     if (ft.fiber && (ft.fiber->getState() != Fiber::TERM ||
                      ft.fiber->getState() != Fiber::EXCEPT)) {
       ft.fiber->swapIn();
@@ -181,6 +195,7 @@ void Scheduler::run() {
         ft.fiber->m_state = Fiber::HOLD;
       }
       ft.reset();
+      /// 按协程执行函数调度
     } else if (ft.cb) {
       if (cb_fiber) {
         cb_fiber->reset(ft.cb);
