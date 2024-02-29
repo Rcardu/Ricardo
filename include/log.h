@@ -23,7 +23,7 @@
 // 使用logger写入日志级别为error的日志（流式日志）
 #define ICEY_LOG_ERROR(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::ERROR)
 // 使用logger写入日志级别为fatal的日志（流式日志）
-#define ICEY_LOG_FATAL(logger) YLAR_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
+#define ICEY_LOG_FATAL(logger) ICEY_LOG_LEVEL(logger, Ricardo::LogLevel::FATAL)
 
 #define ICEY_LOG_FMT_LEVEL(logger, level, fmt, ...)                     \
   if (logger->getLevel() <= level)                                      \

@@ -16,10 +16,11 @@ int main() {
 
   logger->addAppender(file_appender);
 
-  // Ricardo::LogEvent::ptr event(new Ricardo::LogEvent(__FILE__,__LINE__, 0,
-  // Ricardo::GetThreadId(), Ricardo::GetFiberId(), time(0)));
+  Ricardo::LogEvent::ptr event(new Ricardo::LogEvent(
+      logger, logger->getLevel(), __FILE__, __LINE__, 0, Ricardo::GetThreadId(),
+      Ricardo::GetFiberId(), time(0), "roots"));
 
-  // logger->log(Ricardo::LogLevel::DEBUG,event);
+  logger->log(Ricardo::LogLevel::DEBUG, event);
   std::cout << "hello Ricardo log" << std::endl;
 
   ICEY_LOG_INFO(logger) << "test macro";

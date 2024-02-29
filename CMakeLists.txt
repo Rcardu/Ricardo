@@ -36,6 +36,8 @@ set(NAME_ECHO appechoserver)
 set(NAME_HTSR apphttpserver)
 set(NAME_HTCN apphttpconnect)
 set(NAME_URI appuri)
+#测试数据
+set(TES_LOG logapp)
 
 #设置子目录别名
 set(TESTS tests)

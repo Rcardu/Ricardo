@@ -426,6 +426,7 @@ LogFormatter::LogFormatter(const std::string& pattern) : m_pattern(pattern) {
 std::string LogFormatter::format(std::shared_ptr<Logger> logger,
                                  LogLevel::Level level, LogEvent::ptr event) {
   std::stringstream ss;
+  // 对每一个信息函数指针进行字符串转化
   for (auto& i : m_items) {
     i->format(ss, logger, level, event);
   }
@@ -471,15 +472,26 @@ void LogFormatter::init() {
       // 如果是空格，说明当前部分解析完毕，退出while
       if (!fmt_status && (!isalpha(m_pattern[n]) && m_pattern[n] != '{' &&
                           m_pattern[n] != '}')) {
+        /*
+        解析单独的 ‘%’ 后的内容
+         i在 ‘%‘ 的位置，n会停止在下一个非字母的位置
+         那么，需要解析出来的内容就是从i（第一个非字母的位置）+1
+         到n（下一个非字母的位置）
+        */
         str = m_pattern.substr(i + 1, n - i - 1);
         break;
       }
 
       if (fmt_status == 0) {
+        /*当n位置的字符是  ‘{’ 时说明要开始下一轮的解析，
+        那么从i位置一直到n位置之前的内容就是一个整体*/
         if (m_pattern[n] == '{') {
+          // 在解析到’{“时需要转换一种解析方式，此时将前面的内容先处理到str中
           str = m_pattern.substr(i + 1, n - i - 1);
           // std::cout<<"*"<<str<<std::endl;
+          // 将解析状态设置为1，说明要解析 ‘{’ 内部的内容了
           fmt_status = 1;  // 解析格式
+          // 从fmt_begin+1开始解析
           fmt_begin = n;
           n++;
           continue;
@@ -487,6 +499,7 @@ void LogFormatter::init() {
       }
       if (fmt_status == 1) {
         if (m_pattern[n] == '}') {
+          // 遇到‘}’时，解析完成，直接处理到fmt中，从m_pattern[fmt_begin+1]到m_pattern[n-1]
           fmt = m_pattern.substr(fmt_begin + 1, n - fmt_begin - 1);
           // std::cout<<"#"<<fmt<<std::endl;
           fmt_status = 0;
@@ -496,6 +509,7 @@ void LogFormatter::init() {
       }
       n++;
       if (n == m_pattern.size()) {
+        // 全部解析完成后，将最后一个字符也放入str中
         if (str.empty()) {
           str = m_pattern.substr(i + 1);
         }
@@ -509,6 +523,7 @@ void LogFormatter::init() {
       vec.push_back(std::make_tuple(str, fmt, 1));
       i = n - 1;
     } else if (fmt_status == 1) {
+      // 状态为1 说明解析错误，出现多余字符
       std::cout << "Pattern parse error: " << m_pattern << " - "
                 << m_pattern.substr(i) << std::endl;
       m_error = true;
@@ -527,6 +542,7 @@ void LogFormatter::init() {
   //%d -- 时间
   //%f -- 文件名
   //%l -- 行号
+  // 建立信息符号到对应函数的索引
   static std::map<std::string,
                   std::function<FormatItem::ptr(const std::string& str)>>
       s_format_tiems = {
@@ -534,37 +550,44 @@ void LogFormatter::init() {
   {                                                                          \
     #str, [](const std::string& fmt) { return FormatItem::ptr(new C(fmt)); } \
   }
-          XX(m, MessageFormatItem),
-          XX(p, LevelFormatItem),  // m:消息、          p:日志级别
-          XX(r, ElapseFormatItem),
-          XX(c, NameFormatItem),  // r:累积毫秒数、    c:日志名称
-          XX(t, ThreadIdFormatItem),
-          XX(n, NewLineFormatItem),  // t:线程Id、        n:换行
-          XX(d, DateTimeFormatItem),
-          XX(f, FilenameFormatItem),  // d:时间、          f:文件名
-          XX(l, LineFormatItem),
-          XX(T, TabFormatItem),  // l:行号、          T:制表符(Tab)
-          XX(F, FiberIdFormatItem),
-          XX(N, ThreadNameFormatItem),  // F:协程Id、        N:线程名称
+          XX(m, MessageFormatItem),     // m : 消息
+          XX(p, LevelFormatItem),       // p : 日志级别
+          XX(r, ElapseFormatItem),      // r : 累积毫秒数
+          XX(c, NameFormatItem),        // c : 日志名称
+          XX(t, ThreadIdFormatItem),    // t : 线程Id
+          XX(n, NewLineFormatItem),     // n : 换行
+          XX(d, DateTimeFormatItem),    // d : 时间
+          XX(f, FilenameFormatItem),    // f : 文件名
+          XX(l, LineFormatItem),        // l : 行号
+          XX(T, TabFormatItem),         // T : 制表符(Tab)
+          XX(F, FiberIdFormatItem),     // F : 协程Id
+          XX(N, ThreadNameFormatItem),  // N : 线程名称
 #undef XX
       };
+  // 遍历解析出来的信息体进行
   for (auto& i : vec) {
     if (std::get<2>(i) == 0) {
+      // 如果是非字母符号，保持其原样
       m_items.push_back(FormatItem::ptr(new StringFormatItem(std::get<0>(i))));
     } else {
+      // 否则，在map中查找其字母对应的函数
       auto it = s_format_tiems.find(std::get<0>(i));
+      // 没有找到则输出一个错误
       if (it == s_format_tiems.end()) {
         m_items.push_back(FormatItem::ptr(
             new StringFormatItem("<<error_format %" + std::get<0>(i) + ">>")));
         m_error = true;
       } else {
+        // 否则建立这个输出函数指针
         m_items.push_back(it->second(std::get<1>(i)));
       }
     }
-    // std::cout<<"{"<<std::get<0>(i)<<"} - {"<<std::get<1>(i)<<"} -
-    // {"<<std::get<2>(i)<<"}"<<std::endl;
+    // std::cout << "{" << std::get<0>(i) << "} - {" << std::get<1>(i) << "}-{"
+    //           << std::get<2>(i) << "}" << std::endl;
   }
-  // std::cout<<m_items.size()<<std::endl;
+  // std::cout << m_items.size()
+  //           << "--------------------------------------------------"
+  //           << std::endl;
 }
 
 LoggerManager::LoggerManager() {
