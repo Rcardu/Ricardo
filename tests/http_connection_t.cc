@@ -7,7 +7,7 @@ static Ricardo::Logger::ptr g_logger = ICEY_LOG_ROOT();
 
 void test_pool() {
   Ricardo::http::HttpConnectionPool::ptr pool(
-      new Ricardo::http::HttpConnectionPool("www.dujiale.top", "", 80, 10,
+      new Ricardo::http::HttpConnectionPool("www.baidu.com", "", 80, 10,
                                             1000 * 30, 5));
   Ricardo::IOManager::GetThis()->addTimer(
       1000,
@@ -85,21 +85,21 @@ bool test_Bool(int* a, int* b) {
 }
 
 int main(int argc, char** argv) {
-  // Ricardo::IOManager iom(2);
-  // iom.schedule(run);
+  Ricardo::IOManager iom(2);
+  iom.schedule(run);
 
-  int c = 1;
-  int d = 2;
-  int* a = &c;
-  int* b = &d;
-  test_Bool(nullptr, nullptr);
-  test_Bool(nullptr, b);
-  test_Bool(a, nullptr);
-  test_Bool(a, b);
-  b = &c;
-  test_Bool(a, b);
-  std::cout << "pionter a =" << a << std::endl
-            << "pointer b =" << b << std::endl;
-  std::cout << std::boolalpha << test_Bool(a, b) << std::endl;
+  // int c = 1;
+  // int d = 2;
+  // int* a = &c;
+  // int* b = &d;
+  // test_Bool(nullptr, nullptr);
+  // test_Bool(nullptr, b);
+  // test_Bool(a, nullptr);
+  // test_Bool(a, b);
+  // b = &c;
+  // test_Bool(a, b);
+  // std::cout << "pionter a =" << a << std::endl
+  //           << "pointer b =" << b << std::endl;
+  // std::cout << std::boolalpha << test_Bool(a, b) << std::endl;
   return 0;
 }
